@@ -43,5 +43,11 @@
     <Compile Update="ResultTest\FrmResultLab.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="User\FrmAddUsers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="User\FrmUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
 </Project>

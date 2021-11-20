@@ -23,7 +23,9 @@ namespace PatientSystem.Home
 
         private void BtnUser_Click(object sender, EventArgs e)
         {
-            
+            User.FrmUser Users = new User.FrmUser();
+            this.Close();
+            Users.Show();
         }
 
         private void BtnMedical_Click(object sender, EventArgs e)
@@ -58,14 +60,7 @@ namespace PatientSystem.Home
         {
 
         }
-
-
-        public void SelectMantenice(int Value)
-        {
-
-            
-        }
-
+   
         #endregion
 
         private void FrmHome_Load(object sender, EventArgs e)
