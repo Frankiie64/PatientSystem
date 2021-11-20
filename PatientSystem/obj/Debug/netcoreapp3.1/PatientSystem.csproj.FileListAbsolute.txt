@@ -27,3 +27,15 @@ C:\Users\Franklyn\source\repos\PatientSystem\PatientSystem\bin\Debug\netcoreapp3
 C:\Users\Franklyn\source\repos\PatientSystem\PatientSystem\bin\Debug\netcoreapp3.1\DataLayer.pdb
 C:\Users\Franklyn\source\repos\PatientSystem\PatientSystem\bin\Debug\netcoreapp3.1\LogicLayer.pdb
 C:\Users\Franklyn\source\repos\PatientSystem\PatientSystem\obj\Debug\netcoreapp3.1\PatientSystem.csproj.CopyComplete
+C:\Users\Franklyn\source\repos\PatientSystem\PatientSystem\obj\Debug\netcoreapp3.1\PatientSystem.Keep.FrmDate.resources
+C:\Users\Franklyn\source\repos\PatientSystem\PatientSystem\obj\Debug\netcoreapp3.1\PatientSystem.Keep.FrmKeep.resources
+C:\Users\Franklyn\source\repos\PatientSystem\PatientSystem\obj\Debug\netcoreapp3.1\PatientSystem.Keep.FrmListDoctor.resources
+C:\Users\Franklyn\source\repos\PatientSystem\PatientSystem\obj\Debug\netcoreapp3.1\PatientSystem.Keep.FrmListPatients.resources
+C:\Users\Franklyn\source\repos\PatientSystem\PatientSystem\obj\Debug\netcoreapp3.1\PatientSystem.Lab.FrmAddTest.resources
+C:\Users\Franklyn\source\repos\PatientSystem\PatientSystem\obj\Debug\netcoreapp3.1\PatientSystem.Lab.FrmLabTest.resources
+C:\Users\Franklyn\source\repos\PatientSystem\PatientSystem\obj\Debug\netcoreapp3.1\PatientSystem.Medical.FrmAddDoctor.resources
+C:\Users\Franklyn\source\repos\PatientSystem\PatientSystem\obj\Debug\netcoreapp3.1\PatientSystem.Medical.FrmMedical.resources
+C:\Users\Franklyn\source\repos\PatientSystem\PatientSystem\obj\Debug\netcoreapp3.1\PatientSystem.Patients.FrmAddPatients.resources
+C:\Users\Franklyn\source\repos\PatientSystem\PatientSystem\obj\Debug\netcoreapp3.1\PatientSystem.Patients.FrmPatients.resources
+C:\Users\Franklyn\source\repos\PatientSystem\PatientSystem\obj\Debug\netcoreapp3.1\PatientSystem.ResultTest.FrmReport.resources
+C:\Users\Franklyn\source\repos\PatientSystem\PatientSystem\obj\Debug\netcoreapp3.1\PatientSystem.ResultTest.FrmResultLab.resources

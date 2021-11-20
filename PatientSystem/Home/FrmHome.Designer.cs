@@ -100,6 +100,7 @@ namespace PatientSystem.Home
             this.BtnUser.TabIndex = 0;
             this.BtnUser.Text = "User maintenance";
             this.BtnUser.UseVisualStyleBackColor = false;
+            this.BtnUser.Click += new System.EventHandler(this.BtnUser_Click);
             // 
             // BtnMedical
             // 
@@ -115,6 +116,7 @@ namespace PatientSystem.Home
             this.BtnMedical.TabIndex = 1;
             this.BtnMedical.Text = "Medical maintenance";
             this.BtnMedical.UseVisualStyleBackColor = false;
+            this.BtnMedical.Click += new System.EventHandler(this.BtnMedical_Click);
             // 
             // BtnTestLab
             // 
@@ -130,6 +132,7 @@ namespace PatientSystem.Home
             this.BtnTestLab.TabIndex = 2;
             this.BtnTestLab.Text = "Laboratory Test maintenance";
             this.BtnTestLab.UseVisualStyleBackColor = false;
+            this.BtnTestLab.Click += new System.EventHandler(this.BtnTestLab_Click);
             // 
             // BtnPatient
             // 
@@ -145,6 +148,7 @@ namespace PatientSystem.Home
             this.BtnPatient.TabIndex = 3;
             this.BtnPatient.Text = "Patient maintenance";
             this.BtnPatient.UseVisualStyleBackColor = false;
+            this.BtnPatient.Click += new System.EventHandler(this.BtnPatient_Click);
             // 
             // BtnKeep
             // 
@@ -160,6 +164,7 @@ namespace PatientSystem.Home
             this.BtnKeep.TabIndex = 4;
             this.BtnKeep.Text = "Keeping maintenance";
             this.BtnKeep.UseVisualStyleBackColor = false;
+            this.BtnKeep.Click += new System.EventHandler(this.BtnKeep_Click);
             // 
             // BtnTestResult
             // 
@@ -175,6 +180,7 @@ namespace PatientSystem.Home
             this.BtnTestResult.TabIndex = 5;
             this.BtnTestResult.Text = "Maintaining laboratory test results";
             this.BtnTestResult.UseVisualStyleBackColor = false;
+            this.BtnTestResult.Click += new System.EventHandler(this.BtnTestResult_Click);
             // 
             // FrmHome
             // 

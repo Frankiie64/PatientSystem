@@ -1,0 +1,312 @@
+﻿
+namespace PatientSystem.Keep
+{
+    partial class FrmKeep
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmKeep));
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.PtbKeep = new System.Windows.Forms.PictureBox();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.BtnDelete = new System.Windows.Forms.Button();
+            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
+            this.BtnCheck = new System.Windows.Forms.Button();
+            this.BtnConsult = new System.Windows.Forms.Button();
+            this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
+            this.BtnDeselect = new System.Windows.Forms.Button();
+            this.BtnSee = new System.Windows.Forms.Button();
+            this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
+            this.BtnAdd = new System.Windows.Forms.Button();
+            this.DgvKeep = new System.Windows.Forms.DataGridView();
+            this.tableLayoutPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PtbKeep)).BeginInit();
+            this.tableLayoutPanel2.SuspendLayout();
+            this.tableLayoutPanel4.SuspendLayout();
+            this.tableLayoutPanel5.SuspendLayout();
+            this.tableLayoutPanel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvKeep)).BeginInit();
+            this.SuspendLayout();
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.tableLayoutPanel1.ColumnCount = 3;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5.480382F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 89.03924F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 5.480382F));
+            this.tableLayoutPanel1.Controls.Add(this.PtbKeep, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 1, 2);
+            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel3, 1, 1);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 3;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 30.44637F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 51.06511F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 18.48853F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(694, 867);
+            this.tableLayoutPanel1.TabIndex = 7;
+            // 
+            // PtbKeep
+            // 
+            this.PtbKeep.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.PtbKeep.Image = ((System.Drawing.Image)(resources.GetObject("PtbKeep.Image")));
+            this.PtbKeep.Location = new System.Drawing.Point(42, 5);
+            this.PtbKeep.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.PtbKeep.Name = "PtbKeep";
+            this.PtbKeep.Size = new System.Drawing.Size(609, 253);
+            this.PtbKeep.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.PtbKeep.TabIndex = 0;
+            this.PtbKeep.TabStop = false;
+            // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.ColumnCount = 2;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.Controls.Add(this.BtnDelete, 0, 1);
+            this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel4, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel5, 1, 0);
+            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(42, 710);
+            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 2;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 49.33333F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.66667F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 33F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(609, 152);
+            this.tableLayoutPanel2.TabIndex = 2;
+            // 
+            // BtnDelete
+            // 
+            this.BtnDelete.BackColor = System.Drawing.Color.SteelBlue;
+            this.tableLayoutPanel2.SetColumnSpan(this.BtnDelete, 2);
+            this.BtnDelete.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.BtnDelete.FlatAppearance.BorderSize = 0;
+            this.BtnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnDelete.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.BtnDelete.Image = ((System.Drawing.Image)(resources.GetObject("BtnDelete.Image")));
+            this.BtnDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnDelete.Location = new System.Drawing.Point(4, 79);
+            this.BtnDelete.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.BtnDelete.Name = "BtnDelete";
+            this.BtnDelete.Size = new System.Drawing.Size(601, 68);
+            this.BtnDelete.TabIndex = 3;
+            this.BtnDelete.Text = "Deleted";
+            this.BtnDelete.UseVisualStyleBackColor = false;
+            // 
+            // tableLayoutPanel4
+            // 
+            this.tableLayoutPanel4.ColumnCount = 2;
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel4.Controls.Add(this.BtnCheck, 1, 0);
+            this.tableLayoutPanel4.Controls.Add(this.BtnConsult, 0, 0);
+            this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(4, 5);
+            this.tableLayoutPanel4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
+            this.tableLayoutPanel4.RowCount = 1;
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 63F));
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(296, 64);
+            this.tableLayoutPanel4.TabIndex = 4;
+            // 
+            // BtnCheck
+            // 
+            this.BtnCheck.BackColor = System.Drawing.Color.Ivory;
+            this.BtnCheck.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.BtnCheck.FlatAppearance.BorderSize = 0;
+            this.BtnCheck.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnCheck.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.BtnCheck.Location = new System.Drawing.Point(152, 5);
+            this.BtnCheck.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.BtnCheck.Name = "BtnCheck";
+            this.BtnCheck.Size = new System.Drawing.Size(140, 54);
+            this.BtnCheck.TabIndex = 0;
+            this.BtnCheck.Text = "Check results";
+            this.BtnCheck.UseVisualStyleBackColor = false;
+            // 
+            // BtnConsult
+            // 
+            this.BtnConsult.BackColor = System.Drawing.Color.Ivory;
+            this.BtnConsult.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.BtnConsult.FlatAppearance.BorderSize = 0;
+            this.BtnConsult.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnConsult.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.BtnConsult.Location = new System.Drawing.Point(4, 5);
+            this.BtnConsult.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.BtnConsult.Name = "BtnConsult";
+            this.BtnConsult.Size = new System.Drawing.Size(140, 54);
+            this.BtnConsult.TabIndex = 1;
+            this.BtnConsult.Text = "Consult";
+            this.BtnConsult.UseVisualStyleBackColor = false;
+            // 
+            // tableLayoutPanel5
+            // 
+            this.tableLayoutPanel5.ColumnCount = 2;
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel5.Controls.Add(this.BtnDeselect, 1, 0);
+            this.tableLayoutPanel5.Controls.Add(this.BtnSee, 0, 0);
+            this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(308, 5);
+            this.tableLayoutPanel5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tableLayoutPanel5.Name = "tableLayoutPanel5";
+            this.tableLayoutPanel5.RowCount = 1;
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 63F));
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(297, 64);
+            this.tableLayoutPanel5.TabIndex = 5;
+            // 
+            // BtnDeselect
+            // 
+            this.BtnDeselect.BackColor = System.Drawing.Color.Ivory;
+            this.BtnDeselect.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.BtnDeselect.FlatAppearance.BorderSize = 0;
+            this.BtnDeselect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnDeselect.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.BtnDeselect.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnDeselect.Location = new System.Drawing.Point(152, 5);
+            this.BtnDeselect.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.BtnDeselect.Name = "BtnDeselect";
+            this.BtnDeselect.Size = new System.Drawing.Size(141, 54);
+            this.BtnDeselect.TabIndex = 3;
+            this.BtnDeselect.Text = "Deselect";
+            this.BtnDeselect.UseVisualStyleBackColor = false;
+            // 
+            // BtnSee
+            // 
+            this.BtnSee.BackColor = System.Drawing.Color.Ivory;
+            this.BtnSee.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.BtnSee.FlatAppearance.BorderSize = 0;
+            this.BtnSee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnSee.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.BtnSee.Location = new System.Drawing.Point(4, 5);
+            this.BtnSee.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.BtnSee.Name = "BtnSee";
+            this.BtnSee.Size = new System.Drawing.Size(140, 54);
+            this.BtnSee.TabIndex = 4;
+            this.BtnSee.Text = "See Results";
+            this.BtnSee.UseVisualStyleBackColor = false;
+            // 
+            // tableLayoutPanel3
+            // 
+            this.tableLayoutPanel3.ColumnCount = 1;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 29F));
+            this.tableLayoutPanel3.Controls.Add(this.BtnAdd, 0, 0);
+            this.tableLayoutPanel3.Controls.Add(this.DgvKeep, 0, 1);
+            this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(42, 268);
+            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tableLayoutPanel3.Name = "tableLayoutPanel3";
+            this.tableLayoutPanel3.RowCount = 2;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.98842F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 83.01158F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 33F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(609, 432);
+            this.tableLayoutPanel3.TabIndex = 3;
+            this.tableLayoutPanel3.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel3_Paint);
+            // 
+            // BtnAdd
+            // 
+            this.BtnAdd.BackColor = System.Drawing.Color.SteelBlue;
+            this.BtnAdd.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.BtnAdd.FlatAppearance.BorderSize = 0;
+            this.BtnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnAdd.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.BtnAdd.Image = ((System.Drawing.Image)(resources.GetObject("BtnAdd.Image")));
+            this.BtnAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnAdd.Location = new System.Drawing.Point(4, 5);
+            this.BtnAdd.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.BtnAdd.Name = "BtnAdd";
+            this.BtnAdd.Size = new System.Drawing.Size(601, 63);
+            this.BtnAdd.TabIndex = 2;
+            this.BtnAdd.Text = "Add quotes";
+            this.BtnAdd.UseVisualStyleBackColor = false;
+            // 
+            // DgvKeep
+            // 
+            this.DgvKeep.AllowUserToAddRows = false;
+            this.DgvKeep.AllowUserToDeleteRows = false;
+            this.DgvKeep.BackgroundColor = System.Drawing.Color.White;
+            this.DgvKeep.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DgvKeep.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.DgvKeep.GridColor = System.Drawing.Color.DarkGray;
+            this.DgvKeep.Location = new System.Drawing.Point(4, 78);
+            this.DgvKeep.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.DgvKeep.MultiSelect = false;
+            this.DgvKeep.Name = "DgvKeep";
+            this.DgvKeep.ReadOnly = true;
+            this.DgvKeep.RowHeadersWidth = 62;
+            this.DgvKeep.RowTemplate.Height = 25;
+            this.DgvKeep.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.DgvKeep.Size = new System.Drawing.Size(601, 349);
+            this.DgvKeep.TabIndex = 1;
+            // 
+            // FrmKeep
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(694, 867);
+            this.Controls.Add(this.tableLayoutPanel1);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Name = "FrmKeep";
+            this.Text = "Keep";
+            this.Load += new System.EventHandler(this.FrmKeep_Load);
+            this.tableLayoutPanel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.PtbKeep)).EndInit();
+            this.tableLayoutPanel2.ResumeLayout(false);
+            this.tableLayoutPanel4.ResumeLayout(false);
+            this.tableLayoutPanel5.ResumeLayout(false);
+            this.tableLayoutPanel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.DgvKeep)).EndInit();
+            this.ResumeLayout(false);
+
+        }
+
+        #endregion
+
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.PictureBox PtbKeep;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
+        private System.Windows.Forms.DataGridView DgvKeep;
+        private System.Windows.Forms.Button BtnDelete;
+        private System.Windows.Forms.Button BtnAdd;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
+        private System.Windows.Forms.Button BtnCheck;
+        private System.Windows.Forms.Button BtnConsult;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
+        private System.Windows.Forms.Button BtnDeselect;
+        private System.Windows.Forms.Button BtnSee;
+    }
+}

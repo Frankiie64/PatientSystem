@@ -12,6 +12,7 @@ using System.Data.SqlClient;
 using System.Configuration;
 using LogicLayer.Login;
 using DataLayer.Models;
+using PatientSystem.Home;
 
 namespace PatientSystem.Login
 {
@@ -34,12 +35,18 @@ namespace PatientSystem.Login
 
         private void FrmLogin_Load(object sender, EventArgs e)
         {
-
+            loadData();
         }
 
         private void BtnLoginInit_Click(object sender, EventArgs e)
         {
             Login();
+        }
+
+        public void loadData()
+        {
+            TxbLoginNick.Clear();
+            TxbLoginPassword.Clear();
         }
 
         public void Login()
@@ -76,9 +83,11 @@ namespace PatientSystem.Login
                 }
                 else if (service.Login(Usuario) == 3)
                 {
-
+                    FrmHome home = new FrmHome();
                     MessageBox.Show($"Bienvenido {TxbLoginNick.Text}", "Bienvenido");
-
+                    FrmLogin.Intance.Hide();
+                    loadData();
+                    home.Show(); 
                 }
             }
 

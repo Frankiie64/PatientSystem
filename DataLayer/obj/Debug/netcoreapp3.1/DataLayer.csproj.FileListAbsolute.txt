@@ -7,3 +7,4 @@ C:\Users\Franklyn\source\repos\PatientSystem\DataLayer\obj\Debug\netcoreapp3.1\D
 C:\Users\Franklyn\source\repos\PatientSystem\DataLayer\obj\Debug\netcoreapp3.1\DataLayer.csproj.CoreCompileInputs.cache
 C:\Users\Franklyn\source\repos\PatientSystem\DataLayer\obj\Debug\netcoreapp3.1\DataLayer.dll
 C:\Users\Franklyn\source\repos\PatientSystem\DataLayer\obj\Debug\netcoreapp3.1\DataLayer.pdb
+C:\Users\Franklyn\source\repos\PatientSystem\DataLayer\obj\Debug\netcoreapp3.1\DataLayer.csproj.AssemblyReference.cache

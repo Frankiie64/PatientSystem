@@ -25,7 +25,7 @@ namespace DataLayer.Login
                 {
                     _connection.Open();
 
-                    SqlCommand command = new SqlCommand("Select Id,NickName, Pass From Users where NickName= @NickName", _connection);
+                    SqlCommand command = new SqlCommand("Select Id,NickName, Pass,TypeUsers From Users where NickName= @NickName", _connection);
                     command.CommandType = CommandType.Text;
 
                     command.Parameters.AddWithValue("@NickName", NickName);
@@ -39,6 +39,7 @@ namespace DataLayer.Login
                         data.Id = reader.IsDBNull(0) ? 0 : reader.GetInt32(0);
                         data.NickName = reader.IsDBNull(1) ? "" : reader.GetString(1);
                         data.Pass = reader.IsDBNull(2) ? "" : reader.GetString(2);
+                        data.TypeUsers = reader.IsDBNull(3) ? 0 : reader.GetInt32(3);
                     }
 
                     reader.Close();
