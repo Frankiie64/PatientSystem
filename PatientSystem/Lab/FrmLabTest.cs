@@ -81,10 +81,17 @@ namespace PatientSystem.Lab
 
         private void BtnEdit_Click(object sender, EventArgs e)
         {
-            FrmAddTest Edit = new FrmAddTest(_connection);
+            if (GlobalRepositoty.Instance.index < 0)
+            {
+                MessageBox.Show("Por favor seleccione el usario que desea Editar", "Error");
+            }
+            else
+            {
+                FrmAddTest Edit = new FrmAddTest(_connection);
 
-            this.Hide();
-            Edit.Show();
+                this.Hide();
+                Edit.Show();
+            }
         }
 
         private void BtnDelete_Click(object sender, EventArgs e)
