@@ -12,9 +12,9 @@ namespace LogicLayer.PatientLogic
     {
         private SqlConnection _connection;
         private PatientsRepository repo;
-        public ServicePatient(SqlConnection cn)
+        public ServicePatient(SqlConnection connection)
         {
-            repo = new PatientsRepository(cn);
+            _connection = connection;
         }
         public bool Add(PatientsModel item)
         {
@@ -34,7 +34,7 @@ namespace LogicLayer.PatientLogic
         }
         public DataTable GetAll()
         {
-            return repo.GetAll();
+            return  repo.GetAll();
         }
 
     }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
@@ -13,9 +14,11 @@ namespace PatientSystem.Home
 {
     public partial class FrmHome : Form
     {
-        public FrmHome()
+        SqlConnection _conection;
+        public FrmHome(SqlConnection connection)
         {
             InitializeComponent();
+            _conection = connection;
         }
 
         #region
@@ -23,7 +26,7 @@ namespace PatientSystem.Home
 
         private void BtnUser_Click(object sender, EventArgs e)
         {
-            User.FrmUser Users = new User.FrmUser();
+            User.FrmUser Users = new User.FrmUser(_conection);
             this.Close();
             Users.Show();
         }

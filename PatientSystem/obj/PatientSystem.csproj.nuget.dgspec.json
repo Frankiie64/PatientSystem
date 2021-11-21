@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Panda\\source\\repos\\PatientSystem\\PatientSystem\\PatientSystem.csproj": {}
+    "C:\\Users\\Franklyn\\source\\Gestor\\PatientSystem\\PatientSystem.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Panda\\source\\repos\\PatientSystem\\DataLayer\\DataLayer.csproj": {
+    "C:\\Users\\Franklyn\\source\\Gestor\\DataLayer\\DataLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Panda\\source\\repos\\PatientSystem\\DataLayer\\DataLayer.csproj",
+        "projectUniqueName": "C:\\Users\\Franklyn\\source\\Gestor\\DataLayer\\DataLayer.csproj",
         "projectName": "DataLayer",
-        "projectPath": "C:\\Users\\Panda\\source\\repos\\PatientSystem\\DataLayer\\DataLayer.csproj",
-        "packagesPath": "C:\\Users\\Panda\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Panda\\source\\repos\\PatientSystem\\DataLayer\\obj\\",
+        "projectPath": "C:\\Users\\Franklyn\\source\\Gestor\\DataLayer\\DataLayer.csproj",
+        "packagesPath": "C:\\Users\\Franklyn\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Franklyn\\source\\Gestor\\DataLayer\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Panda\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Franklyn\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -60,21 +60,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Panda\\source\\repos\\PatientSystem\\LogicLayer\\LogicLayer.csproj": {
+    "C:\\Users\\Franklyn\\source\\Gestor\\LogicLayer\\LogicLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Panda\\source\\repos\\PatientSystem\\LogicLayer\\LogicLayer.csproj",
+        "projectUniqueName": "C:\\Users\\Franklyn\\source\\Gestor\\LogicLayer\\LogicLayer.csproj",
         "projectName": "LogicLayer",
-        "projectPath": "C:\\Users\\Panda\\source\\repos\\PatientSystem\\LogicLayer\\LogicLayer.csproj",
-        "packagesPath": "C:\\Users\\Panda\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Panda\\source\\repos\\PatientSystem\\LogicLayer\\obj\\",
+        "projectPath": "C:\\Users\\Franklyn\\source\\Gestor\\LogicLayer\\LogicLayer.csproj",
+        "packagesPath": "C:\\Users\\Franklyn\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Franklyn\\source\\Gestor\\LogicLayer\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Panda\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Franklyn\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -88,8 +88,8 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "C:\\Users\\Panda\\source\\repos\\PatientSystem\\DataLayer\\DataLayer.csproj": {
-                "projectPath": "C:\\Users\\Panda\\source\\repos\\PatientSystem\\DataLayer\\DataLayer.csproj"
+              "C:\\Users\\Franklyn\\source\\Gestor\\DataLayer\\DataLayer.csproj": {
+                "projectPath": "C:\\Users\\Franklyn\\source\\Gestor\\DataLayer\\DataLayer.csproj"
               }
             }
           }
@@ -124,21 +124,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Panda\\source\\repos\\PatientSystem\\PatientSystem\\PatientSystem.csproj": {
+    "C:\\Users\\Franklyn\\source\\Gestor\\PatientSystem\\PatientSystem.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Panda\\source\\repos\\PatientSystem\\PatientSystem\\PatientSystem.csproj",
+        "projectUniqueName": "C:\\Users\\Franklyn\\source\\Gestor\\PatientSystem\\PatientSystem.csproj",
         "projectName": "PatientSystem",
-        "projectPath": "C:\\Users\\Panda\\source\\repos\\PatientSystem\\PatientSystem\\PatientSystem.csproj",
-        "packagesPath": "C:\\Users\\Panda\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Panda\\source\\repos\\PatientSystem\\PatientSystem\\obj\\",
+        "projectPath": "C:\\Users\\Franklyn\\source\\Gestor\\PatientSystem\\PatientSystem.csproj",
+        "packagesPath": "C:\\Users\\Franklyn\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Franklyn\\source\\Gestor\\PatientSystem\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Panda\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Franklyn\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -152,11 +152,11 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "C:\\Users\\Panda\\source\\repos\\PatientSystem\\DataLayer\\DataLayer.csproj": {
-                "projectPath": "C:\\Users\\Panda\\source\\repos\\PatientSystem\\DataLayer\\DataLayer.csproj"
+              "C:\\Users\\Franklyn\\source\\Gestor\\DataLayer\\DataLayer.csproj": {
+                "projectPath": "C:\\Users\\Franklyn\\source\\Gestor\\DataLayer\\DataLayer.csproj"
               },
-              "C:\\Users\\Panda\\source\\repos\\PatientSystem\\LogicLayer\\LogicLayer.csproj": {
-                "projectPath": "C:\\Users\\Panda\\source\\repos\\PatientSystem\\LogicLayer\\LogicLayer.csproj"
+              "C:\\Users\\Franklyn\\source\\Gestor\\LogicLayer\\LogicLayer.csproj": {
+                "projectPath": "C:\\Users\\Franklyn\\source\\Gestor\\LogicLayer\\LogicLayer.csproj"
               }
             }
           }
@@ -188,7 +188,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     }

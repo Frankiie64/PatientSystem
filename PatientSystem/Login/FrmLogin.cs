@@ -83,7 +83,7 @@ namespace PatientSystem.Login
                 }
                 else if (service.Login(Usuario) == 3)
                 {
-                    FrmHome home = new FrmHome();
+                    FrmHome home = new FrmHome(connection);
                     MessageBox.Show($"Bienvenido {TxbLoginNick.Text}", "Bienvenido");
                     FrmLogin.Intance.Hide();
                     loadData();

@@ -113,6 +113,7 @@ namespace PatientSystem.User
             this.BtnEdit.TabIndex = 0;
             this.BtnEdit.Text = "Edit";
             this.BtnEdit.UseVisualStyleBackColor = false;
+            this.BtnEdit.Click += new System.EventHandler(this.BtnEdit_Click);
             // 
             // BtnDelete
             // 
@@ -130,6 +131,7 @@ namespace PatientSystem.User
             this.BtnDelete.TabIndex = 1;
             this.BtnDelete.Text = "Deleted";
             this.BtnDelete.UseVisualStyleBackColor = false;
+            this.BtnDelete.Click += new System.EventHandler(this.BtnDelete_Click);
             // 
             // BtnDeselect
             // 
@@ -148,6 +150,8 @@ namespace PatientSystem.User
             this.BtnDeselect.TabIndex = 2;
             this.BtnDeselect.Text = "Deselect";
             this.BtnDeselect.UseVisualStyleBackColor = false;
+            this.BtnDeselect.Visible = false;
+            this.BtnDeselect.Click += new System.EventHandler(this.BtnDeselect_Click);
             // 
             // tableLayoutPanel3
             // 
@@ -202,6 +206,7 @@ namespace PatientSystem.User
             this.DgvUser.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DgvUser.Size = new System.Drawing.Size(524, 354);
             this.DgvUser.TabIndex = 1;
+            this.DgvUser.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvUser_CellClick);
             // 
             // FrmUser
             // 
@@ -212,6 +217,8 @@ namespace PatientSystem.User
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "FrmUser";
             this.Text = "User";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmUser_FormClosed);
+            this.Load += new System.EventHandler(this.FrmUser_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.PbContacs)).EndInit();
             this.tableLayoutPanel2.ResumeLayout(false);

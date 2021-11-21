@@ -24,7 +24,7 @@ namespace PatientSystem.Patients
 
         private void FrmPatients_Load(object sender, EventArgs e)
         {
-            LoadData();
+            //LoadData();
         }
         private void BtnAdd_Click(object sender, EventArgs e)
         {

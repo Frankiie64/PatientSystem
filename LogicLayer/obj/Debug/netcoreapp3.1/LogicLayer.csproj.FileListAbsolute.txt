@@ -23,3 +23,16 @@ C:\Users\Panda\Source\Repos\PatientSystem\LogicLayer\obj\Debug\netcoreapp3.1\Log
 C:\Users\Panda\Source\Repos\PatientSystem\LogicLayer\obj\Debug\netcoreapp3.1\LogicLayer.csproj.CopyComplete
 C:\Users\Panda\Source\Repos\PatientSystem\LogicLayer\obj\Debug\netcoreapp3.1\LogicLayer.dll
 C:\Users\Panda\Source\Repos\PatientSystem\LogicLayer\obj\Debug\netcoreapp3.1\LogicLayer.pdb
+C:\Users\Franklyn\source\Gestor\LogicLayer\bin\Debug\netcoreapp3.1\LogicLayer.deps.json
+C:\Users\Franklyn\source\Gestor\LogicLayer\bin\Debug\netcoreapp3.1\LogicLayer.dll
+C:\Users\Franklyn\source\Gestor\LogicLayer\bin\Debug\netcoreapp3.1\LogicLayer.pdb
+C:\Users\Franklyn\source\Gestor\LogicLayer\bin\Debug\netcoreapp3.1\DataLayer.dll
+C:\Users\Franklyn\source\Gestor\LogicLayer\bin\Debug\netcoreapp3.1\DataLayer.pdb
+C:\Users\Franklyn\source\Gestor\LogicLayer\obj\Debug\netcoreapp3.1\LogicLayer.csproj.AssemblyReference.cache
+C:\Users\Franklyn\source\Gestor\LogicLayer\obj\Debug\netcoreapp3.1\LogicLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Franklyn\source\Gestor\LogicLayer\obj\Debug\netcoreapp3.1\LogicLayer.AssemblyInfoInputs.cache
+C:\Users\Franklyn\source\Gestor\LogicLayer\obj\Debug\netcoreapp3.1\LogicLayer.AssemblyInfo.cs
+C:\Users\Franklyn\source\Gestor\LogicLayer\obj\Debug\netcoreapp3.1\LogicLayer.csproj.CoreCompileInputs.cache
+C:\Users\Franklyn\source\Gestor\LogicLayer\obj\Debug\netcoreapp3.1\LogicLayer.csproj.CopyComplete
+C:\Users\Franklyn\source\Gestor\LogicLayer\obj\Debug\netcoreapp3.1\LogicLayer.dll
+C:\Users\Franklyn\source\Gestor\LogicLayer\obj\Debug\netcoreapp3.1\LogicLayer.pdb

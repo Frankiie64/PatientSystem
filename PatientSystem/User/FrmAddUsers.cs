@@ -1,5 +1,4 @@
-﻿using PatientSystem.ComboBoxItem;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,21 +6,57 @@ using System.Data.SqlClient;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using PatientSystem;
+using LogicLayer.Usuario;
+using DataLayer.Models;
+using LogicLayer;
 
 namespace PatientSystem.User
 {
+
     public partial class FrmAddUsers : Form
     {
+        ComboBoxItem rol;
         SqlConnection _connection;
+        ServiceUsers _service;
+       
         public FrmAddUsers(string connection)
         {
             InitializeComponent();
             _connection = new SqlConnection(connection);
+            _service = new ServiceUsers(_connection);
+            
         }
 
         #region
+        private void FrmAddUsers_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            FrmUser frmUser = new FrmUser(_connection);
+            frmUser.Show();
+        }
+        private void Edit(Users item,int id,ComboBoxItem Adm,ComboBoxItem Doc)
+        {
+            if (id >= 1)
+            {
+                ComboBoxItem Usuario = CxbType.SelectedItem as ComboBoxItem;
+                TxbName.Text = item.FName;
+                TxbLastName.Text = item.LastName;
+                TxbMail.Text = item.LastName;
+                TxbUser.Text = item.LastName;
+                TxbPassword.Text = item.Pass;
+                TxbConfirm.Text = item.Pass;
+                if(item.TypeUsers == 0)
+                {
+                    CxbType.SelectedItem = Adm;
 
+                }
+                else
+                {
+                    CxbType.SelectedItem = Doc;
+                }
 
+            }
+        }
         private void FrmAddUsers_Load(object sender, EventArgs e)
         {
             loadUsers();            
@@ -29,70 +64,141 @@ namespace PatientSystem.User
 
         private void BtnConfirm_Click(object sender, EventArgs e)
         {
-            AddUser();
+
+            if(validation() == true)
+            {
+                if(GlobalRepositoty.Instance.id > 0)
+                {
+                   if( _service.EditUser(CreateUse()))
+                    {
+                        MessageBox.Show("Se ha editado correctamente", "Edicion correcta");
+
+                    }
+                   else
+                    {
+                        MessageBox.Show("El usuario que intenta registrar ya existe", "Error");
+
+                    }
+                    this.Close();
+
+                }
+                else
+                { 
+                    AddUser();
+                                      
+                }
+            }
         }
         #endregion
 
-        private void AddUser()
+
+        private bool validation()
         {
-            if(string.IsNullOrWhiteSpace(TxbName.Text))
+            rol = CxbType.SelectedItem as ComboBoxItem;
+
+            try
             {
-                MessageBox.Show("Por favor introduzca el nombre", "Error");
-            }
-            else if (string.IsNullOrWhiteSpace(TxbLastName.Text))
-            {
-                MessageBox.Show("Por favor introduzca el apellido", "Error");
-            }
-            else if (string.IsNullOrWhiteSpace(TxbMail.Text))
-            {
-                MessageBox.Show("Por favor introduzca el correo", "Error");
-            }
-            else if (string.IsNullOrWhiteSpace(TxbUser.Text))
-            {
-                MessageBox.Show("Por favor introduzca el usuario", "Error");
-            }
-            else if (string.IsNullOrWhiteSpace(TxbPassword.Text) || string.IsNullOrWhiteSpace(TxbConfirm.Text))
-            {
-                MessageBox.Show("Por favor introduzca la contraseña", "Error");
-            }
-            else if (CxbType.SelectedIndex == 0)
-            {
-                MessageBox.Show("Por favor introduzca el rol de la persona", "Error");
+                if (string.IsNullOrWhiteSpace(TxbName.Text))
+                {
+                    MessageBox.Show("Por favor introduzca el nombre", "Error");
+                    return false;
+                }
+                else if (string.IsNullOrWhiteSpace(TxbLastName.Text))
+                {
+                    MessageBox.Show("Por favor introduzca el apellido", "Error");
+                    return false;
+                }
+                else if (string.IsNullOrWhiteSpace(TxbMail.Text))
+                {
+                    MessageBox.Show("Por favor introduzca el correo", "Error");
+                    return false;
+                }
+                else if (string.IsNullOrWhiteSpace(TxbUser.Text))
+                {
+                    MessageBox.Show("Por favor introduzca el usuario", "Error");
+                    return false;
+                }
+                else if (string.IsNullOrWhiteSpace(TxbPassword.Text) || string.IsNullOrWhiteSpace(TxbConfirm.Text))
+                {
+                    MessageBox.Show("Por favor introduzca la contraseña", "Error");
+                    return false;
+                }
+                else if (rol.Value == null)
+                {
+                    MessageBox.Show("Por favor introduzca el rol de la persona", "Error");
+                    return false;
+                }
+                else
+                {
+                    return true;
+                }
 
             }
-            else 
+            catch
+            {
+                MessageBox.Show("Error", "Error");
+                return false;
+            }
+        }
+
+        private Users CreateUse()
+        {
+            Users item = new Users();
+            {
+                item.FName = TxbName.Text;
+                item.LastName = TxbLastName.Text;
+                item.Email = TxbMail.Text;
+                item.NickName = TxbUser.Text;
+                item.TypeUsers = Convert.ToInt32(rol.Value);
+                item.Pass = TxbPassword.Text;                
+            }
+            return item;
+        }
+        private void AddUser()
+        {
+
+
+            if (_service.AddUser(CreateUse()))
             {
                 MessageBox.Show("Correct", "ok");
+                
             }
+            else
+            {
+                MessageBox.Show("El usuario que intenta registrar ya existe", "USUARIO EXISTENTE");
+                
+            }
+            this.Close();
 
         }
         private void loadUsers()
         {
-            ComboBoxItems DefaultOption = new ComboBoxItems();
+            ComboBoxItem DefaultOption = new ComboBoxItem();
             {
                 DefaultOption.Text = "Seleccione una opcion";
                 DefaultOption.Value = null;
 
             }
-            ComboBoxItems Admistration = new ComboBoxItems();
+            ComboBoxItem Admistration = new ComboBoxItem();
             {
                 Admistration.Text = "Administrator";
                 Admistration.Value = 0;
 
             }
-            ComboBoxItems Doctor = new ComboBoxItems();
+            ComboBoxItem Doctor = new ComboBoxItem();
             {
                 Doctor.Text = "Doctor";
                 Doctor.Value = 1;
             }
 
-            CxbType.Items.Add(DefaultOption.Text);
-            CxbType.Items.Add(Admistration.Text);
-            CxbType.Items.Add(Doctor.Text);
+            CxbType.Items.Add(DefaultOption);
+            CxbType.Items.Add(Admistration);
+            CxbType.Items.Add(Doctor);
             
-
             CxbType.SelectedItem = DefaultOption;
-
+            Edit(GlobalRepositoty.Instance.Usuario, GlobalRepositoty.Instance.id, Admistration, Doctor);
         }
+
+        
     }
 }
