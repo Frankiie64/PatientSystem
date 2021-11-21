@@ -325,6 +325,7 @@ namespace PatientSystem.Lab
             this.BtnConfirm.TabIndex = 1;
             this.BtnConfirm.Text = "Add";
             this.BtnConfirm.UseVisualStyleBackColor = false;
+            this.BtnConfirm.Click += new System.EventHandler(this.BtnConfirm_Click);
             // 
             // FrmAddTest
             // 
@@ -335,6 +336,7 @@ namespace PatientSystem.Lab
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "FrmAddTest";
             this.Text = "Test";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmAddTest_FormClosed);
             this.Load += new System.EventHandler(this.FrmAddTest_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.PbLab)).EndInit();

@@ -40,7 +40,7 @@ namespace PatientSystem.Home
 
         private void BtnTestLab_Click(object sender, EventArgs e)
         {
-            Lab.FrmLabTest labTest = new Lab.FrmLabTest();
+            Lab.FrmLabTest labTest = new Lab.FrmLabTest(_conection);
             this.Close();
             labTest.Show();
         }

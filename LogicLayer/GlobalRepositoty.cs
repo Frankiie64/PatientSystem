@@ -11,6 +11,7 @@ namespace LogicLayer
         public int index = new int();
         public int id = new int();
         public Users Usuario = new Users();
+        public LabTest test = new LabTest();
 
         public int TyperUser = new int();
         private GlobalRepositoty()

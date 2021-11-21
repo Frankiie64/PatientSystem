@@ -113,6 +113,7 @@ namespace PatientSystem.Lab
             this.BtnEdit.TabIndex = 0;
             this.BtnEdit.Text = "Edit";
             this.BtnEdit.UseVisualStyleBackColor = false;
+            this.BtnEdit.Click += new System.EventHandler(this.BtnEdit_Click);
             // 
             // BtnDelete
             // 
@@ -148,6 +149,7 @@ namespace PatientSystem.Lab
             this.BtnDeselect.TabIndex = 2;
             this.BtnDeselect.Text = "Deselect";
             this.BtnDeselect.UseVisualStyleBackColor = false;
+            this.BtnDeselect.Click += new System.EventHandler(this.BtnDeselect_Click);
             // 
             // tableLayoutPanel3
             // 
@@ -182,6 +184,7 @@ namespace PatientSystem.Lab
             this.BtnAdd.TabIndex = 0;
             this.BtnAdd.Text = "Add Test";
             this.BtnAdd.UseVisualStyleBackColor = false;
+            this.BtnAdd.Click += new System.EventHandler(this.BtnAdd_Click);
             // 
             // DgvLab
             // 
@@ -201,6 +204,7 @@ namespace PatientSystem.Lab
             this.DgvLab.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DgvLab.Size = new System.Drawing.Size(524, 354);
             this.DgvLab.TabIndex = 1;
+            this.DgvLab.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvLab_CellClick);
             // 
             // FrmLabTest
             // 

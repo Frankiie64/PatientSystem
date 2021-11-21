@@ -62,15 +62,23 @@ namespace PatientSystem.User
             }
             else
             {
-                if(_service.DeleteUser(GlobalRepositoty.Instance.id))
+                DialogResult result = MessageBox.Show("Estas seguro que deseas eliminar este usuario ?", "QUESTION", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                if (result == DialogResult.OK)
                 {
-                    MessageBox.Show("Se ha eliminado correctamente", "Eliminacion del usario");
-                    loadData();
+                    if (_service.DeleteUser(GlobalRepositoty.Instance.id))
+                    {
+                        MessageBox.Show("Se ha eliminado correctamente", "Eliminacion del usario");
+                        loadData();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Ha ocurrido un error", "Error");
+                        loadData();
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Ha ocurrido un error", "Error");
-                    loadData();
+                    Deselect();
                 }
             }
         }
