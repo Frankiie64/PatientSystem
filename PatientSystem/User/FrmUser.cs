@@ -36,6 +36,8 @@ namespace PatientSystem.User
         private void FrmUser_Load(object sender, EventArgs e)
         {
             loadData();
+            DgvUser.Columns[0].Visible = false;
+            DgvUser.Columns[6].Visible = false;
             Deselect();
         }
         private void BtnDeselect_Click(object sender, EventArgs e)

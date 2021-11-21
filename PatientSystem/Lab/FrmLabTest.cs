@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using LogicLayer.FolderLabTest;
 using LogicLayer;
 using DataLayer.Models;
+using PatientSystem.Home;
 
 namespace PatientSystem.Lab
 {
@@ -23,6 +24,11 @@ namespace PatientSystem.Lab
             service = new ServiceLabTest(_connection);
 
         }
+        private void FrmLabTest_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            FrmHome home = new FrmHome(_connection);
+            home.Show();
+        }
         private void BtnAdd_Click(object sender, EventArgs e)
         {
             AddTestLab();
@@ -34,6 +40,7 @@ namespace PatientSystem.Lab
         private void FrmLabTest_Load(object sender, EventArgs e)
         {
             loadData();
+            DgvLab.Columns[0].Visible = false;
             Deselect();
         }
         private void DgvLab_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -79,5 +86,33 @@ namespace PatientSystem.Lab
             this.Hide();
             Edit.Show();
         }
+
+        private void BtnDelete_Click(object sender, EventArgs e)
+        {
+            if (GlobalRepositoty.Instance.index < 0)
+            {
+                MessageBox.Show("Por favor seleccione el usario que desea Editar", "Error");
+            }
+            else
+            {
+
+                DialogResult result = MessageBox.Show("Estas seguro que deseas eliminar esta prueba ?", "QUESTION", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                if (result == DialogResult.OK)
+                {
+                    if (service.DeleteLabTest(GlobalRepositoty.Instance.id))
+                    {
+                        MessageBox.Show("Se ha elimanado correctamente la prueba", "Notificacion");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("No se ha elimanado  la prueba", "Notificacion");
+                }
+            }
+            loadData();
+
+        }
+
+        
     }
 }

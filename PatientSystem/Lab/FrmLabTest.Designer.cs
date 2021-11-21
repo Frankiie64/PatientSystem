@@ -131,6 +131,7 @@ namespace PatientSystem.Lab
             this.BtnDelete.TabIndex = 1;
             this.BtnDelete.Text = "Deleted";
             this.BtnDelete.UseVisualStyleBackColor = false;
+            this.BtnDelete.Click += new System.EventHandler(this.BtnDelete_Click);
             // 
             // BtnDeselect
             // 
@@ -215,6 +216,7 @@ namespace PatientSystem.Lab
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "FrmLabTest";
             this.Text = "Lab";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmLabTest_FormClosing);
             this.Load += new System.EventHandler(this.FrmLabTest_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.PtbLab)).EndInit();

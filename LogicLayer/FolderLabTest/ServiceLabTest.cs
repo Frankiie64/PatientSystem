@@ -64,6 +64,10 @@ namespace LogicLayer.FolderLabTest
                 return false;
             }
         }
+        public bool DeleteLabTest(int id)
+        {
+            return Data.DeleteLabTest(id);
+        }
         public LabTest GetById(int id)
         {
             return Data.GetId(id);

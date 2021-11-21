@@ -29,6 +29,10 @@ namespace PatientSystem.User
         }
 
         #region
+        private void BtnBack_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
         private void FrmAddUsers_FormClosed(object sender, FormClosedEventArgs e)
         {
             FrmUser frmUser = new FrmUser(_connection);
@@ -198,7 +202,6 @@ namespace PatientSystem.User
             CxbType.SelectedItem = DefaultOption;
             Edit(GlobalRepositoty.Instance.Usuario, GlobalRepositoty.Instance.id, Admistration, Doctor);
         }
-
-        
+     
     }
 }

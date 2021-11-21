@@ -30,7 +30,10 @@ namespace PatientSystem.Lab
             FrmLabTest Test = new FrmLabTest(_connection);
             Test.Show();
         }
-
+        private void BtnBack_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
         private void FrmAddTest_Load(object sender, EventArgs e)
         {
             if (GlobalRepositoty.Instance.id > 0)
@@ -93,6 +96,6 @@ namespace PatientSystem.Lab
             return test;
         }
 
-        
+       
     }
 }
