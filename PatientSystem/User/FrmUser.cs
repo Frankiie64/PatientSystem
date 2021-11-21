@@ -60,7 +60,7 @@ namespace PatientSystem.User
         {
             if (GlobalRepositoty.Instance.index < 0)
             {
-                MessageBox.Show("Por favor seleccione el usario que desea Editar", "Error");
+                MessageBox.Show("Por favor seleccione el usario que desea Eliminar", "Error");
             }
             else
             {
@@ -71,11 +71,13 @@ namespace PatientSystem.User
                     {
                         MessageBox.Show("Se ha eliminado correctamente", "Eliminacion del usario");
                         loadData();
+                        Deselect();
                     }
                     else
                     {
                         MessageBox.Show("Ha ocurrido un error", "Error");
                         loadData();
+                        Deselect();
                     }
                 }
                 else

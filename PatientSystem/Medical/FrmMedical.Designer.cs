@@ -113,6 +113,7 @@ namespace PatientSystem.Medical
             this.BtnEdit.TabIndex = 0;
             this.BtnEdit.Text = "Edit";
             this.BtnEdit.UseVisualStyleBackColor = false;
+            this.BtnEdit.Click += new System.EventHandler(this.BtnEdit_Click);
             // 
             // BtnDelete
             // 
@@ -130,6 +131,7 @@ namespace PatientSystem.Medical
             this.BtnDelete.TabIndex = 1;
             this.BtnDelete.Text = "Deleted";
             this.BtnDelete.UseVisualStyleBackColor = false;
+            this.BtnDelete.Click += new System.EventHandler(this.BtnDelete_Click);
             // 
             // BtnDeselect
             // 
@@ -148,6 +150,7 @@ namespace PatientSystem.Medical
             this.BtnDeselect.TabIndex = 2;
             this.BtnDeselect.Text = "Deselect";
             this.BtnDeselect.UseVisualStyleBackColor = false;
+            this.BtnDeselect.Click += new System.EventHandler(this.BtnDeselect_Click);
             // 
             // tableLayoutPanel3
             // 
@@ -182,6 +185,7 @@ namespace PatientSystem.Medical
             this.BtnAdd.TabIndex = 0;
             this.BtnAdd.Text = "Add doctors";
             this.BtnAdd.UseVisualStyleBackColor = false;
+            this.BtnAdd.Click += new System.EventHandler(this.BtnAdd_Click);
             // 
             // DgvDoctor
             // 
@@ -201,6 +205,7 @@ namespace PatientSystem.Medical
             this.DgvDoctor.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DgvDoctor.Size = new System.Drawing.Size(524, 354);
             this.DgvDoctor.TabIndex = 1;
+            this.DgvDoctor.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvDoctor_CellClick);
             // 
             // FrmMedical
             // 
@@ -211,6 +216,7 @@ namespace PatientSystem.Medical
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "FrmMedical";
             this.Text = "Doctors";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmMedical_FormClosed);
             this.Load += new System.EventHandler(this.FrmMedical_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.PtbDoctor)).EndInit();

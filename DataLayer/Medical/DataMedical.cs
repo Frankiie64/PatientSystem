@@ -5,80 +5,76 @@ using System.Data.SqlClient;
 using System.Text;
 using DataLayer.Models;
 
-namespace DataLayer.DataUsers
+namespace DataLayer
 {
-    public class ReposotoryUsers
+    public class DataMedical
     {
-        private SqlConnection _connection;
+        SqlConnection _connection;
 
-        public ReposotoryUsers(SqlConnection connection)
+        public DataMedical(SqlConnection connection)
         {
             _connection = connection;
-        
         }
-
-        public bool AddUser(Users Usuario)
+        public bool AddDoc(Doctors Doct)
         {
 
-            SqlCommand sqlCommand = new SqlCommand("insert into Users(FName,LastName,Email,NickName,Pass,TypeUsers) values(@FName,@LastName,@Email,@NickName,@Pass,@TypeUsers)", _connection);
+            SqlCommand sqlCommand = new SqlCommand("insert into Doctors(FName,LastName,Email,PhoneNumber,Identification) values (@FName,@LastName,@Email,@PhoneNumber,@Identification)", _connection);
 
-            sqlCommand.Parameters.AddWithValue("@FName", Usuario.FName);
-            sqlCommand.Parameters.AddWithValue("@LastName", Usuario.LastName);
-            sqlCommand.Parameters.AddWithValue("@Email", Usuario.Email);
-            sqlCommand.Parameters.AddWithValue("@NickName", Usuario.NickName);
-            sqlCommand.Parameters.AddWithValue("@Pass", Usuario.Pass);
-            sqlCommand.Parameters.AddWithValue("@TypeUsers", Usuario.TypeUsers);
+            sqlCommand.Parameters.AddWithValue("@FName", Doct.FName);
+            sqlCommand.Parameters.AddWithValue("@LastName", Doct.LastName);
+            sqlCommand.Parameters.AddWithValue("@Email", Doct.Email);
+            sqlCommand.Parameters.AddWithValue("@PhoneNumber", Doct.PhoneNumber);
+            sqlCommand.Parameters.AddWithValue("@Identification", Doct.Identification);
             
+
             return ExecuteDml(sqlCommand);
         }
-        public bool Edit(Users Usuario,int id)
+        public bool Edit(Doctors Doct, int id)
         {
-            SqlCommand sqlCommand = new SqlCommand("update Users set FName = @FName,LastName = @LastName, Email = @Email, NickName = @NickName, Pass = @Pass,TypeUsers = @TypeUsers where Id=@Id", _connection);
+            SqlCommand sqlCommand = new SqlCommand("update Doctors set FName = @FName,LastName = @LastName, Email = @Email, PhoneNumber = @PhoneNumber, Identification = @Identification where Id=@Id", _connection);
             sqlCommand.CommandType = CommandType.Text;
 
-            sqlCommand.Parameters.AddWithValue("@FName", Usuario.FName);
-            sqlCommand.Parameters.AddWithValue("@LastName", Usuario.LastName);
-            sqlCommand.Parameters.AddWithValue("@Email", Usuario.Email);
-            sqlCommand.Parameters.AddWithValue("@NickName", Usuario.NickName);
-            sqlCommand.Parameters.AddWithValue("@Pass", Usuario.Pass);
-            sqlCommand.Parameters.AddWithValue("@TypeUsers", Usuario.TypeUsers);
+            sqlCommand.Parameters.AddWithValue("@FName", Doct.FName);
+            sqlCommand.Parameters.AddWithValue("@LastName", Doct.LastName);
+            sqlCommand.Parameters.AddWithValue("@Email", Doct.Email);
+            sqlCommand.Parameters.AddWithValue("@PhoneNumber", Doct.PhoneNumber);
+            sqlCommand.Parameters.AddWithValue("@Identification", Doct.Identification);          
             sqlCommand.Parameters.AddWithValue("@Id", id);
 
             return ExecuteDml(sqlCommand);
         }
         public bool Delete(int id)
         {
-            SqlCommand sqlCommand = new SqlCommand(" delete Users where id=@id", _connection);
+            SqlCommand sqlCommand = new SqlCommand("delete Doctors where id=@id", _connection);
 
             sqlCommand.Parameters.AddWithValue("@id", id);
 
             return ExecuteDml(sqlCommand);
         }
-        public Users GetId(int id)
+        public Doctors GetId(int id)
         {
 
             try
             {
-                
+
                 _connection.Open();
 
-                SqlCommand command = new SqlCommand("select FName,LastName,Email,NickName,Pass,TypeUsers from Users where Id = @Id", _connection);
+                SqlCommand command = new SqlCommand("select FName,LastName,Email,PhoneNumber,Identification from Doctors where Id = @Id", _connection);
                 command.CommandType = CommandType.Text;
-                
+
                 command.Parameters.AddWithValue("@id", id);
 
                 SqlDataReader reader = command.ExecuteReader();
 
-                Users ReturnUsers = new Users();
+                Doctors ReturnUsers = new Doctors();
 
                 while (reader.Read())
                 {
                     ReturnUsers.FName = reader.IsDBNull(0) ? "" : reader.GetString(0);
                     ReturnUsers.LastName = reader.IsDBNull(1) ? "" : reader.GetString(1);
                     ReturnUsers.Email = reader.IsDBNull(2) ? "" : reader.GetString(2);
-                    ReturnUsers.NickName = reader.IsDBNull(3) ? "" : reader.GetString(3);
-                    ReturnUsers.Pass = reader.IsDBNull(4) ? "" : reader.GetString(4);
-                    ReturnUsers.TypeUsers = reader.IsDBNull(5) ? 0 : reader.GetInt32(5);
+                    ReturnUsers.PhoneNumber = reader.IsDBNull(3) ? "" : reader.GetString(3);
+                    ReturnUsers.Identification = reader.IsDBNull(4) ? "" : reader.GetString(4);                    
 
                 }
                 _connection.Close();
@@ -96,19 +92,15 @@ namespace DataLayer.DataUsers
 
 
         }
-       
-
-
         public DataTable GetallUsers()
         {
-            SqlCommand command = new SqlCommand("select * from Users", _connection);
+            SqlCommand command = new SqlCommand("select * from Doctors", _connection);
             command.CommandType = CommandType.Text;
-            
+
             SqlDataAdapter query = new SqlDataAdapter(command);
 
             return LoadTable(query);
         }
-
         private DataTable LoadTable(SqlDataAdapter Query)
         {
             try
@@ -155,27 +147,25 @@ namespace DataLayer.DataUsers
             }
 
         }
-        public Users ValidationExist(string NickName)
+        public Doctors ValidationExist(string Identification)
         {
             try
             {
                 _connection.Open();
 
-                SqlCommand command = new SqlCommand("Select Id,NickName, Pass,TypeUsers From Users where NickName= @NickName", _connection);
+                SqlCommand command = new SqlCommand("Select Identification From Doctors where Identification= @Identification", _connection);
                 command.CommandType = CommandType.Text;
 
-                command.Parameters.AddWithValue("@NickName", NickName);
+                command.Parameters.AddWithValue("@Identification", Identification);
 
                 SqlDataReader reader = command.ExecuteReader();
 
-                Users data = new Users();
+                Doctors data = new Doctors();
 
                 while (reader.Read())
                 {
-                    data.Id = reader.IsDBNull(0) ? 0 : reader.GetInt32(0);
-                    data.NickName = reader.IsDBNull(1) ? "" : reader.GetString(1);
-                    data.Pass = reader.IsDBNull(2) ? "" : reader.GetString(2);
-                    data.TypeUsers = reader.IsDBNull(3) ? 0 : reader.GetInt32(3);
+                    data.Identification = reader.IsDBNull(0) ? "" : reader.GetString(0);
+                
                 }
 
                 reader.Close();
@@ -191,6 +181,7 @@ namespace DataLayer.DataUsers
                 return null;
             }
         }
+
 
     }
 }

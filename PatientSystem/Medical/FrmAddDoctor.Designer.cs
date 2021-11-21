@@ -254,6 +254,7 @@ namespace PatientSystem.Medical
             this.BtnBack.TabIndex = 0;
             this.BtnBack.Text = "Back";
             this.BtnBack.UseVisualStyleBackColor = false;
+            this.BtnBack.Click += new System.EventHandler(this.BtnBack_Click);
             // 
             // BtnConfirm
             // 
@@ -271,6 +272,7 @@ namespace PatientSystem.Medical
             this.BtnConfirm.TabIndex = 1;
             this.BtnConfirm.Text = "Add";
             this.BtnConfirm.UseVisualStyleBackColor = false;
+            this.BtnConfirm.Click += new System.EventHandler(this.BtnConfirm_Click);
             // 
             // FrmAddDoctor
             // 
@@ -281,6 +283,7 @@ namespace PatientSystem.Medical
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "FrmAddDoctor";
             this.Text = "FrmAddDoctor";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmAddDoctor_FormClosed);
             this.Load += new System.EventHandler(this.FrmAddDoctor_Load);
             this.TblRegister.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.PtbImage)).EndInit();

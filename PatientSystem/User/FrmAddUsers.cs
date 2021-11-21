@@ -46,7 +46,7 @@ namespace PatientSystem.User
                 TxbName.Text = item.FName;
                 TxbLastName.Text = item.LastName;
                 TxbMail.Text = item.LastName;
-                TxbUser.Text = item.LastName;
+                TxbUser.Text = item.NickName;
                 TxbPassword.Text = item.Pass;
                 TxbConfirm.Text = item.Pass;
                 if(item.TypeUsers == 0)

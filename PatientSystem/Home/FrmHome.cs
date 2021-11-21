@@ -33,7 +33,7 @@ namespace PatientSystem.Home
 
         private void BtnMedical_Click(object sender, EventArgs e)
         {
-           Medical.FrmMedical medical = new Medical.FrmMedical();
+           Medical.FrmMedical medical = new Medical.FrmMedical(_conection);
             this.Close();
             medical.Show();
         }
