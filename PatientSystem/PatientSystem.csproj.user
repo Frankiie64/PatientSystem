@@ -31,10 +31,10 @@
     <Compile Update="Medical\FrmMedical.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Patients\FrmAddPatients.cs">
+    <Compile Update="PatientsFolder\FrmAddPatients.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Patients\FrmPatients.cs">
+    <Compile Update="PatientsFolder\FrmPatients.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="ResultTest\FrmReport.cs">

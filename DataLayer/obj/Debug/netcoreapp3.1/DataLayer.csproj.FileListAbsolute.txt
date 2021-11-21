@@ -8,3 +8,12 @@ C:\Users\Franklyn\source\repos\PatientSystem\DataLayer\obj\Debug\netcoreapp3.1\D
 C:\Users\Franklyn\source\repos\PatientSystem\DataLayer\obj\Debug\netcoreapp3.1\DataLayer.dll
 C:\Users\Franklyn\source\repos\PatientSystem\DataLayer\obj\Debug\netcoreapp3.1\DataLayer.pdb
 C:\Users\Franklyn\source\repos\PatientSystem\DataLayer\obj\Debug\netcoreapp3.1\DataLayer.csproj.AssemblyReference.cache
+C:\Users\Panda\Source\Repos\PatientSystem\DataLayer\bin\Debug\netcoreapp3.1\DataLayer.deps.json
+C:\Users\Panda\Source\Repos\PatientSystem\DataLayer\bin\Debug\netcoreapp3.1\DataLayer.dll
+C:\Users\Panda\Source\Repos\PatientSystem\DataLayer\bin\Debug\netcoreapp3.1\DataLayer.pdb
+C:\Users\Panda\Source\Repos\PatientSystem\DataLayer\obj\Debug\netcoreapp3.1\DataLayer.csproj.AssemblyReference.cache
+C:\Users\Panda\Source\Repos\PatientSystem\DataLayer\obj\Debug\netcoreapp3.1\DataLayer.AssemblyInfoInputs.cache
+C:\Users\Panda\Source\Repos\PatientSystem\DataLayer\obj\Debug\netcoreapp3.1\DataLayer.AssemblyInfo.cs
+C:\Users\Panda\Source\Repos\PatientSystem\DataLayer\obj\Debug\netcoreapp3.1\DataLayer.csproj.CoreCompileInputs.cache
+C:\Users\Panda\Source\Repos\PatientSystem\DataLayer\obj\Debug\netcoreapp3.1\DataLayer.dll
+C:\Users\Panda\Source\Repos\PatientSystem\DataLayer\obj\Debug\netcoreapp3.1\DataLayer.pdb

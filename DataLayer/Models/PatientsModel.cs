@@ -4,7 +4,7 @@ using System.Text;
 
 namespace DataLayer.Models
 {
-    public class Patients
+    public class PatientsModel
     {
         public int Id { get; set; }
         public string Fname { get; set; }

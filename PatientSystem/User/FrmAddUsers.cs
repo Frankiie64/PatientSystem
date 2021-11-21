@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PatientSystem.ComboBoxItem;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -65,31 +66,30 @@ namespace PatientSystem.User
             }
 
         }
-
         private void loadUsers()
         {
-            ComboBoxTyperUsers DefaultOption = new ComboBoxTyperUsers();
+            ComboBoxItems DefaultOption = new ComboBoxItems();
             {
-                DefaultOption.Rol = "Seleccione una opcion";
-                DefaultOption.value = null;
+                DefaultOption.Text = "Seleccione una opcion";
+                DefaultOption.Value = null;
 
             }
-            ComboBoxTyperUsers Admistration = new ComboBoxTyperUsers();
+            ComboBoxItems Admistration = new ComboBoxItems();
             {
-                Admistration.Rol = "Administrator";
-                Admistration.value = 0;
+                Admistration.Text = "Administrator";
+                Admistration.Value = 0;
 
             }
-            ComboBoxTyperUsers Doctor = new ComboBoxTyperUsers();
+            ComboBoxItems Doctor = new ComboBoxItems();
             {
-                Doctor.Rol = "Doctor";
-                Doctor.value = 1;
-
+                Doctor.Text = "Doctor";
+                Doctor.Value = 1;
             }
 
-            CxbType.Items.Add(DefaultOption.Rol);
-            CxbType.Items.Add(Admistration.Rol);
-            CxbType.Items.Add(Doctor.Rol);
+            CxbType.Items.Add(DefaultOption.Text);
+            CxbType.Items.Add(Admistration.Text);
+            CxbType.Items.Add(Doctor.Text);
+            
 
             CxbType.SelectedItem = DefaultOption;
 

@@ -11,3 +11,15 @@ C:\Users\Franklyn\source\repos\PatientSystem\LogicLayer\obj\Debug\netcoreapp3.1\
 C:\Users\Franklyn\source\repos\PatientSystem\LogicLayer\obj\Debug\netcoreapp3.1\LogicLayer.csproj.CopyComplete
 C:\Users\Franklyn\source\repos\PatientSystem\LogicLayer\obj\Debug\netcoreapp3.1\LogicLayer.dll
 C:\Users\Franklyn\source\repos\PatientSystem\LogicLayer\obj\Debug\netcoreapp3.1\LogicLayer.pdb
+C:\Users\Panda\Source\Repos\PatientSystem\LogicLayer\bin\Debug\netcoreapp3.1\LogicLayer.deps.json
+C:\Users\Panda\Source\Repos\PatientSystem\LogicLayer\bin\Debug\netcoreapp3.1\LogicLayer.dll
+C:\Users\Panda\Source\Repos\PatientSystem\LogicLayer\bin\Debug\netcoreapp3.1\LogicLayer.pdb
+C:\Users\Panda\Source\Repos\PatientSystem\LogicLayer\bin\Debug\netcoreapp3.1\DataLayer.dll
+C:\Users\Panda\Source\Repos\PatientSystem\LogicLayer\bin\Debug\netcoreapp3.1\DataLayer.pdb
+C:\Users\Panda\Source\Repos\PatientSystem\LogicLayer\obj\Debug\netcoreapp3.1\LogicLayer.csproj.AssemblyReference.cache
+C:\Users\Panda\Source\Repos\PatientSystem\LogicLayer\obj\Debug\netcoreapp3.1\LogicLayer.AssemblyInfoInputs.cache
+C:\Users\Panda\Source\Repos\PatientSystem\LogicLayer\obj\Debug\netcoreapp3.1\LogicLayer.AssemblyInfo.cs
+C:\Users\Panda\Source\Repos\PatientSystem\LogicLayer\obj\Debug\netcoreapp3.1\LogicLayer.csproj.CoreCompileInputs.cache
+C:\Users\Panda\Source\Repos\PatientSystem\LogicLayer\obj\Debug\netcoreapp3.1\LogicLayer.csproj.CopyComplete
+C:\Users\Panda\Source\Repos\PatientSystem\LogicLayer\obj\Debug\netcoreapp3.1\LogicLayer.dll
+C:\Users\Panda\Source\Repos\PatientSystem\LogicLayer\obj\Debug\netcoreapp3.1\LogicLayer.pdb
