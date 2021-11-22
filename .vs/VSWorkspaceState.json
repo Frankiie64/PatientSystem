@@ -2,15 +2,15 @@
   "ExpandedNodes": [
     "",
     "\\DataLayer",
-    "\\DataLayer\\Login",
+    "\\DataLayer\\DataUsers",
+    "\\DataLayer\\Medical",
     "\\LogicLayer",
-    "\\LogicLayer\\Login",
-    "\\LogicLayer\\Usuario",
+    "\\LogicLayer\\Medical",
     "\\PatientSystem",
-    "\\PatientSystem\\Home",
-    "\\PatientSystem\\Login",
+    "\\PatientSystem\\Lab",
+    "\\PatientSystem\\Medical",
     "\\PatientSystem\\User"
   ],
-  "SelectedNode": "\\PatientSystem\\User\\FrmUser.cs",
+  "SelectedNode": "\\PatientSystem\\Medical\\FrmMedical.cs",
   "PreviewInSolutionExplorer": false
 }
