@@ -56,13 +56,12 @@ namespace PatientSystem.ResultTest
             this.TblRegister.Controls.Add(this.tableLayoutPanel5, 1, 2);
             this.TblRegister.Dock = System.Windows.Forms.DockStyle.Fill;
             this.TblRegister.Location = new System.Drawing.Point(0, 0);
-            this.TblRegister.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.TblRegister.Name = "TblRegister";
             this.TblRegister.RowCount = 3;
             this.TblRegister.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 68.79607F));
             this.TblRegister.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 21.13022F));
             this.TblRegister.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.82801F));
-            this.TblRegister.Size = new System.Drawing.Size(630, 678);
+            this.TblRegister.Size = new System.Drawing.Size(441, 407);
             this.TblRegister.TabIndex = 5;
             // 
             // PtbReport
@@ -70,10 +69,9 @@ namespace PatientSystem.ResultTest
             this.PtbReport.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.PtbReport.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PtbReport.Image = ((System.Drawing.Image)(resources.GetObject("PtbReport.Image")));
-            this.PtbReport.Location = new System.Drawing.Point(96, 5);
-            this.PtbReport.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.PtbReport.Location = new System.Drawing.Point(67, 3);
             this.PtbReport.Name = "PtbReport";
-            this.PtbReport.Size = new System.Drawing.Size(436, 457);
+            this.PtbReport.Size = new System.Drawing.Size(305, 274);
             this.PtbReport.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.PtbReport.TabIndex = 0;
             this.PtbReport.TabStop = false;
@@ -86,16 +84,15 @@ namespace PatientSystem.ResultTest
             this.tableLayoutPanel4.Controls.Add(this.LblResult, 0, 0);
             this.tableLayoutPanel4.Controls.Add(this.TxbResult, 1, 0);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(96, 472);
-            this.tableLayoutPanel4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(67, 283);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 1;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 133F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 133F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 133F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 133F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(436, 133);
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 80F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 80F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 80F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 80F));
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(305, 80);
             this.tableLayoutPanel4.TabIndex = 1;
             // 
             // LblResult
@@ -103,20 +100,18 @@ namespace PatientSystem.ResultTest
             this.LblResult.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.LblResult.AutoSize = true;
             this.LblResult.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.LblResult.Location = new System.Drawing.Point(38, 0);
-            this.LblResult.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.LblResult.Location = new System.Drawing.Point(29, 0);
             this.LblResult.Name = "LblResult";
-            this.LblResult.Size = new System.Drawing.Size(86, 31);
+            this.LblResult.Size = new System.Drawing.Size(57, 20);
             this.LblResult.TabIndex = 0;
             this.LblResult.Text = "Result:";
             // 
             // TxbResult
             // 
             this.TxbResult.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.TxbResult.Location = new System.Drawing.Point(132, 5);
-            this.TxbResult.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.TxbResult.Location = new System.Drawing.Point(92, 3);
             this.TxbResult.Name = "TxbResult";
-            this.TxbResult.Size = new System.Drawing.Size(300, 31);
+            this.TxbResult.Size = new System.Drawing.Size(210, 23);
             this.TxbResult.TabIndex = 5;
             // 
             // tableLayoutPanel5
@@ -127,13 +122,12 @@ namespace PatientSystem.ResultTest
             this.tableLayoutPanel5.Controls.Add(this.BtnBack, 0, 0);
             this.tableLayoutPanel5.Controls.Add(this.BtnFinish, 1, 0);
             this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel5.Location = new System.Drawing.Point(96, 615);
-            this.tableLayoutPanel5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(67, 369);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 1;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 63F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(436, 58);
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 38F));
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(305, 35);
             this.tableLayoutPanel5.TabIndex = 2;
             // 
             // BtnBack
@@ -145,10 +139,9 @@ namespace PatientSystem.ResultTest
             this.BtnBack.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.BtnBack.ForeColor = System.Drawing.Color.Black;
             this.BtnBack.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnBack.Location = new System.Drawing.Point(4, 5);
-            this.BtnBack.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.BtnBack.Location = new System.Drawing.Point(3, 3);
             this.BtnBack.Name = "BtnBack";
-            this.BtnBack.Size = new System.Drawing.Size(210, 48);
+            this.BtnBack.Size = new System.Drawing.Size(146, 29);
             this.BtnBack.TabIndex = 0;
             this.BtnBack.Text = "Back";
             this.BtnBack.UseVisualStyleBackColor = false;
@@ -162,21 +155,19 @@ namespace PatientSystem.ResultTest
             this.BtnFinish.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.BtnFinish.ForeColor = System.Drawing.Color.Black;
             this.BtnFinish.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnFinish.Location = new System.Drawing.Point(222, 5);
-            this.BtnFinish.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.BtnFinish.Location = new System.Drawing.Point(155, 3);
             this.BtnFinish.Name = "BtnFinish";
-            this.BtnFinish.Size = new System.Drawing.Size(210, 48);
+            this.BtnFinish.Size = new System.Drawing.Size(147, 29);
             this.BtnFinish.TabIndex = 1;
             this.BtnFinish.Text = "Finish";
             this.BtnFinish.UseVisualStyleBackColor = false;
             // 
             // FrmReport
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(630, 678);
+            this.ClientSize = new System.Drawing.Size(441, 407);
             this.Controls.Add(this.TblRegister);
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "FrmReport";
             this.Text = "Report";
             this.Load += new System.EventHandler(this.FrmReport_Load);

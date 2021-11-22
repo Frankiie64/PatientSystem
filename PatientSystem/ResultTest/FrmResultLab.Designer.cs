@@ -61,23 +61,21 @@ namespace PatientSystem.ResultTest
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel3, 1, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 3;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 30.44637F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 52.88462F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.73077F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(694, 867);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(486, 449);
             this.tableLayoutPanel1.TabIndex = 6;
             // 
             // PbLab
             // 
             this.PbLab.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PbLab.Image = ((System.Drawing.Image)(resources.GetObject("PbLab.Image")));
-            this.PbLab.Location = new System.Drawing.Point(69, 5);
-            this.PbLab.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.PbLab.Location = new System.Drawing.Point(48, 3);
             this.PbLab.Name = "PbLab";
-            this.PbLab.Size = new System.Drawing.Size(555, 253);
+            this.PbLab.Size = new System.Drawing.Size(388, 130);
             this.PbLab.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.PbLab.TabIndex = 0;
             this.PbLab.TabStop = false;
@@ -90,13 +88,12 @@ namespace PatientSystem.ResultTest
             this.tableLayoutPanel2.Controls.Add(this.BtnReport, 0, 1);
             this.tableLayoutPanel2.Controls.Add(this.BtnDeselect, 0, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(69, 726);
-            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(48, 376);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 2;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 49.33333F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.66667F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(555, 136);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(388, 70);
             this.tableLayoutPanel2.TabIndex = 2;
             // 
             // BtnReport
@@ -109,13 +106,13 @@ namespace PatientSystem.ResultTest
             this.BtnReport.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.BtnReport.Image = ((System.Drawing.Image)(resources.GetObject("BtnReport.Image")));
             this.BtnReport.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnReport.Location = new System.Drawing.Point(4, 72);
-            this.BtnReport.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.BtnReport.Location = new System.Drawing.Point(3, 37);
             this.BtnReport.Name = "BtnReport";
-            this.BtnReport.Size = new System.Drawing.Size(547, 59);
+            this.BtnReport.Size = new System.Drawing.Size(382, 30);
             this.BtnReport.TabIndex = 0;
             this.BtnReport.Text = "Report Result";
             this.BtnReport.UseVisualStyleBackColor = false;
+            this.BtnReport.Click += new System.EventHandler(this.BtnReport_Click);
             // 
             // BtnDeselect
             // 
@@ -127,29 +124,28 @@ namespace PatientSystem.ResultTest
             this.BtnDeselect.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.BtnDeselect.Image = ((System.Drawing.Image)(resources.GetObject("BtnDeselect.Image")));
             this.BtnDeselect.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnDeselect.Location = new System.Drawing.Point(4, 5);
-            this.BtnDeselect.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.BtnDeselect.Location = new System.Drawing.Point(3, 3);
             this.BtnDeselect.Name = "BtnDeselect";
-            this.BtnDeselect.Size = new System.Drawing.Size(547, 57);
+            this.BtnDeselect.Size = new System.Drawing.Size(382, 28);
             this.BtnDeselect.TabIndex = 2;
             this.BtnDeselect.Text = "Deselect";
             this.BtnDeselect.UseVisualStyleBackColor = false;
+            this.BtnDeselect.Click += new System.EventHandler(this.BtnDeselect_Click);
             // 
             // tableLayoutPanel3
             // 
             this.tableLayoutPanel3.ColumnCount = 1;
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 29F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel3.Controls.Add(this.DgvResultLab, 0, 1);
             this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel4, 0, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(69, 268);
-            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(48, 139);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 2;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 14.28571F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 85.71429F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(555, 448);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(388, 231);
             this.tableLayoutPanel3.TabIndex = 3;
             // 
             // DgvResultLab
@@ -160,16 +156,16 @@ namespace PatientSystem.ResultTest
             this.DgvResultLab.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DgvResultLab.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DgvResultLab.GridColor = System.Drawing.Color.DarkGray;
-            this.DgvResultLab.Location = new System.Drawing.Point(4, 68);
-            this.DgvResultLab.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.DgvResultLab.Location = new System.Drawing.Point(3, 35);
             this.DgvResultLab.MultiSelect = false;
             this.DgvResultLab.Name = "DgvResultLab";
             this.DgvResultLab.ReadOnly = true;
             this.DgvResultLab.RowHeadersWidth = 62;
             this.DgvResultLab.RowTemplate.Height = 25;
             this.DgvResultLab.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DgvResultLab.Size = new System.Drawing.Size(547, 375);
+            this.DgvResultLab.Size = new System.Drawing.Size(382, 193);
             this.DgvResultLab.TabIndex = 1;
+            this.DgvResultLab.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvResultLab_CellContentClick);
             // 
             // tableLayoutPanel4
             // 
@@ -181,12 +177,11 @@ namespace PatientSystem.ResultTest
             this.tableLayoutPanel4.Controls.Add(this.MtbCard, 1, 0);
             this.tableLayoutPanel4.Controls.Add(this.BtnSearch, 2, 0);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(4, 5);
-            this.tableLayoutPanel4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 1;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(547, 53);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(382, 26);
             this.tableLayoutPanel4.TabIndex = 2;
             // 
             // LblSearch
@@ -194,21 +189,19 @@ namespace PatientSystem.ResultTest
             this.LblSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.LblSearch.AutoSize = true;
             this.LblSearch.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.LblSearch.Location = new System.Drawing.Point(7, 0);
-            this.LblSearch.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.LblSearch.Location = new System.Drawing.Point(9, 0);
             this.LblSearch.Name = "LblSearch";
-            this.LblSearch.Size = new System.Drawing.Size(119, 28);
+            this.LblSearch.Size = new System.Drawing.Size(79, 17);
             this.LblSearch.TabIndex = 0;
             this.LblSearch.Text = "Search Test:";
             // 
             // MtbCard
             // 
             this.MtbCard.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.MtbCard.Location = new System.Drawing.Point(134, 5);
-            this.MtbCard.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.MtbCard.Location = new System.Drawing.Point(94, 3);
             this.MtbCard.Mask = "000-0000000-0";
             this.MtbCard.Name = "MtbCard";
-            this.MtbCard.Size = new System.Drawing.Size(216, 31);
+            this.MtbCard.Size = new System.Drawing.Size(151, 23);
             this.MtbCard.TabIndex = 1;
             // 
             // BtnSearch
@@ -218,21 +211,19 @@ namespace PatientSystem.ResultTest
             this.BtnSearch.FlatAppearance.BorderSize = 0;
             this.BtnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnSearch.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.BtnSearch.Location = new System.Drawing.Point(358, 5);
-            this.BtnSearch.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.BtnSearch.Location = new System.Drawing.Point(251, 3);
             this.BtnSearch.Name = "BtnSearch";
-            this.BtnSearch.Size = new System.Drawing.Size(185, 43);
+            this.BtnSearch.Size = new System.Drawing.Size(128, 20);
             this.BtnSearch.TabIndex = 2;
             this.BtnSearch.Text = "Search";
             this.BtnSearch.UseVisualStyleBackColor = false;
             // 
             // FrmResultLab
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(694, 867);
+            this.ClientSize = new System.Drawing.Size(486, 449);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "FrmResultLab";
             this.Text = "ResultLab";
             this.Load += new System.EventHandler(this.FrmResultLab_Load);
