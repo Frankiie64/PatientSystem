@@ -6,6 +6,14 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v3.1": {
+      "EASendMail/7.8.0.1": {
+        "runtime": {
+          "lib/netcoreapp3.1/EASendMail.dll": {
+            "assemblyVersion": "7.8.0.1",
+            "fileVersion": "7.8.0.1"
+          }
+        }
+      },
       "Microsoft.NETCore.Platforms/3.1.0": {},
       "Microsoft.Win32.Registry/4.7.0": {
         "dependencies": {
@@ -139,6 +147,13 @@
     }
   },
   "libraries": {
+    "EASendMail/7.8.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-PUVj/J+K4ms+vn87PrPC2lmfPRsu/0sCLU/uwnAw47TEriSXf4PcwoMOJt+U5jO/efzUtuK6xrEqsoB+wADJXw==",
+      "path": "easendmail/7.8.0.1",
+      "hashPath": "easendmail.7.8.0.1.nupkg.sha512"
+    },
     "Microsoft.NETCore.Platforms/3.1.0": {
       "type": "package",
       "serviceable": true,

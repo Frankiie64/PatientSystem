@@ -5,6 +5,7 @@ using System.Text;
 using DataLayer.Models;
 using DataLayer.DataUsers;
 using System.Data;
+using EmailLayer;
 
 namespace LogicLayer.Usuario
 {
@@ -12,39 +13,72 @@ namespace LogicLayer.Usuario
     {
         SqlConnection _connection;
         ReposotoryUsers DataUsers;
+        EmailSender email;
+
         public ServiceUsers(SqlConnection connection)
         {
             _connection = connection;
             DataUsers = new ReposotoryUsers(_connection);
         }
 
-        public bool AddUser(Users rol)
+        private bool EnviarCorreo(string destinario, string titulo, string cuerpo)
         {
-            try
-            {
-                if (DataUsers.ValidationExist(rol.NickName).NickName != rol.NickName)
-                {
-                    return DataUsers.AddUser(rol);
-                }
-                else if (DataUsers.ValidationExist(rol.NickName).NickName.Trim() != rol.NickName)
-                {
-                    return DataUsers.AddUser(rol);
-                }
-                else
-                {
-                    return false;
-                }
-            }
-            catch(Exception ex)
-            {
+            email = new EmailSender();
 
+            if (email.EnviarEmail(destinario, titulo, cuerpo))
+            {
+                return true;
+            }
+            else
+            {
                 return false;
             }
+
         }
-        public bool EditUser(Users rol)
+
+        public int AddUser(Users rol)
         {
             try
             {
+                string Datanickname = (DataUsers.ValidationExist(rol.NickName).NickName != null ? DataUsers.ValidationExist(rol.NickName).NickName.Trim() : "");
+                if (Datanickname.ToLower() != rol.NickName.ToLower())
+                {
+                    if (DataUsers.AddUser(rol))
+                    {
+                        if (EnviarCorreo(rol.Email, "Se creado su usuario.", $"Recienteme se ha creado un usuario de tipo {(rol.TypeUsers == 0 ? "Administracion" : "Doctor" )} "))
+                        {
+                            return 1;
+                        }
+                        else
+                        {
+                            return 3;
+                        }
+                    }
+                    else
+                    {
+                        return 2;
+                    }
+
+                }                
+                else
+                {
+                    return 2;
+                }
+            }
+            catch (Exception ex)
+            {
+
+                return 4;
+            }        
+        }
+        public bool EditUser(Users rol,string nickname)
+        {
+            try
+            {
+                if(nickname == rol.NickName)
+                {
+                    return true;
+                }
                 if (DataUsers.ValidationExist(rol.NickName).NickName != rol.NickName)
                 {
                     return DataUsers.Edit(rol,GlobalRepositoty.Instance.id);

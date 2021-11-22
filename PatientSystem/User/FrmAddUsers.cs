@@ -10,6 +10,7 @@ using PatientSystem;
 using LogicLayer.Usuario;
 using DataLayer.Models;
 using LogicLayer;
+using System.Text.RegularExpressions;
 
 namespace PatientSystem.User
 {
@@ -73,17 +74,17 @@ namespace PatientSystem.User
             {
                 if(GlobalRepositoty.Instance.id > 0)
                 {
-                   if( _service.EditUser(CreateUse()))
+                   if( _service.EditUser(CreateUse(),GlobalRepositoty.Instance.Usuario.NickName))
                     {
                         MessageBox.Show("Se ha editado correctamente", "Edicion correcta");
+                        this.Close();
 
                     }
-                   else
+                    else
                     {
                         MessageBox.Show("El usuario que intenta registrar ya existe", "Error");
 
                     }
-                    this.Close();
 
                 }
                 else
@@ -132,8 +133,13 @@ namespace PatientSystem.User
                     MessageBox.Show("Por favor introduzca el rol de la persona", "Error");
                     return false;
                 }
-                else
+                else if (ValidationEmail(TxbMail.Text) == false)
                 {
+                    MessageBox.Show("El email que desea de ingresar no corresponde a una dirrecion de correo reconocidad por el sistema, favor tratar de nuevo.", "Error");
+                    return false;
+                }
+                else
+                        {
                     return true;
                 }
 
@@ -160,19 +166,27 @@ namespace PatientSystem.User
         }
         private void AddUser()
         {
+                           
+                if (_service.AddUser(CreateUse()) == 1)
+                {
+                    MessageBox.Show("Se ha creado correctamente el usuario", "Notficacion");
+                    this.Close();
+                }
+                else if (_service.AddUser(CreateUse()) == 2)
+                {
+                MessageBox.Show("Este usuario ya esta registrado", "Notficacion");
 
+                }
+                else if (_service.AddUser(CreateUse()) == 3)
+                {
+                MessageBox.Show("Ha ocurrido un problema con el correo", "Notficacion");
 
-            if (_service.AddUser(CreateUse()))
-            {
-                MessageBox.Show("Correct", "ok");
-                
-            }
-            else
-            {
-                MessageBox.Show("El usuario que intenta registrar ya existe", "USUARIO EXISTENTE");
-                
-            }
-            this.Close();
+                }
+                 else if (_service.AddUser(CreateUse()) == 4)
+                {
+                MessageBox.Show("Error desconocido", "Notficacion");
+
+                }
 
         }
         private void loadUsers()
@@ -198,10 +212,30 @@ namespace PatientSystem.User
             CxbType.Items.Add(DefaultOption);
             CxbType.Items.Add(Admistration);
             CxbType.Items.Add(Doctor);
-            
+
             CxbType.SelectedItem = DefaultOption;
             Edit(GlobalRepositoty.Instance.Usuario, GlobalRepositoty.Instance.id, Admistration, Doctor);
         }
-     
+        private Boolean ValidationEmail(String email)
+        {
+            String expresion;
+            expresion = "\\w+([-+.']\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*";
+            if (Regex.IsMatch(email, expresion))
+            {
+                if (Regex.Replace(email, expresion, String.Empty).Length == 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            else
+            {
+                return false;
+            }
+        }
+
     }
 }

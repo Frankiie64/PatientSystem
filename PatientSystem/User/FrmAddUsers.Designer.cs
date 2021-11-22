@@ -218,7 +218,6 @@ namespace PatientSystem.User
             this.TxbUser.Name = "TxbUser";
             this.TxbUser.Size = new System.Drawing.Size(233, 31);
             this.TxbUser.TabIndex = 8;
-            this.TxbUser.UseSystemPasswordChar = true;
             // 
             // LblPassword
             // 
@@ -252,6 +251,7 @@ namespace PatientSystem.User
             this.TxbPassword.Name = "TxbPassword";
             this.TxbPassword.Size = new System.Drawing.Size(233, 31);
             this.TxbPassword.TabIndex = 12;
+            this.TxbPassword.UseSystemPasswordChar = true;
             // 
             // CxbType
             // 
@@ -272,6 +272,7 @@ namespace PatientSystem.User
             this.TxbConfirm.Name = "TxbConfirm";
             this.TxbConfirm.Size = new System.Drawing.Size(233, 31);
             this.TxbConfirm.TabIndex = 14;
+            this.TxbConfirm.UseSystemPasswordChar = true;
             // 
             // tableLayoutPanel2
             // 
@@ -358,7 +359,6 @@ namespace PatientSystem.User
         private System.Windows.Forms.Label LblType;
         private System.Windows.Forms.TextBox TxbName;
         private System.Windows.Forms.TextBox TxbLastName;
-        private System.Windows.Forms.TextBox TxbMail;
         private System.Windows.Forms.TextBox TxbUser;
         private System.Windows.Forms.Label LblPassword;
         private System.Windows.Forms.Label LblConfirm;
@@ -368,5 +368,6 @@ namespace PatientSystem.User
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Button BtnBack;
         private System.Windows.Forms.Button BtnConfirm;
+        private System.Windows.Forms.TextBox TxbMail;
     }
 }

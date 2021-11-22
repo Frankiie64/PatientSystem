@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "FyHhWbnUcSHpO5ms5K0in11LsevAU0GfgK7WSFBWR/qV0QN72R6RrsOvScyHoigYflFlbhyHX/ud8WmK2Br8ug==",
+  "dgSpecHash": "eNHDN1pOqpIMiudSWghFvlDefbeR1Xy37XJ+yQWskhf8QRDeTOfp/KqXPTGzPEnkFrrH1u5dx1uZbkLgLQRn1Q==",
   "success": true,
   "projectFilePath": "C:\\Users\\Franklyn\\source\\Gestor\\LogicLayer\\LogicLayer.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Franklyn\\.nuget\\packages\\easendmail\\7.8.0.1\\easendmail.7.8.0.1.nupkg.sha512",
     "C:\\Users\\Franklyn\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\Franklyn\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
     "C:\\Users\\Franklyn\\.nuget\\packages\\runtime.native.system.data.sqlclient.sni\\4.7.0\\runtime.native.system.data.sqlclient.sni.4.7.0.nupkg.sha512",

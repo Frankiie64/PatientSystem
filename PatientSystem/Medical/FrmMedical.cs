@@ -32,7 +32,8 @@ namespace PatientSystem.Medical
         private void FrmMedical_Load(object sender, EventArgs e)
         {
             loadData();
-            DgvDoctor.Columns[0].Visible = false;            
+            DgvDoctor.Columns[0].Visible = false;
+            DgvDoctor.Columns[6].Visible = false;
             Deselect();
         }
 
@@ -98,7 +99,9 @@ namespace PatientSystem.Medical
             {
                 GlobalRepositoty.Instance.id = Convert.ToInt32(DgvDoctor.CurrentRow.Cells[0].Value);
                 GlobalRepositoty.Instance.index = e.RowIndex;
+                GlobalRepositoty.Instance._filename = Convert.ToString(DgvDoctor.CurrentRow.Cells[6].Value);
 
+                PtbDoctor.ImageLocation = GlobalRepositoty.Instance._filename;
                 BtnDeselect.Visible = true;
 
                 GlobalRepositoty.Instance.Doc = service.GetById(GlobalRepositoty.Instance.id);
@@ -120,6 +123,7 @@ namespace PatientSystem.Medical
             GlobalRepositoty.Instance.index = -1;
             GlobalRepositoty.Instance.id = new int();
             GlobalRepositoty.Instance.Doc = new DataLayer.Models.Doctors();
+            PtbDoctor.ImageLocation = "";
 
         }
 

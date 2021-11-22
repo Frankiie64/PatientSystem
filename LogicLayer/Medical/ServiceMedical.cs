@@ -5,6 +5,7 @@ using System.Data.SqlClient;
 using System.Text;
 using DataLayer;
 using DataLayer.Models;
+using EmailLayer;
 
 namespace LogicLayer.Medical
 {
@@ -12,35 +13,71 @@ namespace LogicLayer.Medical
     {
         SqlConnection _connection;
         DataLayer.DataMedical DataMedical;
+        EmailSender email;
 
         public ServiceMedical(SqlConnection connection)
         {
             _connection = connection;
             DataMedical = new DataMedical(_connection);
         }
-        public bool AddUDoc(Doctors Doc)
+        public int AddUDoc(Doctors Doc)
         {
             try
             {
-                if (DataMedical.ValidationExist(Doc.Identification).Identification != Doc.Identification)
-                {
-                    return DataMedical.AddDoc(Doc);
-                }
-                else if (DataMedical.ValidationExist(Doc.Identification).Identification.Trim() != Doc.Identification)
-                {
-                    return DataMedical.AddDoc(Doc);
-                }
+                string identif = (DataMedical.ValidationExist(Doc.Identification).Identification != Doc.Identification ? "" : (DataMedical.ValidationExist(Doc.Identification)).Identification.Trim());
+
+
+                if (identif != Doc.Identification)
+                {                    
+                    if (DataMedical.AddDoc(Doc))
+                    {
+                        if(EnviarCorreo(Doc.Email, "titulo", "correcto"))
+                        {
+                            return 1;
+                        }
+                        else
+                        {
+                            return 3;
+                        }
+                    }
+                    else
+                    {
+                        return 2;
+                    }
+                                     
+                }                
                 else
                 {
-                    return false;
+                    return 2;
                 }
             }
             catch (Exception ex)
             {
 
-                return false;
+                return 4;
             }
         }
+
+        public bool SavePhoto(int id, string Photo)
+        {
+            return DataMedical.SavePhoto(Photo, id);
+        }
+
+        private bool EnviarCorreo(string destinario,string titulo,string cuerpo)
+        {
+            email = new EmailSender();
+
+            if (email.EnviarEmail(destinario, titulo, cuerpo))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+            
+        }
+
         public bool EditDoc(Doctors Doc)
         {
             try
@@ -71,6 +108,10 @@ namespace LogicLayer.Medical
         public Doctors GetById(int id)
         {
             return DataMedical.GetId(id);
+        }
+        public int GetLastId()
+        {
+            return DataMedical.GetLastId();
         }
         public DataTable LoadTable()
         {

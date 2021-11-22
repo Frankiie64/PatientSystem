@@ -29,6 +29,17 @@ namespace DataLayer
 
             return ExecuteDml(sqlCommand);
         }
+
+        public bool SavePhoto(string photo, int id)
+        {
+            SqlCommand sqlCommand = new SqlCommand("update Doctors set Photos = @Photos where Id = @Id", _connection);
+            sqlCommand.CommandType = CommandType.Text;
+
+            sqlCommand.Parameters.AddWithValue("@Photos", photo);
+            sqlCommand.Parameters.AddWithValue("@Id", id);
+
+            return ExecuteDml(sqlCommand);
+        }
         public bool Edit(Doctors Doct, int id)
         {
             SqlCommand sqlCommand = new SqlCommand("update Doctors set FName = @FName,LastName = @LastName, Email = @Email, PhoneNumber = @PhoneNumber, Identification = @Identification where Id=@Id", _connection);
@@ -53,10 +64,8 @@ namespace DataLayer
         }
         public Doctors GetId(int id)
         {
-
             try
             {
-
                 _connection.Open();
 
                 SqlCommand command = new SqlCommand("select FName,LastName,Email,PhoneNumber,Identification from Doctors where Id = @Id", _connection);
@@ -88,6 +97,40 @@ namespace DataLayer
             {
 
                 return null;
+            }
+
+
+        }
+        public int GetLastId()
+        {
+            try
+            {
+                _connection.Open();
+
+                int LastId = 0;
+                SqlCommand command = new SqlCommand("select MAX(Id) as id from Doctors", _connection);
+               
+
+                SqlDataReader reader = command.ExecuteReader();
+
+                Doctors ReturnUsers = new Doctors();
+
+                while (reader.Read())
+                {
+                   LastId = reader.IsDBNull(0) ? 0 : reader.GetInt32(0);
+                   
+                }
+                _connection.Close();
+
+                reader.Close();
+                reader.Dispose();
+
+                return LastId;
+            }
+            catch (Exception ex)
+            {
+
+                return 0;
             }
 
 
@@ -151,6 +194,7 @@ namespace DataLayer
         {
             try
             {
+                _connection.Close();
                 _connection.Open();
 
                 SqlCommand command = new SqlCommand("Select Identification From Doctors where Identification= @Identification", _connection);

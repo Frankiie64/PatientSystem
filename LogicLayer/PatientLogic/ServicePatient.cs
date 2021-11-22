@@ -15,6 +15,7 @@ namespace LogicLayer.PatientLogic
         public ServicePatient(SqlConnection connection)
         {
             _connection = connection;
+            repo = new PatientsRepository(_connection);
         }
         public bool Add(PatientsModel item)
         {

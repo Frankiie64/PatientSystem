@@ -1,0 +1,113 @@
+{
+  "version": 3,
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "EASendMail/7.8.0.1": {
+        "type": "package",
+        "compile": {
+          "lib/netcoreapp3.1/EASendMail.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/EASendMail.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "EASendMail/7.8.0.1": {
+      "sha512": "PUVj/J+K4ms+vn87PrPC2lmfPRsu/0sCLU/uwnAw47TEriSXf4PcwoMOJt+U5jO/efzUtuK6xrEqsoB+wADJXw==",
+      "type": "package",
+      "path": "easendmail/7.8.0.1",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "easendmail.7.8.0.1.nupkg.sha512",
+        "easendmail.nuspec",
+        "lib/net20-cf/EASendMail.dll",
+        "lib/net20/EASendMail.dll",
+        "lib/net35-cf/EASendMail.dll",
+        "lib/net40/EASendMail.dll",
+        "lib/net45/EASendMail.dll",
+        "lib/net461/EASendMail.dll",
+        "lib/net5.0/EASendMail.deps.json",
+        "lib/net5.0/EASendMail.dll",
+        "lib/netcoreapp3.1/EASendMail.deps.json",
+        "lib/netcoreapp3.1/EASendMail.dll",
+        "lib/netstandard2.0/EASendMail.deps.json",
+        "lib/netstandard2.0/EASendMail.dll",
+        "lib/uap10.0/EASendMail.winmd",
+        "tools/init.ps1",
+        "tools/installed.dat"
+      ]
+    }
+  },
+  "projectFileDependencyGroups": {
+    ".NETCoreApp,Version=v3.1": [
+      "EASendMail >= 7.8.0.1"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\Franklyn\\.nuget\\packages\\": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "C:\\Users\\Franklyn\\source\\Gestor\\EmailLayer\\EmailLayer.csproj",
+      "projectName": "EmailLayer",
+      "projectPath": "C:\\Users\\Franklyn\\source\\Gestor\\EmailLayer\\EmailLayer.csproj",
+      "packagesPath": "C:\\Users\\Franklyn\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Franklyn\\source\\Gestor\\EmailLayer\\obj\\",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "C:\\Users\\Franklyn\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "netcoreapp3.1"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "projectReferences": {}
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "netcoreapp3.1": {
+        "targetAlias": "netcoreapp3.1",
+        "dependencies": {
+          "EASendMail": {
+            "target": "Package",
+            "version": "[7.8.0.1, )"
+          }
+        },
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}

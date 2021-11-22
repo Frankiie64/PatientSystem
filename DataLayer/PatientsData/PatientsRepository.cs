@@ -18,6 +18,8 @@ namespace DataLayer.PatientData
         {
             SqlCommand cmd = new SqlCommand("insert into Patients(FName,LastName,PhoneNumber,AddressPatient,Identification,NatalDay,Smoker,Allergies,photo) " +
                 "values(@fname,@lastname,@phonenumber,@addresspatient,@identification,@natalday,@smoker,@allergies,@photo)", _cn);
+            cmd.CommandType = CommandType.Text;
+
             cmd.Parameters.AddWithValue("@fname", item.Fname);
             cmd.Parameters.AddWithValue("@lastname", item.LastName);
             cmd.Parameters.AddWithValue("@phonenumber", item.PhoneNumber);
@@ -77,7 +79,7 @@ namespace DataLayer.PatientData
                     returnData.Address = reader.IsDBNull(4) ? "" : reader.GetString(4);
                     returnData.Identification = reader.IsDBNull(5) ? "" : reader.GetString(5);
                     returnData.NatalDay = reader.IsDBNull(6) ? "" : reader.GetString(6);
-                    returnData.Smoker = reader.IsDBNull(7) ? false:  true;
+                    returnData.Smoker = reader.IsDBNull(7) ? 2 :  reader.GetInt32(7);
                     returnData.Allergies = reader.IsDBNull(8) ? "" : reader.GetString(8);
                     returnData.Photo = reader.IsDBNull(9) ? "" : reader.GetString(9);
                 }

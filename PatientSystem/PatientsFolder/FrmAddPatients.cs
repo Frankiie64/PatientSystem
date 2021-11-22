@@ -12,11 +12,11 @@ namespace PatientSystem.Patients
 
         private ServicePatient _service;
         public int? id = null;
-        FrmPatients patients = new FrmPatients();
-        public FrmAddPatients()
+        SqlConnection _connection;
+        public FrmAddPatients(SqlConnection cn)
         {
             InitializeComponent();
-            SqlConnection cn = new SqlConnection();
+            _connection = cn;
             _service = new ServicePatient(cn);
         }
 
@@ -28,18 +28,14 @@ namespace PatientSystem.Patients
         public void AddPatient()
         {
             PatientsModel item = new PatientsModel();
-            ComboBoxItem selectedSmoke = CbxSmoker.SelectedItem as ComboBoxItem;
+            ComboBoxItem selectedSmoke = CbxSmoker.SelectedItem as ComboBoxItem;           
             item.Fname = TxbName.Text;
             item.LastName = TxbLastName.Text;
             item.PhoneNumber = MtbPhone.Text;
             item.Address = TxbAddress.Text;
             item.Identification = MtbCard.Text;
             item.NatalDay = MtbBirth.Text;
-            if(selectedSmoke.Text == "Yes")
-            { item.Smoker = true; }           
-            else
-            { item.Smoker = false; }
-
+            item.Smoker = (int)selectedSmoke.Value;
             item.Allergies = TxbAllergies.Text;
 
             _service.Add(item);
@@ -55,11 +51,8 @@ namespace PatientSystem.Patients
             item.Address = TxbAddress.Text;
             item.Identification = MtbCard.Text;
             item.NatalDay = MtbBirth.Text;
-            if (selectedSmoke.Text == "Yes")
-            { item.Smoker = true; }
-            else
-            { item.Smoker = false; }
-            item.Allergies = TxbAllergies.Text;
+            item.Smoker = (int)selectedSmoke.Value;
+            item.Allergies = TxbAllergies.Text; 
             item.Id = id.Value;
             _service.Edit(item);
             MessageBox.Show("The patients was edited bacanamente", "System");
@@ -81,37 +74,32 @@ namespace PatientSystem.Patients
                 TxbAddress.Text = patients.Address;
                 MtbCard.Text = patients.Identification;
                 MtbBirth.Text = patients.NatalDay;
-                if (patients.Smoker == true)
-                {
-                    CbxSmoker.Text = "Yes";
-                }
-                else
-                { CbxSmoker.Text = "Nope"; }
+                CbxSmoker.SelectedIndex = patients.Smoker;
                 TxbAllergies.Text = patients.Allergies;
             }
         }
         public void LoadCbx()
         {
-            ComboBoxItem defaultOption = new ComboBoxItem()
+            ComboBoxItem defaultOption = new ComboBoxItem();
             {
-                Text = "Select an option",
-                Value = null
+                defaultOption.Text = "Select an option";
+                defaultOption.Value = new int();
             };
-            ComboBoxItem yesismoke = new ComboBoxItem()
+            ComboBoxItem yesismoke = new ComboBoxItem();
             {
-                Text = "Yes",
-                Value = 1
+                yesismoke.Text = "Yes";
+                yesismoke.Value = 1;
             };
-            ComboBoxItem noidontsmoke = new ComboBoxItem()
+            ComboBoxItem noidontsmoke = new ComboBoxItem();
             {
-                Text = "Nope",
-                Value = 2
+                noidontsmoke.Text = "Nope";
+                noidontsmoke.Value = 0;
             };
 
-            CbxSmoker.Items.Add(defaultOption.Text);
-            CbxSmoker.Items.Add(yesismoke.Text);
-            CbxSmoker.Items.Add(noidontsmoke.Text);
-            CbxSmoker.SelectedItem = defaultOption.Text;
+            CbxSmoker.Items.Add(defaultOption);
+            CbxSmoker.Items.Add(yesismoke);
+            CbxSmoker.Items.Add(noidontsmoke);
+            CbxSmoker.SelectedItem = defaultOption;
         }
 
         private void BtnConfirm_Click(object sender, EventArgs e)

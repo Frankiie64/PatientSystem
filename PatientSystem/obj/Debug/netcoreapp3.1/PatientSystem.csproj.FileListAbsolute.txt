@@ -126,3 +126,6 @@ C:\Users\Franklyn\source\Gestor\PatientSystem\bin\Debug\netcoreapp3.1\DataLayer.
 C:\Users\Franklyn\source\Gestor\PatientSystem\bin\Debug\netcoreapp3.1\LogicLayer.pdb
 C:\Users\Franklyn\source\Gestor\PatientSystem\obj\Debug\netcoreapp3.1\PatientSystem.csproj.CopyComplete
 C:\Users\Franklyn\source\Gestor\PatientSystem\obj\Debug\netcoreapp3.1\PatientSystem.genruntimeconfig.cache
+C:\Users\Franklyn\source\Gestor\PatientSystem\bin\Debug\netcoreapp3.1\EASendMail.dll
+C:\Users\Franklyn\source\Gestor\PatientSystem\bin\Debug\netcoreapp3.1\EmailLayer.dll
+C:\Users\Franklyn\source\Gestor\PatientSystem\bin\Debug\netcoreapp3.1\EmailLayer.pdb

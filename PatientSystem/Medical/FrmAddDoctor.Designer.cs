@@ -31,7 +31,7 @@ namespace PatientSystem.Medical
         {
             this.TblRegister = new System.Windows.Forms.TableLayoutPanel();
             this.PtbImage = new System.Windows.Forms.PictureBox();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.TLPdatos = new System.Windows.Forms.TableLayoutPanel();
             this.LblName = new System.Windows.Forms.Label();
             this.LblLast = new System.Windows.Forms.Label();
             this.LblMail = new System.Windows.Forms.Label();
@@ -42,12 +42,14 @@ namespace PatientSystem.Medical
             this.TxbMail = new System.Windows.Forms.TextBox();
             this.MtbCard = new System.Windows.Forms.MaskedTextBox();
             this.MtbPhone = new System.Windows.Forms.MaskedTextBox();
+            this.btnSavePhoto = new System.Windows.Forms.Button();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.BtnBack = new System.Windows.Forms.Button();
             this.BtnConfirm = new System.Windows.Forms.Button();
+            this.DialogDoctor = new System.Windows.Forms.OpenFileDialog();
             this.TblRegister.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PtbImage)).BeginInit();
-            this.tableLayoutPanel1.SuspendLayout();
+            this.TLPdatos.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -59,7 +61,7 @@ namespace PatientSystem.Medical
             this.TblRegister.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70.58862F));
             this.TblRegister.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 14.70542F));
             this.TblRegister.Controls.Add(this.PtbImage, 1, 0);
-            this.TblRegister.Controls.Add(this.tableLayoutPanel1, 1, 1);
+            this.TblRegister.Controls.Add(this.TLPdatos, 1, 1);
             this.TblRegister.Controls.Add(this.tableLayoutPanel2, 1, 2);
             this.TblRegister.Dock = System.Windows.Forms.DockStyle.Fill;
             this.TblRegister.Location = new System.Drawing.Point(0, 0);
@@ -80,39 +82,39 @@ namespace PatientSystem.Medical
             this.PtbImage.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.PtbImage.Name = "PtbImage";
             this.PtbImage.Size = new System.Drawing.Size(481, 306);
-            this.PtbImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.PtbImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.PtbImage.TabIndex = 0;
             this.PtbImage.TabStop = false;
             // 
-            // tableLayoutPanel1
+            // TLPdatos
             // 
-            this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Controls.Add(this.LblName, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.LblLast, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.LblMail, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.LblPhone, 0, 3);
-            this.tableLayoutPanel1.Controls.Add(this.LblCard, 0, 4);
-            this.tableLayoutPanel1.Controls.Add(this.TxbName, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.TxbLastName, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.TxbMail, 1, 2);
-            this.tableLayoutPanel1.Controls.Add(this.MtbCard, 1, 4);
-            this.tableLayoutPanel1.Controls.Add(this.MtbPhone, 1, 3);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(106, 321);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 5;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 33F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 33F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(481, 468);
-            this.tableLayoutPanel1.TabIndex = 1;
+            this.TLPdatos.ColumnCount = 2;
+            this.TLPdatos.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.TLPdatos.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.TLPdatos.Controls.Add(this.LblName, 0, 0);
+            this.TLPdatos.Controls.Add(this.LblLast, 0, 1);
+            this.TLPdatos.Controls.Add(this.LblMail, 0, 2);
+            this.TLPdatos.Controls.Add(this.LblPhone, 0, 3);
+            this.TLPdatos.Controls.Add(this.LblCard, 0, 4);
+            this.TLPdatos.Controls.Add(this.TxbName, 1, 0);
+            this.TLPdatos.Controls.Add(this.TxbLastName, 1, 1);
+            this.TLPdatos.Controls.Add(this.TxbMail, 1, 2);
+            this.TLPdatos.Controls.Add(this.MtbCard, 1, 4);
+            this.TLPdatos.Controls.Add(this.MtbPhone, 1, 3);
+            this.TLPdatos.Controls.Add(this.btnSavePhoto, 0, 5);
+            this.TLPdatos.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.TLPdatos.Location = new System.Drawing.Point(106, 321);
+            this.TLPdatos.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.TLPdatos.Name = "TLPdatos";
+            this.TLPdatos.RowCount = 6;
+            this.TLPdatos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.39344F));
+            this.TLPdatos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.39344F));
+            this.TLPdatos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.39344F));
+            this.TLPdatos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.39344F));
+            this.TLPdatos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.39344F));
+            this.TLPdatos.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 18.03279F));
+            this.TLPdatos.Size = new System.Drawing.Size(481, 468);
+            this.TLPdatos.TabIndex = 1;
             // 
             // LblName
             // 
@@ -131,7 +133,7 @@ namespace PatientSystem.Medical
             this.LblLast.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.LblLast.AutoSize = true;
             this.LblLast.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.LblLast.Location = new System.Drawing.Point(123, 93);
+            this.LblLast.Location = new System.Drawing.Point(123, 76);
             this.LblLast.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LblLast.Name = "LblLast";
             this.LblLast.Size = new System.Drawing.Size(113, 28);
@@ -143,7 +145,7 @@ namespace PatientSystem.Medical
             this.LblMail.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.LblMail.AutoSize = true;
             this.LblMail.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.LblMail.Location = new System.Drawing.Point(181, 186);
+            this.LblMail.Location = new System.Drawing.Point(181, 152);
             this.LblMail.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LblMail.Name = "LblMail";
             this.LblMail.Size = new System.Drawing.Size(55, 28);
@@ -155,7 +157,7 @@ namespace PatientSystem.Medical
             this.LblPhone.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.LblPhone.AutoSize = true;
             this.LblPhone.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.LblPhone.Location = new System.Drawing.Point(160, 279);
+            this.LblPhone.Location = new System.Drawing.Point(160, 228);
             this.LblPhone.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LblPhone.Name = "LblPhone";
             this.LblPhone.Size = new System.Drawing.Size(76, 28);
@@ -167,7 +169,7 @@ namespace PatientSystem.Medical
             this.LblCard.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.LblCard.AutoSize = true;
             this.LblCard.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.LblCard.Location = new System.Drawing.Point(52, 372);
+            this.LblCard.Location = new System.Drawing.Point(52, 304);
             this.LblCard.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.LblCard.Name = "LblCard";
             this.LblCard.Size = new System.Drawing.Size(184, 28);
@@ -186,7 +188,7 @@ namespace PatientSystem.Medical
             // TxbLastName
             // 
             this.TxbLastName.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.TxbLastName.Location = new System.Drawing.Point(244, 98);
+            this.TxbLastName.Location = new System.Drawing.Point(244, 81);
             this.TxbLastName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.TxbLastName.Name = "TxbLastName";
             this.TxbLastName.Size = new System.Drawing.Size(233, 31);
@@ -195,7 +197,7 @@ namespace PatientSystem.Medical
             // TxbMail
             // 
             this.TxbMail.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.TxbMail.Location = new System.Drawing.Point(244, 191);
+            this.TxbMail.Location = new System.Drawing.Point(244, 157);
             this.TxbMail.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.TxbMail.Name = "TxbMail";
             this.TxbMail.Size = new System.Drawing.Size(233, 31);
@@ -204,7 +206,7 @@ namespace PatientSystem.Medical
             // MtbCard
             // 
             this.MtbCard.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.MtbCard.Location = new System.Drawing.Point(244, 377);
+            this.MtbCard.Location = new System.Drawing.Point(244, 309);
             this.MtbCard.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MtbCard.Mask = "000-0000000-0";
             this.MtbCard.Name = "MtbCard";
@@ -214,12 +216,26 @@ namespace PatientSystem.Medical
             // MtbPhone
             // 
             this.MtbPhone.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.MtbPhone.Location = new System.Drawing.Point(244, 284);
+            this.MtbPhone.Location = new System.Drawing.Point(244, 233);
             this.MtbPhone.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MtbPhone.Mask = "(999)-000-0000";
             this.MtbPhone.Name = "MtbPhone";
             this.MtbPhone.Size = new System.Drawing.Size(233, 31);
             this.MtbPhone.TabIndex = 13;
+            // 
+            // btnSavePhoto
+            // 
+            this.btnSavePhoto.BackColor = System.Drawing.Color.DarkGray;
+            this.TLPdatos.SetColumnSpan(this.btnSavePhoto, 2);
+            this.btnSavePhoto.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnSavePhoto.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnSavePhoto.Location = new System.Drawing.Point(3, 383);
+            this.btnSavePhoto.Name = "btnSavePhoto";
+            this.btnSavePhoto.Size = new System.Drawing.Size(475, 82);
+            this.btnSavePhoto.TabIndex = 14;
+            this.btnSavePhoto.Text = "Subir Photo";
+            this.btnSavePhoto.UseVisualStyleBackColor = false;
+            this.btnSavePhoto.Click += new System.EventHandler(this.btnSavePhoto_Click);
             // 
             // tableLayoutPanel2
             // 
@@ -274,6 +290,10 @@ namespace PatientSystem.Medical
             this.BtnConfirm.UseVisualStyleBackColor = false;
             this.BtnConfirm.Click += new System.EventHandler(this.BtnConfirm_Click);
             // 
+            // DialogDoctor
+            // 
+            this.DialogDoctor.FileName = "DialogDoctor";
+            // 
             // FrmAddDoctor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
@@ -287,8 +307,8 @@ namespace PatientSystem.Medical
             this.Load += new System.EventHandler(this.FrmAddDoctor_Load);
             this.TblRegister.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.PtbImage)).EndInit();
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel1.PerformLayout();
+            this.TLPdatos.ResumeLayout(false);
+            this.TLPdatos.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -298,7 +318,7 @@ namespace PatientSystem.Medical
 
         private System.Windows.Forms.TableLayoutPanel TblRegister;
         private System.Windows.Forms.PictureBox PtbImage;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.TableLayoutPanel TLPdatos;
         private System.Windows.Forms.Label LblName;
         private System.Windows.Forms.Label LblLast;
         private System.Windows.Forms.Label LblMail;
@@ -312,5 +332,7 @@ namespace PatientSystem.Medical
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Button BtnBack;
         private System.Windows.Forms.Button BtnConfirm;
+        private System.Windows.Forms.Button btnSavePhoto;
+        private System.Windows.Forms.OpenFileDialog DialogDoctor;
     }
 }

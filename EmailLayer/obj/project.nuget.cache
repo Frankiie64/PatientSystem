@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "yj+NgW0w6p4s6n3q/Vmmy9YHJUKCH+Jl9A/Kn3/qkaJ5kP0kElV+ysj6VXdC7Emv/Za9X0Rh9VyCuqDAD5jGnA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Franklyn\\source\\Gestor\\EmailLayer\\EmailLayer.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Franklyn\\.nuget\\packages\\easendmail\\7.8.0.1\\easendmail.7.8.0.1.nupkg.sha512"
+  ],
+  "logs": []
+}

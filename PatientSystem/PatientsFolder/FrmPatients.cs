@@ -14,12 +14,13 @@ namespace PatientSystem.Patients
     public partial class FrmPatients : Form
     {
         private ServicePatient _service;
+        private SqlConnection _connection;
         public int? id = null;
-        public FrmPatients()
+        public FrmPatients(SqlConnection cn)
         {
             InitializeComponent();
-            SqlConnection cn = new SqlConnection();
             _service = new ServicePatient(cn);
+            _connection = cn;
         }
 
         private void FrmPatients_Load(object sender, EventArgs e)
@@ -28,7 +29,7 @@ namespace PatientSystem.Patients
         }
         private void BtnAdd_Click(object sender, EventArgs e)
         {
-            FrmAddPatients frmPatients = new FrmAddPatients();
+            FrmAddPatients frmPatients = new FrmAddPatients(_connection);
             this.Close();
             frmPatients.Show();
         }
@@ -61,7 +62,7 @@ namespace PatientSystem.Patients
         }
         private void DgvPatients_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            FrmAddPatients addPatients = new FrmAddPatients();
+            FrmAddPatients addPatients = new FrmAddPatients(_connection);
             addPatients.DgvPatients(e);
         }
 

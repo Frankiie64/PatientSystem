@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "HV+p2gYDT61ot5wbb5+g1Lb0kcU6K2hGOduOnjUzESEetW4qYUt0RzObYwG3Y/IA+duPR/+mt+GDZvCqNb7lhA==",
+  "dgSpecHash": "YCTXE9F+gs2xPHsRRvl9vz5sMOz4sm2YEitosS+XC7DyQxLCj4iTR4t8Sl/zqVJeNVMqJkbbBxSDENjMf7P3nw==",
   "success": true,
   "projectFilePath": "C:\\Users\\Franklyn\\source\\Gestor\\PatientSystem\\PatientSystem.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Franklyn\\.nuget\\packages\\easendmail\\7.8.0.1\\easendmail.7.8.0.1.nupkg.sha512",
     "C:\\Users\\Franklyn\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\Franklyn\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
     "C:\\Users\\Franklyn\\.nuget\\packages\\runtime.native.system.data.sqlclient.sni\\4.7.0\\runtime.native.system.data.sqlclient.sni.4.7.0.nupkg.sha512",

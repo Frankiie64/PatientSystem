@@ -36,3 +36,5 @@ C:\Users\Franklyn\source\Gestor\LogicLayer\obj\Debug\netcoreapp3.1\LogicLayer.cs
 C:\Users\Franklyn\source\Gestor\LogicLayer\obj\Debug\netcoreapp3.1\LogicLayer.csproj.CopyComplete
 C:\Users\Franklyn\source\Gestor\LogicLayer\obj\Debug\netcoreapp3.1\LogicLayer.dll
 C:\Users\Franklyn\source\Gestor\LogicLayer\obj\Debug\netcoreapp3.1\LogicLayer.pdb
+C:\Users\Franklyn\source\Gestor\LogicLayer\bin\Debug\netcoreapp3.1\EmailLayer.dll
+C:\Users\Franklyn\source\Gestor\LogicLayer\bin\Debug\netcoreapp3.1\EmailLayer.pdb

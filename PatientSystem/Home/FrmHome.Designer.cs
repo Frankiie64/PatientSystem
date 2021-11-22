@@ -190,7 +190,7 @@ namespace PatientSystem.Home
             this.Controls.Add(this.tableLayoutPanel1);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "FrmHome";
-            this.Text = "FrmHome";
+            this.Text = "HOME";
             this.Load += new System.EventHandler(this.FrmHome_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);

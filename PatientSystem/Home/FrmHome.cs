@@ -47,7 +47,7 @@ namespace PatientSystem.Home
 
         private void BtnPatient_Click(object sender, EventArgs e)
         {
-            Patients.FrmPatients patients = new Patients.FrmPatients();
+            Patients.FrmPatients patients = new Patients.FrmPatients(_conection);
             this.Close();
             patients.Show();
         }

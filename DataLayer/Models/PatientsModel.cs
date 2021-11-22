@@ -13,7 +13,7 @@ namespace DataLayer.Models
         public string Address { get; set; }
         public string Identification { get; set; }
         public string NatalDay { get; set; }
-        public bool Smoker { get; set; }
+        public int Smoker { get; set; }
         public string Allergies { get; set; }
         public string Photo { get; set; }
 

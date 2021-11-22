@@ -7,7 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="EASendMail" Version="7.8.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\DataLayer\DataLayer.csproj" />
+    <ProjectReference Include="..\EmailLayer\EmailLayer.csproj" />
     <ProjectReference Include="..\LogicLayer\LogicLayer.csproj" />
   </ItemGroup>
 
