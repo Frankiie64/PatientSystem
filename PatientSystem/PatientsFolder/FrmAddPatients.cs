@@ -4,6 +4,7 @@ using System;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 using PatientSystem;
+using LogicLayer;
 
 namespace PatientSystem.Patients
 {
@@ -22,24 +23,59 @@ namespace PatientSystem.Patients
 
         private void FrmAddPatients_Load(object sender, EventArgs e)
         {
+           
             LoadCbx();
         }
 
         public void AddPatient()
         {
             PatientsModel item = new PatientsModel();
-            ComboBoxItem selectedSmoke = CbxSmoker.SelectedItem as ComboBoxItem;           
-            item.Fname = TxbName.Text;
-            item.LastName = TxbLastName.Text;
-            item.PhoneNumber = MtbPhone.Text;
-            item.Address = TxbAddress.Text;
-            item.Identification = MtbCard.Text;
-            item.NatalDay = MtbBirth.Text;
-            item.Smoker = (int)selectedSmoke.Value;
-            item.Allergies = TxbAllergies.Text;
+            ComboBoxItem selectedSmoke = CbxSmoker.SelectedItem as ComboBoxItem;
+            try
+            {
+                item.Fname = TxbName.Text;
+                item.LastName = TxbLastName.Text;
+                item.PhoneNumber = MtbPhone.Text;
+                item.Address = TxbAddress.Text;
+                item.Identification = MtbCard.Text;
+                item.NatalDay = DateTime.ParseExact(MtbBirth.Text, "dd/MM/yyyy", null);
+                item.Smoker = (int)selectedSmoke.Value;
+                item.Allergies = TxbAllergies.Text;
 
-            _service.Add(item);
-            MessageBox.Show("The patients was saved bacanamente", "System");
+                _service.Add(item);
+                MessageBox.Show("The patients was saved bacanamente", "System");
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("The patients was not saved bacanamente", "System");
+
+            }
+
+
+        }
+        private PatientsModel paciente(ComboBoxItem smoker, ComboBoxItem nosmoker)
+        {
+            ComboBoxItem selectedSmoke = CbxSmoker.SelectedItem as ComboBoxItem;
+            PatientsModel item = GlobalRepositoty.Instance.Patient;
+            TxbName.Text = item.Fname;
+            TxbLastName.Text = item.LastName;
+            MtbPhone.Text = item.PhoneNumber;
+            TxbAddress.Text = item.Address;
+            MtbCard.Text = item.Identification;
+            MtbBirth.Text = Convert.ToString(item.NatalDay);
+            if (item.Smoker == 0)
+            {
+                CbxSmoker.SelectedItem = smoker;
+
+            }
+            else
+            {
+                CbxSmoker.SelectedItem = nosmoker;
+            }
+            TxbAllergies.Text = item.Allergies;
+
+
+            return  GlobalRepositoty.Instance.Patient;           
         }
         public void EditPatient()
         {
@@ -50,10 +86,10 @@ namespace PatientSystem.Patients
             item.PhoneNumber = MtbPhone.Text;
             item.Address = TxbAddress.Text;
             item.Identification = MtbCard.Text;
-            item.NatalDay = MtbBirth.Text;
+            item.NatalDay = DateTime.ParseExact(MtbBirth.Text, "dd/MM/yyyy", null);
             item.Smoker = (int)selectedSmoke.Value;
-            item.Allergies = TxbAllergies.Text; 
-            item.Id = id.Value;
+            item.Allergies = TxbAllergies.Text;
+            item.Id = GlobalRepositoty.Instance.id;
 
             _service.Edit(item);
             MessageBox.Show("The patients was edited bacanamente", "System");
@@ -81,11 +117,16 @@ namespace PatientSystem.Patients
             CbxSmoker.Items.Add(yesismoke);
             CbxSmoker.Items.Add(noidontsmoke);
             CbxSmoker.SelectedItem = defaultOption;
+
+            if (GlobalRepositoty.Instance.id > 0)
+            {
+                paciente(yesismoke, noidontsmoke);
+            }
         }
 
         private void BtnConfirm_Click(object sender, EventArgs e)
         {
-            if (id == null)
+            if (GlobalRepositoty.Instance.id == 0)
             {
                 AddPatient();
             }

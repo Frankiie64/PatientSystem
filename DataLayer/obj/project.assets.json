@@ -2,6 +2,15 @@
   "version": 3,
   "targets": {
     ".NETCoreApp,Version=v3.1": {
+      "EASendMail/7.8.0.1": {
+        "type": "package",
+        "compile": {
+          "lib/netcoreapp3.1/EASendMail.dll": {}
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/EASendMail.dll": {}
+        }
+      },
       "Microsoft.NETCore.Platforms/3.1.0": {
         "type": "package",
         "compile": {
@@ -134,6 +143,33 @@
     }
   },
   "libraries": {
+    "EASendMail/7.8.0.1": {
+      "sha512": "PUVj/J+K4ms+vn87PrPC2lmfPRsu/0sCLU/uwnAw47TEriSXf4PcwoMOJt+U5jO/efzUtuK6xrEqsoB+wADJXw==",
+      "type": "package",
+      "path": "easendmail/7.8.0.1",
+      "hasTools": true,
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "easendmail.7.8.0.1.nupkg.sha512",
+        "easendmail.nuspec",
+        "lib/net20-cf/EASendMail.dll",
+        "lib/net20/EASendMail.dll",
+        "lib/net35-cf/EASendMail.dll",
+        "lib/net40/EASendMail.dll",
+        "lib/net45/EASendMail.dll",
+        "lib/net461/EASendMail.dll",
+        "lib/net5.0/EASendMail.deps.json",
+        "lib/net5.0/EASendMail.dll",
+        "lib/netcoreapp3.1/EASendMail.deps.json",
+        "lib/netcoreapp3.1/EASendMail.dll",
+        "lib/netstandard2.0/EASendMail.deps.json",
+        "lib/netstandard2.0/EASendMail.dll",
+        "lib/uap10.0/EASendMail.winmd",
+        "tools/init.ps1",
+        "tools/installed.dat"
+      ]
+    },
     "Microsoft.NETCore.Platforms/3.1.0": {
       "sha512": "z7aeg8oHln2CuNulfhiLYxCVMPEwBl3rzicjvIX+4sUuCwvXw5oXQEtbiU2c0z4qYL5L3Kmx0mMA/+t/SbY67w==",
       "type": "package",
@@ -450,23 +486,24 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
+      "EASendMail >= 7.8.0.1",
       "System.Data.SqlClient >= 4.8.3"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Panda\\.nuget\\packages\\": {}
+    "C:\\Users\\Franklyn\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Panda\\Source\\Repos\\PatientSystem\\DataLayer\\DataLayer.csproj",
+      "projectUniqueName": "C:\\Users\\Franklyn\\source\\BackUpx2\\DataLayer\\DataLayer.csproj",
       "projectName": "DataLayer",
-      "projectPath": "C:\\Users\\Panda\\Source\\Repos\\PatientSystem\\DataLayer\\DataLayer.csproj",
-      "packagesPath": "C:\\Users\\Panda\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Panda\\Source\\Repos\\PatientSystem\\DataLayer\\obj\\",
+      "projectPath": "C:\\Users\\Franklyn\\source\\BackUpx2\\DataLayer\\DataLayer.csproj",
+      "packagesPath": "C:\\Users\\Franklyn\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Franklyn\\source\\BackUpx2\\DataLayer\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Panda\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Franklyn\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -492,6 +529,10 @@
       "netcoreapp3.1": {
         "targetAlias": "netcoreapp3.1",
         "dependencies": {
+          "EASendMail": {
+            "target": "Package",
+            "version": "[7.8.0.1, )"
+          },
           "System.Data.SqlClient": {
             "target": "Package",
             "version": "[4.8.3, )"
@@ -512,7 +553,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
       }
     }
   }

@@ -12,7 +12,7 @@ namespace DataLayer.Models
         public string PhoneNumber { get; set; }
         public string Address { get; set; }
         public string Identification { get; set; }
-        public string NatalDay { get; set; }
+        public DateTime NatalDay { get; set; }
         public int Smoker { get; set; }
         public string Allergies { get; set; }
         public string Photo { get; set; }

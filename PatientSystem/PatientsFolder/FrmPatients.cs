@@ -15,51 +15,33 @@ namespace PatientSystem.Patients
     public partial class FrmPatients : Form
     {
         private ServicePatient _service;
-        private SqlConnection _connection;
-        public int? id = null;
+        private SqlConnection _connection;        
         public FrmPatients(SqlConnection cn)
         {
             InitializeComponent();
             _service = new ServicePatient(cn);
             _connection = cn;
         }
-
-        private void FrmPatients_Load(object sender, EventArgs e)
+        private void BtnDeselect_Click(object sender, EventArgs e)
         {
-            LoadData();
+            Deselect();
         }
-        private void BtnAdd_Click(object sender, EventArgs e)
+        private void BtnEdit_Click(object sender, EventArgs e)
         {
-            FrmAddPatients frmPatients = new FrmAddPatients(_connection);
-            frmPatients.Show();
-            this.Close();
-        }
-        public void Deselect()
-        {
-            DgvPatients.ClearSelection();
-            BtnDeselect.Visible = false;
-            id = null;
-        }
-        private void LoadData()
-        {
-            DgvPatients.DataSource = _service.GetAll();
-            DgvPatients.ClearSelection();
-        }
-        public void DeletePatient()
-        {
-            if (id == null)
+            if(GlobalRepositoty.Instance.index >= 0)
             {
-                MessageBox.Show("U should select a patient", "System");
+                FrmAddPatients patients = new FrmAddPatients(_connection);
+                patients.Show();
+                this.Close();
             }
             else
             {
-                DialogResult response = MessageBox.Show("U sure u want to delete this patient", "System", MessageBoxButtons.OKCancel);
-                if (response == DialogResult.OK)
-                {
-                    _service.Delete(id.Value);
-                    Deselect();
-                }
+                MessageBox.Show("U should select a patient", "System");
             }
+        }
+        private void FrmPatients_Load(object sender, EventArgs e)
+        {
+            LoadData();            
         }
         private void DgvPatients_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -71,6 +53,53 @@ namespace PatientSystem.Patients
                 GlobalRepositoty.Instance.Patient = _service.GetById(GlobalRepositoty.Instance.id);
             }
         }
+        private void BtnAdd_Click(object sender, EventArgs e)
+        {
+            FrmAddPatients frmPatients = new FrmAddPatients(_connection);
+            frmPatients.Show();
+            this.Hide();
+        }
+        private void BtnDelete_Click(object sender, EventArgs e)
+        {
+            DeletePatient();
+        }
+
+        public void DeletePatient()
+        {
+            if (GlobalRepositoty.Instance.index < 0)
+            {
+                MessageBox.Show("U should select a patient", "System");
+            }
+            else
+            {
+                DialogResult response = MessageBox.Show("U sure u want to delete this patient", "System", MessageBoxButtons.OKCancel);
+                if (response == DialogResult.OK)
+                {
+                    _service.Delete(GlobalRepositoty.Instance.id);
+                    Deselect();
+                    LoadData();
+                }
+            }
+        }
+        
+        private void Deselect()
+        {
+            DgvPatients.ClearSelection();
+            BtnDeselect.Visible = false;
+            GlobalRepositoty.Instance.index = -1;
+            GlobalRepositoty.Instance.id = new int();
+            GlobalRepositoty.Instance.Patient = new PatientsModel();
+        }
+        private void LoadData()
+        {
+            DgvPatients.DataSource = _service.GetAll();
+            DgvPatients.Columns[9].Visible = false;
+            DgvPatients.Columns[0].Visible = false;
+            DgvPatients.ClearSelection();
+
+        }
+
+        
     }
 }
 

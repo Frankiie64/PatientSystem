@@ -102,6 +102,7 @@
       "System.Security.Principal.Windows/4.7.0": {},
       "DataLayer/1.0.0": {
         "dependencies": {
+          "EASendMail": "7.8.0.1",
           "System.Data.SqlClient": "4.8.3"
         },
         "runtime": {

@@ -29,7 +29,7 @@ namespace PatientSystem.User
             
         }
 
-        #region
+        #region Events
         private void BtnBack_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -237,5 +237,9 @@ namespace PatientSystem.User
             }
         }
 
+        private void TblRegister_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
