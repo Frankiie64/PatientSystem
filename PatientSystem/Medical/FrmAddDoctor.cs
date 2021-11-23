@@ -67,8 +67,6 @@ namespace PatientSystem.Medical
                     {
                         MessageBox.Show("Este medico ya esta registrado", "Notficacion");
                     }
-
-
                 }
                 else
                 {
@@ -93,20 +91,12 @@ namespace PatientSystem.Medical
                         MessageBox.Show("Error desconocido", "Notficacion");
 
                     }
-
-
                 }
             }
         }
-
-
-
-
         #endregion
         private Doctors createDoc()
         {
-
-
             Doctors doctors = new Doctors();
             {
                 doctors.FName = TxbName.Text;
@@ -117,9 +107,7 @@ namespace PatientSystem.Medical
 
             }
             return doctors;
-
         }
-
         private void AddPhoto()
         {
             DialogResult result = DialogDoctor.ShowDialog();
@@ -128,9 +116,7 @@ namespace PatientSystem.Medical
             {
                 filename = DialogDoctor.FileName;
                 PtbImage.ImageLocation = filename;
-            }
-
-            
+            }            
         }
         private bool SavePhoto()
         {
@@ -160,7 +146,6 @@ namespace PatientSystem.Medical
                 return false;
             }
         }
-
         private void CreateDirecotry(string dirrectionally)
         {
             if(!Directory.Exists(dirrectionally))
@@ -168,7 +153,6 @@ namespace PatientSystem.Medical
                 Directory.CreateDirectory(dirrectionally);
             }
         }
-
         private bool validation()
         {
             if (string.IsNullOrWhiteSpace(TxbName.Text))
@@ -221,7 +205,6 @@ namespace PatientSystem.Medical
                 MtbCard.Text = GlobalRepositoty.Instance.Doc.Identification;
             }
         }
-
         private Boolean ValidationEmail(String email)
         {
             String expresion;

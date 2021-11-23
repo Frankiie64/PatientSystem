@@ -54,30 +54,11 @@ namespace PatientSystem.Patients
             item.Smoker = (int)selectedSmoke.Value;
             item.Allergies = TxbAllergies.Text; 
             item.Id = id.Value;
+
             _service.Edit(item);
             MessageBox.Show("The patients was edited bacanamente", "System");
         }
-        public void DgvPatients(DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex >= 0)
-            {
-                id = e.RowIndex;
-                BtnDeselect.Visible = true;
 
-                PatientsModel patients = new PatientsModel();
-
-                patients = _service.GetById(id.Value);
-
-                TxbName.Text = patients.Fname;
-                TxbLastName.Text = patients.LastName;
-                MtbPhone.Text = patients.PhoneNumber;
-                TxbAddress.Text = patients.Address;
-                MtbCard.Text = patients.Identification;
-                MtbBirth.Text = patients.NatalDay;
-                CbxSmoker.SelectedIndex = patients.Smoker;
-                TxbAllergies.Text = patients.Allergies;
-            }
-        }
         public void LoadCbx()
         {
             ComboBoxItem defaultOption = new ComboBoxItem();
@@ -112,6 +93,18 @@ namespace PatientSystem.Patients
             {
                 EditPatient();
             }
+            this.Close();
+        }
+
+        private void FrmAddPatients_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            FrmPatients patients = new FrmPatients(_connection);
+            patients.Show();
+        }
+
+        private void BtnBack_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

@@ -17,19 +17,15 @@ namespace DataLayer
         }
         public bool AddDoc(Doctors Doct)
         {
-
             SqlCommand sqlCommand = new SqlCommand("insert into Doctors(FName,LastName,Email,PhoneNumber,Identification) values (@FName,@LastName,@Email,@PhoneNumber,@Identification)", _connection);
-
             sqlCommand.Parameters.AddWithValue("@FName", Doct.FName);
             sqlCommand.Parameters.AddWithValue("@LastName", Doct.LastName);
             sqlCommand.Parameters.AddWithValue("@Email", Doct.Email);
             sqlCommand.Parameters.AddWithValue("@PhoneNumber", Doct.PhoneNumber);
-            sqlCommand.Parameters.AddWithValue("@Identification", Doct.Identification);
-            
+            sqlCommand.Parameters.AddWithValue("@Identification", Doct.Identification);        
 
             return ExecuteDml(sqlCommand);
         }
-
         public bool SavePhoto(string photo, int id)
         {
             SqlCommand sqlCommand = new SqlCommand("update Doctors set Photos = @Photos where Id = @Id", _connection);
@@ -225,7 +221,5 @@ namespace DataLayer
                 return null;
             }
         }
-
-
     }
 }

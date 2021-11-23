@@ -8,3 +8,12 @@ C:\Users\Franklyn\source\Gestor\EmailLayer\bin\Debug\netcoreapp3.1\EmailLayer.pd
 C:\Users\Franklyn\source\Gestor\EmailLayer\obj\Debug\netcoreapp3.1\EmailLayer.dll
 C:\Users\Franklyn\source\Gestor\EmailLayer\obj\Debug\netcoreapp3.1\EmailLayer.pdb
 C:\Users\Franklyn\source\Gestor\EmailLayer\obj\Debug\netcoreapp3.1\EmailLayer.csproj.AssemblyReference.cache
+C:\Users\Panda\Source\Repos\PatientSystem\EmailLayer\bin\Debug\netcoreapp3.1\EmailLayer.deps.json
+C:\Users\Panda\Source\Repos\PatientSystem\EmailLayer\bin\Debug\netcoreapp3.1\EmailLayer.dll
+C:\Users\Panda\Source\Repos\PatientSystem\EmailLayer\bin\Debug\netcoreapp3.1\EmailLayer.pdb
+C:\Users\Panda\Source\Repos\PatientSystem\EmailLayer\obj\Debug\netcoreapp3.1\EmailLayer.csproj.AssemblyReference.cache
+C:\Users\Panda\Source\Repos\PatientSystem\EmailLayer\obj\Debug\netcoreapp3.1\EmailLayer.AssemblyInfoInputs.cache
+C:\Users\Panda\Source\Repos\PatientSystem\EmailLayer\obj\Debug\netcoreapp3.1\EmailLayer.AssemblyInfo.cs
+C:\Users\Panda\Source\Repos\PatientSystem\EmailLayer\obj\Debug\netcoreapp3.1\EmailLayer.csproj.CoreCompileInputs.cache
+C:\Users\Panda\Source\Repos\PatientSystem\EmailLayer\obj\Debug\netcoreapp3.1\EmailLayer.dll
+C:\Users\Panda\Source\Repos\PatientSystem\EmailLayer\obj\Debug\netcoreapp3.1\EmailLayer.pdb

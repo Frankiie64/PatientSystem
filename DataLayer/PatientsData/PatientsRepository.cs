@@ -90,7 +90,7 @@ namespace DataLayer.PatientData
 
                 return returnData;
             }
-            catch (Exception exc)
+            catch (Exception)
             {
                 return null;
             }
@@ -99,6 +99,7 @@ namespace DataLayer.PatientData
         {
             try
             {
+                _cn.Close();
                 DataTable data = new DataTable();
                 _cn.Open();
                 dataAdapter.Fill(data);
@@ -107,7 +108,6 @@ namespace DataLayer.PatientData
             }
             catch (Exception)
             {
-
                 return null;
             }
         }
@@ -115,12 +115,15 @@ namespace DataLayer.PatientData
         {
             try
             {
+                _cn.Close();
                 _cn.Open();
+                
                 query.ExecuteNonQuery();
+
                 _cn.Close();
                 return true;
             }
-            catch (Exception exc)
+            catch (Exception)
             {
                 return false;
             }

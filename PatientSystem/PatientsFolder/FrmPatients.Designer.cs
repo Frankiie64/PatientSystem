@@ -193,7 +193,7 @@ namespace PatientSystem.Patients
             this.DgvPatients.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DgvPatients.Size = new System.Drawing.Size(366, 182);
             this.DgvPatients.TabIndex = 1;
-            this.DgvPatients.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvPatients_CellContentClick);
+            this.DgvPatients.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvPatients_CellClick);
             // 
             // FrmPatients
             // 

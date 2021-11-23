@@ -12,7 +12,9 @@ namespace LogicLayer
         public int id = new int();
         public string _filename = null;
         public Users Usuario = new Users();
+        public PatientsModel Patient = new PatientsModel();
         public LabTest test = new LabTest();
+        public LabResult result = new LabResult();
         public Doctors Doc = new Doctors();
 
         public int TyperUser = new int();

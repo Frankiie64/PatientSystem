@@ -1,4 +1,5 @@
 ﻿using DataLayer.Models;
+using LogicLayer;
 using LogicLayer.PatientLogic;
 using System;
 using System.Collections.Generic;
@@ -25,13 +26,13 @@ namespace PatientSystem.Patients
 
         private void FrmPatients_Load(object sender, EventArgs e)
         {
-            //LoadData();
+            LoadData();
         }
         private void BtnAdd_Click(object sender, EventArgs e)
         {
             FrmAddPatients frmPatients = new FrmAddPatients(_connection);
-            this.Close();
             frmPatients.Show();
+            this.Close();
         }
         public void Deselect()
         {
@@ -60,12 +61,16 @@ namespace PatientSystem.Patients
                 }
             }
         }
-        private void DgvPatients_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void DgvPatients_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            FrmAddPatients addPatients = new FrmAddPatients(_connection);
-            addPatients.DgvPatients(e);
+            if (e.RowIndex >= 0)
+            {
+                GlobalRepositoty.Instance.id = Convert.ToInt32(DgvPatients.CurrentRow.Cells[0].Value);
+                GlobalRepositoty.Instance.index = e.RowIndex;
+                BtnDeselect.Visible = true;
+                GlobalRepositoty.Instance.Patient = _service.GetById(GlobalRepositoty.Instance.id);
+            }
         }
-
-        
     }
 }
+
