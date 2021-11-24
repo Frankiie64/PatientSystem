@@ -65,7 +65,7 @@ namespace DataLayer.PatientData
         }
         public DataTable GetAll()
         {
-            SqlDataAdapter dataAdapter = new SqlDataAdapter("select Id,FName as 'Name', LastName as 'Last Name', PhoneNumber as 'Phone Number', AddressPatient as Adress, Identification, NatalDay as Birthday, Smoker as '¿Smoker?', Allergies, photo from Patients", _cn);
+            SqlDataAdapter dataAdapter = new SqlDataAdapter("select Patients.Id,FName as 'Name', LastName as 'Last Name', PhoneNumber as 'Phone Number', AddressPatient as Adress, Identification, NatalDay as Birthday, Smoker.text as '¿Smoker?', Allergies, photo from Patients inner join Smoker on Patients.Smoker = Smoker.id", _cn);
             return LoadData(dataAdapter);
         }
         public PatientsModel GetById(int id)
