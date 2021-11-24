@@ -78,11 +78,15 @@ namespace LogicLayer.Medical
             
         }
 
-        public bool EditDoc(Doctors Doc)
+        public bool EditDoc(Doctors Doc, string Identification)
         {
             try
             {
-                if (DataMedical.ValidationExist(Doc.Identification).Identification != Doc.Identification)
+                if (Doc.Identification == Identification)
+                {
+                    return DataMedical.Edit(Doc, GlobalRepositoty.Instance.id);
+                }
+                else if (DataMedical.ValidationExist(Doc.Identification).Identification != Doc.Identification)
                 {
                     return DataMedical.Edit(Doc,GlobalRepositoty.Instance.id);
                 }

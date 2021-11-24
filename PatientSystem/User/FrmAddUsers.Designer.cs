@@ -76,7 +76,6 @@ namespace PatientSystem.User
             this.TblRegister.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.928059F));
             this.TblRegister.Size = new System.Drawing.Size(694, 748);
             this.TblRegister.TabIndex = 2;
-            this.TblRegister.Paint += new System.Windows.Forms.PaintEventHandler(this.TblRegister_Paint);
             // 
             // PtbFormularioR
             // 

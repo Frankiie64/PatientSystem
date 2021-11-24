@@ -40,6 +40,9 @@ namespace PatientSystem.User
             DgvUser.Columns[6].Visible = false;
             Deselect();
         }
+
+
+       
         private void BtnDeselect_Click(object sender, EventArgs e)
         {
             Deselect();

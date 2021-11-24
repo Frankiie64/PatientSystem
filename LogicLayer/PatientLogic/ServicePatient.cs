@@ -19,11 +19,51 @@ namespace LogicLayer.PatientLogic
         }
         public bool Add(PatientsModel item)
         {
-            return repo.Add(item);
+            try
+            {
+                string identification = (repo.ValidationExist(item.Identification).Identification != item.Identification ? "" : (repo.ValidationExist(item.Identification)).Identification.Trim());
+
+
+                if (identification != item.Identification)
+                {
+                    return repo.Add(item);                                      
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
         }
-        public bool Edit(PatientsModel item)
+        public bool Edit(PatientsModel item, string Identification)
         {
-            return repo.Edit(item);
+            try
+            {
+                if (item.Identification == Identification)
+                {
+                    return repo.Edit(item, GlobalRepositoty.Instance.id);
+                }
+                else if (repo.ValidationExist(item.Identification).Identification != item.Identification)
+                {
+                    return repo.Edit(item, GlobalRepositoty.Instance.id);
+                }
+                else if (repo.ValidationExist(item.Identification).Identification.Trim() != item.Identification)
+                {
+                    return repo.Edit(item, GlobalRepositoty.Instance.id);
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (Exception ex)
+            {
+
+                return false;
+            }
         }
         public bool Delete(int id)
         {

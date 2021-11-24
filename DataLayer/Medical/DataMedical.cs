@@ -22,8 +22,8 @@ namespace DataLayer
             sqlCommand.Parameters.AddWithValue("@LastName", Doct.LastName);
             sqlCommand.Parameters.AddWithValue("@Email", Doct.Email);
             sqlCommand.Parameters.AddWithValue("@PhoneNumber", Doct.PhoneNumber);
-            sqlCommand.Parameters.AddWithValue("@Identification", Doct.Identification);        
-
+            sqlCommand.Parameters.AddWithValue("@Identification", Doct.Identification);
+            
             return ExecuteDml(sqlCommand);
         }
         public bool SavePhoto(string photo, int id)

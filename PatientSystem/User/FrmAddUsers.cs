@@ -46,7 +46,7 @@ namespace PatientSystem.User
                 ComboBoxItem Usuario = CxbType.SelectedItem as ComboBoxItem;
                 TxbName.Text = item.FName;
                 TxbLastName.Text = item.LastName;
-                TxbMail.Text = item.LastName;
+                TxbMail.Text = item.Email;
                 TxbUser.Text = item.NickName;
                 TxbPassword.Text = item.Pass;
                 TxbConfirm.Text = item.Pass;
@@ -237,9 +237,6 @@ namespace PatientSystem.User
             }
         }
 
-        private void TblRegister_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
+       
     }
 }

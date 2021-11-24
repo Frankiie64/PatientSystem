@@ -75,15 +75,15 @@ namespace LogicLayer.Usuario
         {
             try
             {
-                if(nickname == rol.NickName)
+                if(nickname.ToLower() == rol.NickName.ToLower())
                 {
-                    return true;
+                    return DataUsers.Edit(rol, GlobalRepositoty.Instance.id); 
                 }
-                if (DataUsers.ValidationExist(rol.NickName).NickName != rol.NickName)
+                if (DataUsers.ValidationExist(rol.NickName).NickName.ToLower() != rol.NickName.ToLower())
                 {
-                    return DataUsers.Edit(rol,GlobalRepositoty.Instance.id);
+                    return DataUsers.Edit(rol, GlobalRepositoty.Instance.id);
                 }
-                else if (DataUsers.ValidationExist(rol.NickName).NickName.Trim() != rol.NickName)
+                else if (DataUsers.ValidationExist(rol.NickName).NickName.Trim().ToLower() != rol.NickName.ToLower())
                 {
                     return DataUsers.Edit(rol,GlobalRepositoty.Instance.id);
                 }

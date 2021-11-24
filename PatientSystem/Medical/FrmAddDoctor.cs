@@ -54,7 +54,7 @@ namespace PatientSystem.Medical
                 if (GlobalRepositoty.Instance.id > 0)
                 {
 
-                    if (_service.EditDoc(createDoc()))
+                    if (_service.EditDoc(createDoc(), GlobalRepositoty.Instance.Doc.Identification))
                     {
                         MessageBox.Show("Se ha editado correctamente el usuario", "Notficacion");
                         if (!SavePhoto())
@@ -103,8 +103,7 @@ namespace PatientSystem.Medical
                 doctors.LastName = TxbLastName.Text;
                 doctors.Email = TxbMail.Text;
                 doctors.PhoneNumber = MtbPhone.Text;
-                doctors.Identification = MtbCard.Text;
-
+                doctors.Identification = MtbCard.Text;               
             }
             return doctors;
         }
@@ -203,6 +202,7 @@ namespace PatientSystem.Medical
                 TxbMail.Text = GlobalRepositoty.Instance.Doc.Email;
                 MtbPhone.Text = GlobalRepositoty.Instance.Doc.PhoneNumber;
                 MtbCard.Text = GlobalRepositoty.Instance.Doc.Identification;
+                PtbImage.ImageLocation = GlobalRepositoty.Instance._filename;
             }
         }
         private Boolean ValidationEmail(String email)

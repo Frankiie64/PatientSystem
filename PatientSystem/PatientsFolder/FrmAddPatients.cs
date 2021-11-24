@@ -91,8 +91,15 @@ namespace PatientSystem.Patients
             item.Allergies = TxbAllergies.Text;
             item.Id = GlobalRepositoty.Instance.id;
 
-            _service.Edit(item);
-            MessageBox.Show("The patients was edited bacanamente", "System");
+            if(_service.Edit(item,GlobalRepositoty.Instance.Patient.Identification))
+            {
+                MessageBox.Show("The patients was edited bacanamente", "System");
+            }
+            else
+            {
+                MessageBox.Show("The patients wasn't edited bacanamente", "System");
+
+            }
         }
 
         public void LoadCbx()

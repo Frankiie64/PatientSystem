@@ -31,7 +31,7 @@ namespace DataLayer.PatientData
 
             return ExecuteDml(cmd);
         }
-        public bool Edit(PatientsModel item)
+        public bool Edit(PatientsModel item, int Id)
         {
             SqlCommand cmd = new SqlCommand("update Patients set FName=@fname,LastName=@lastname,PhoneNumber=@phonenumber,AddressPatient=@addresspatient,Identification=@identification,NatalDay=@natalday,Smoker=@smoker,Allergies=@allergies where Id = @id", _cn);
             cmd.Parameters.AddWithValue("@fname", item.Fname);
@@ -42,7 +42,7 @@ namespace DataLayer.PatientData
             cmd.Parameters.AddWithValue("@natalday", item.NatalDay);
             cmd.Parameters.AddWithValue("@smoker", item.Smoker);
             cmd.Parameters.AddWithValue("@allergies", item.Allergies);           
-            cmd.Parameters.AddWithValue("@id", item.Id);
+            cmd.Parameters.AddWithValue("@id", Id);
 
             return ExecuteDml(cmd);
         }
@@ -128,5 +128,40 @@ namespace DataLayer.PatientData
             }
 
         }
+        public PatientsModel ValidationExist(string Identification)
+        {
+            try
+            {
+                _cn.Open();
+
+                SqlCommand command = new SqlCommand("Select Identification From Patients where Identification= @Identification", _cn);
+                command.CommandType = CommandType.Text;
+
+                command.Parameters.AddWithValue("@Identification", Identification);
+
+                SqlDataReader reader = command.ExecuteReader();
+
+                PatientsModel patients   = new PatientsModel();
+
+                while (reader.Read())
+                {
+                    patients.Identification = reader.IsDBNull(0) ? "" : reader.GetString(0);
+                
+                }
+
+                reader.Close();
+                reader.Dispose();
+
+                _cn.Close();
+
+                return patients;
+
+            }
+            catch (Exception ex)
+            {
+                return null;
+            }
+        }
+
     }
 }
