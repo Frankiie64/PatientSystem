@@ -5,6 +5,7 @@ using System.Data.SqlClient;
 using System.Windows.Forms;
 using PatientSystem;
 using LogicLayer;
+using System.IO;
 
 namespace PatientSystem.Patients
 {
@@ -14,6 +15,7 @@ namespace PatientSystem.Patients
         private ServicePatient _service;
         public int? id = null;
         SqlConnection _connection;
+        public string filename = null;
         public FrmAddPatients(SqlConnection cn)
         {
             InitializeComponent();
@@ -23,8 +25,12 @@ namespace PatientSystem.Patients
 
         private void FrmAddPatients_Load(object sender, EventArgs e)
         {
-           
+
             LoadCbx();
+        }
+        private void btnSavePhoto_Click(object sender, EventArgs e)
+        {
+            AddPhoto();
         }
 
         public void AddPatient()
@@ -42,16 +48,62 @@ namespace PatientSystem.Patients
                 item.Smoker = (int)selectedSmoke.Value;
                 item.Allergies = TxbAllergies.Text;
 
-                _service.Add(item);
-                MessageBox.Show("The patients was saved bacanamente", "System");
+                if (_service.Add(item))
+                {
+                    if (SavePhoto())
+                    {
+                        MessageBox.Show("The patients was saved bacanamente", "System");
+                    }
+                    else
+                    {
+                        MessageBox.Show("The patients was not saved bacanamente", "System");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("The patients was not saved bacanamente", "System");
+                }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show("The patients was not saved bacanamente", "System");
 
             }
+        }
+        private bool SavePhoto()
+        {
+            try
+            {
+                int LastId = GlobalRepositoty.Instance.id != 0 ? GlobalRepositoty.Instance.id : _service.GetLastId();
+                if (!string.IsNullOrWhiteSpace(filename))
+                {
+                    string dirrectionally = @"Imagenes\Doctors\" + LastId + "\\";
+                    CreateDirecotry(dirrectionally);
 
+                    string[] fileNameSplit = filename.Split("\\");
+                    string _filename = fileNameSplit[(fileNameSplit.Length - 1)];
 
+                    string location = dirrectionally + _filename;
+
+                    File.Copy(filename, location, true);
+
+                    _service.SavePhoto(LastId, location);
+
+                    return true;
+                }
+                return false;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+        private void CreateDirecotry(string dirrectionally)
+        {
+            if (!Directory.Exists(dirrectionally))
+            {
+                Directory.CreateDirectory(dirrectionally);
+            }
         }
         private PatientsModel paciente(ComboBoxItem smoker, ComboBoxItem nosmoker)
         {
@@ -63,7 +115,7 @@ namespace PatientSystem.Patients
             TxbAddress.Text = item.Address;
             MtbCard.Text = item.Identification;
             MtbBirth.Text = Convert.ToString(item.NatalDay);
-            if (item.Smoker == 0)
+            if (item.Smoker == 1)
             {
                 CbxSmoker.SelectedItem = smoker;
 
@@ -73,9 +125,9 @@ namespace PatientSystem.Patients
                 CbxSmoker.SelectedItem = nosmoker;
             }
             TxbAllergies.Text = item.Allergies;
+            PtbPatients.ImageLocation = GlobalRepositoty.Instance._filename;
 
-
-            return  GlobalRepositoty.Instance.Patient;           
+            return GlobalRepositoty.Instance.Patient;
         }
         public void EditPatient()
         {
@@ -90,8 +142,8 @@ namespace PatientSystem.Patients
             item.Smoker = (int)selectedSmoke.Value;
             item.Allergies = TxbAllergies.Text;
             item.Id = GlobalRepositoty.Instance.id;
-
-            if(_service.Edit(item,GlobalRepositoty.Instance.Patient.Identification))
+            SavePhoto();
+            if (_service.Edit(item, GlobalRepositoty.Instance.Patient.Identification))
             {
                 MessageBox.Show("The patients was edited bacanamente", "System");
             }
@@ -154,5 +206,17 @@ namespace PatientSystem.Patients
         {
             this.Close();
         }
+        private void AddPhoto()
+        {
+            DialogResult result = ChosePhot.ShowDialog();
+
+            if (result == DialogResult.OK)
+            {
+                filename = ChosePhot.FileName;
+                PtbPatients.ImageLocation = filename;
+            }
+        }
+
     }
 }
+

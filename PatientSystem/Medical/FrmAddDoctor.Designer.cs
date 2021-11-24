@@ -302,7 +302,7 @@ namespace PatientSystem.Medical
             this.Controls.Add(this.TblRegister);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "FrmAddDoctor";
-            this.Text = "FrmAddDoctor";
+            this.Text = "Adding Doctor";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmAddDoctor_FormClosed);
             this.Load += new System.EventHandler(this.FrmAddDoctor_Load);
             this.TblRegister.ResumeLayout(false);

@@ -38,6 +38,11 @@ namespace LogicLayer.PatientLogic
                 return false;
             }
         }
+
+        public bool SavePhoto(int id, string Photo)
+        {
+            return repo.SavePhoto(Photo, id);
+        }
         public bool Edit(PatientsModel item, string Identification)
         {
             try
@@ -68,6 +73,10 @@ namespace LogicLayer.PatientLogic
         public bool Delete(int id)
         {
             return repo.Delete(id);
+        }
+        public int GetLastId()
+        {
+            return repo.GetLastId();
         }
         public PatientsModel GetById(int id)
         {

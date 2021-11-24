@@ -217,6 +217,7 @@ namespace PatientSystem.Patients
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "FrmPatients";
             this.Text = "Patients";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmPatients_FormClosed);
             this.Load += new System.EventHandler(this.FrmPatients_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.PtbPatients)).EndInit();

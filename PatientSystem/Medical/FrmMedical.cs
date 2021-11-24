@@ -102,6 +102,7 @@ namespace PatientSystem.Medical
                 GlobalRepositoty.Instance._filename = Convert.ToString(DgvDoctor.CurrentRow.Cells[6].Value);
 
                 PtbDoctor.ImageLocation = GlobalRepositoty.Instance._filename;
+                PtbDoctor.SizeMode = PictureBoxSizeMode.StretchImage;
                 BtnDeselect.Visible = true;
 
                 GlobalRepositoty.Instance.Doc = service.GetById(GlobalRepositoty.Instance.id);

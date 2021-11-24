@@ -31,6 +31,16 @@ namespace DataLayer.PatientData
 
             return ExecuteDml(cmd);
         }
+        public bool SavePhoto(string photo, int id)
+        {
+            SqlCommand sqlCommand = new SqlCommand("update Patients set Photo = @Photo where Id = @Id", _cn);
+            sqlCommand.CommandType = CommandType.Text;
+
+            sqlCommand.Parameters.AddWithValue("@Photo", photo);
+            sqlCommand.Parameters.AddWithValue("@Id", id);
+
+            return ExecuteDml(sqlCommand);
+        }
         public bool Edit(PatientsModel item, int Id)
         {
             SqlCommand cmd = new SqlCommand("update Patients set FName=@fname,LastName=@lastname,PhoneNumber=@phonenumber,AddressPatient=@addresspatient,Identification=@identification,NatalDay=@natalday,Smoker=@smoker,Allergies=@allergies where Id = @id", _cn);
@@ -41,7 +51,7 @@ namespace DataLayer.PatientData
             cmd.Parameters.AddWithValue("@identification", item.Identification);
             cmd.Parameters.AddWithValue("@natalday", item.NatalDay);
             cmd.Parameters.AddWithValue("@smoker", item.Smoker);
-            cmd.Parameters.AddWithValue("@allergies", item.Allergies);           
+            cmd.Parameters.AddWithValue("@allergies", item.Allergies);
             cmd.Parameters.AddWithValue("@id", Id);
 
             return ExecuteDml(cmd);
@@ -78,7 +88,7 @@ namespace DataLayer.PatientData
                     returnData.Address = reader.IsDBNull(4) ? "" : reader.GetString(4);
                     returnData.Identification = reader.IsDBNull(5) ? "" : reader.GetString(5);
                     returnData.NatalDay = reader.IsDBNull(6) ? default : reader.GetDateTime(6);
-                    returnData.Smoker = reader.IsDBNull(7) ? 2 :  reader.GetInt32(7);
+                    returnData.Smoker = reader.IsDBNull(7) ? 2 : reader.GetInt32(7);
                     returnData.Allergies = reader.IsDBNull(8) ? "" : reader.GetString(8);
                     returnData.Photo = reader.IsDBNull(9) ? "" : reader.GetString(9);
                 }
@@ -116,7 +126,7 @@ namespace DataLayer.PatientData
             {
                 _cn.Close();
                 _cn.Open();
-                
+
                 query.ExecuteNonQuery();
 
                 _cn.Close();
@@ -141,12 +151,12 @@ namespace DataLayer.PatientData
 
                 SqlDataReader reader = command.ExecuteReader();
 
-                PatientsModel patients   = new PatientsModel();
+                PatientsModel patients = new PatientsModel();
 
                 while (reader.Read())
                 {
                     patients.Identification = reader.IsDBNull(0) ? "" : reader.GetString(0);
-                
+
                 }
 
                 reader.Close();
@@ -162,6 +172,38 @@ namespace DataLayer.PatientData
                 return null;
             }
         }
+        public int GetLastId()
+        {
+            try
+            {
+                _cn.Open();
 
+                int LastId = 0;
+                SqlCommand command = new SqlCommand("select MAX(Id) as id from Patients", _cn);
+
+
+                SqlDataReader reader = command.ExecuteReader();
+
+                PatientsModel ReturnUsers = new PatientsModel();
+
+                while (reader.Read())
+                {
+                    LastId = reader.IsDBNull(0) ? 0 : reader.GetInt32(0);
+
+                }
+                _cn.Close();
+
+                reader.Close();
+                reader.Dispose();
+
+                return LastId;
+            }
+            catch (Exception ex)
+            {
+
+                return 0;
+            }
+
+        }
     }
 }
