@@ -49,22 +49,7 @@ namespace PatientSystem.Patients
         {
             LoadData();            
         }
-        private void DgvPatients_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex >= 0)
-            {
-                GlobalRepositoty.Instance.id = Convert.ToInt32(DgvPatients.CurrentRow.Cells[0].Value);
-                GlobalRepositoty.Instance.index = e.RowIndex;
-                GlobalRepositoty.Instance._filename = Convert.ToString(DgvPatients.CurrentRow.Cells[9].Value);
-
-                PtbPatients.ImageLocation = GlobalRepositoty.Instance._filename;
-                PtbPatients.SizeMode = PictureBoxSizeMode.StretchImage;
-                BtnDeselect.Visible = true;
-
-                GlobalRepositoty.Instance.Patient = _service.GetById(GlobalRepositoty.Instance.id);
-                
-            }
-        }
+     
         private void BtnAdd_Click(object sender, EventArgs e)
         {
             Deselect();

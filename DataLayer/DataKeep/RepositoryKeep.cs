@@ -16,6 +16,7 @@ namespace DataLayer.DataKeep
             _connection = connection;
         }
 
+        #region Keeps
         public bool AddDate(Appointment date)
         {
             SqlCommand sqlCommand = new SqlCommand("insert into Appointment(Id_Patients,Id_Doctor,Date_Appointment,Cause,StatusAppointment) values(@Id_Patients,@Id_Doctor,@Date_Appointment,@Cause,@StatusAppointment)", _connection);
@@ -44,7 +45,7 @@ namespace DataLayer.DataKeep
         }
         public bool Delete(int id)
         {
-            SqlCommand sqlCommand = new SqlCommand(" delete Appointment where id=@id", _connection);
+            SqlCommand sqlCommand = new SqlCommand(" delete Appointment where Id=@id", _connection);
 
             sqlCommand.Parameters.AddWithValue("@id", id);
 
@@ -69,7 +70,7 @@ namespace DataLayer.DataKeep
                     date.Id = reader.IsDBNull(0) ? 0 : reader.GetInt32(0);
                     date.Id_Patients = reader.IsDBNull(1) ? 0 : reader.GetInt32(1);
                     date.Id_Doctor = reader.IsDBNull(2) ? 0 : reader.GetInt32(2);
-                    date.Date_Appointment = reader.IsDBNull(3) ? "" : reader.GetString(3);
+                    date.Date_Appointment = reader.IsDBNull(3) ? default : reader.GetDateTime(3);
                     date.Cause = reader.IsDBNull(4) ? "" : reader.GetString(4);
                     date.StatusAppointment = reader.IsDBNull(5) ? 0 : reader.GetInt32(5);
                 }
@@ -86,6 +87,18 @@ namespace DataLayer.DataKeep
                 return null;
             }
         }
+        public DataTable GetallKeeps()
+        {
+            SqlCommand command = new SqlCommand("select Appointment.id, Patients.FName as 'Patient Name', Doctors.FName as 'Doctor Name', Appointment.Date_Appointment as 'Date Appointment', Appointment.Cause, StatusDate.Text as 'Status Date' from Appointment INNER JOIN Patients ON Id_Patients = Patients.Id INNER JOIN Doctors ON Id_Doctor = Doctors.Id INNER JOIN StatusDate ON StatusAppointment = StatusDate.id", _connection);
+            command.CommandType = CommandType.Text;
+
+            SqlDataAdapter query = new SqlDataAdapter(command);
+
+            return LoadTable(query);
+        }
+        #endregion
+
+        #region Patiens
         public PatientsModel GetByIdPatient(int id)
         {
             try
@@ -116,6 +129,33 @@ namespace DataLayer.DataKeep
             {
                 return null;
             }
+        }
+        public DataTable GetUniquePatients(string identification)
+        {
+            SqlCommand command = new SqlCommand("select * from Patients where Identification = @identification", _connection);
+            command.CommandType = CommandType.Text;
+
+            command.Parameters.AddWithValue("@identification", identification);
+
+            SqlDataAdapter query = new SqlDataAdapter(command);
+
+            return LoadTable(query);
+        }
+        public DataTable GetAllPatients()
+        {
+            SqlDataAdapter dataAdapter = new SqlDataAdapter("select Patients.Id,FName as 'Name', LastName as 'Last Name', PhoneNumber as 'Phone Number', AddressPatient as Adress, Identification, NatalDay as Birthday, Smoker.text as '¿Smoker?', Allergies, photo from Patients inner join Smoker on Patients.Smoker = Smoker.id", _connection);
+            return LoadTable(dataAdapter);
+        }
+        #endregion
+        #region Doctors
+        public DataTable GetUniqueDoctors(string identification)
+        {
+            SqlCommand command = new SqlCommand("select * from Doctors where Identification = @identification", _connection);
+            command.CommandType = CommandType.Text;
+
+            SqlDataAdapter query = new SqlDataAdapter(command);
+
+            return LoadTable(query);
         }
         public Doctors GetByIdDoc(int id)
         {
@@ -148,33 +188,20 @@ namespace DataLayer.DataKeep
                 return null;
             }
         }
-        public DataTable GetListPatients(string identification)
+        public DataTable GetallDoctors()
         {
-            SqlCommand command = new SqlCommand("select * from Patients where Identification = @identification", _connection);
+            SqlCommand command = new SqlCommand("select * from Doctors", _connection);
             command.CommandType = CommandType.Text;
 
             SqlDataAdapter query = new SqlDataAdapter(command);
 
             return LoadTable(query);
         }
-        public DataTable GetListDoctors(string identification)
-        {
-            SqlCommand command = new SqlCommand("select * from Doctors where Identification = @identification", _connection);
-            command.CommandType = CommandType.Text;
 
-            SqlDataAdapter query = new SqlDataAdapter(command);
+        #endregion
 
-            return LoadTable(query);
-        }    
-        public DataTable GetallKeeps()
-        {
-            SqlCommand command = new SqlCommand("select Appointment.id, Patients.FName as 'Patient Name', Doctors.FName as 'Doctor Name', Appointment.Date_Appointment as 'Date Appointment', Appointment.Cause, StatusDate.Text as 'Status Date' from Appointment INNER JOIN Patients ON Id_Patients = Patients.Id INNER JOIN Doctors ON Id_Doctor = Doctors.Id INNER JOIN StatusDate ON StatusAppointment = StatusDate.id", _connection);
-            command.CommandType = CommandType.Text;
-
-            SqlDataAdapter query = new SqlDataAdapter(command);
-
-            return LoadTable(query);
-        }
+       
+        #region Consult Genaral
         private bool ExecuteDml(SqlCommand command)
         {
             try
@@ -194,6 +221,9 @@ namespace DataLayer.DataKeep
             }
 
         }
+        
+
+       
         private DataTable LoadTable(SqlDataAdapter Query)
         {
             try
@@ -214,5 +244,6 @@ namespace DataLayer.DataKeep
                 return null;
             }
         }
+        #endregion
     }
 }

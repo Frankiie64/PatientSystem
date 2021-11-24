@@ -9,7 +9,7 @@ namespace DataLayer.Models
         public int Id { get; set; }
         public int Id_Patients { get; set; }
         public int Id_Doctor { get; set; }
-        public string Date_Appointment { get; set; }
+        public DateTime Date_Appointment { get; set; }
         public string Cause { get; set; }
         public int StatusAppointment { get; set; }
 

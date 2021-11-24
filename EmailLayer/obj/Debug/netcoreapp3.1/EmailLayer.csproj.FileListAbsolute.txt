@@ -27,3 +27,13 @@ C:\Users\Franklyn\source\BackUpx2\EmailLayer\obj\Debug\netcoreapp3.1\EmailLayer.
 C:\Users\Franklyn\source\BackUpx2\EmailLayer\obj\Debug\netcoreapp3.1\EmailLayer.AssemblyInfoInputs.cache
 C:\Users\Franklyn\source\BackUpx2\EmailLayer\obj\Debug\netcoreapp3.1\EmailLayer.AssemblyInfo.cs
 C:\Users\Franklyn\source\BackUpx2\EmailLayer\obj\Debug\netcoreapp3.1\EmailLayer.csproj.CoreCompileInputs.cache
+C:\Users\Franklyn\source\Keeps\EmailLayer\bin\Debug\netcoreapp3.1\EmailLayer.deps.json
+C:\Users\Franklyn\source\Keeps\EmailLayer\bin\Debug\netcoreapp3.1\EmailLayer.dll
+C:\Users\Franklyn\source\Keeps\EmailLayer\bin\Debug\netcoreapp3.1\EmailLayer.pdb
+C:\Users\Franklyn\source\Keeps\EmailLayer\obj\Debug\netcoreapp3.1\EmailLayer.csproj.AssemblyReference.cache
+C:\Users\Franklyn\source\Keeps\EmailLayer\obj\Debug\netcoreapp3.1\EmailLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Franklyn\source\Keeps\EmailLayer\obj\Debug\netcoreapp3.1\EmailLayer.AssemblyInfoInputs.cache
+C:\Users\Franklyn\source\Keeps\EmailLayer\obj\Debug\netcoreapp3.1\EmailLayer.AssemblyInfo.cs
+C:\Users\Franklyn\source\Keeps\EmailLayer\obj\Debug\netcoreapp3.1\EmailLayer.csproj.CoreCompileInputs.cache
+C:\Users\Franklyn\source\Keeps\EmailLayer\obj\Debug\netcoreapp3.1\EmailLayer.dll
+C:\Users\Franklyn\source\Keeps\EmailLayer\obj\Debug\netcoreapp3.1\EmailLayer.pdb

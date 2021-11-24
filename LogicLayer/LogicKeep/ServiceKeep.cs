@@ -11,6 +11,7 @@ namespace LogicLayer.LogicKeep
 {
     public class ServiceKeep
     {
+
         SqlConnection _connection;
         RepositoryKeep _repo;
         public ServiceKeep(SqlConnection connection)
@@ -18,6 +19,8 @@ namespace LogicLayer.LogicKeep
             _connection = connection;
             _repo = new RepositoryKeep(_connection);
         }
+
+        #region Keeps
         public bool AddApointment(Appointment appointment)
         {
             return _repo.AddDate(appointment);
@@ -34,21 +37,33 @@ namespace LogicLayer.LogicKeep
         {
             return _repo.GetallKeeps();
         }
-        public PatientsModel GetPatientsById(int id)
-        {
-            return _repo.GetByIdPatient(id);
-        }
+        #endregion
+        #region Doctor
         public Doctors GetDoctorsById(int id)
         {
             return _repo.GetByIdDoc(id);
         }
-        public DataTable GetListPantients(string identification)
+       
+        public DataTable GetUniqueDoctors(string identification)
         {
-            return _repo.GetListPatients(identification);
+            return _repo.GetUniqueDoctors(identification);
         }
-        public DataTable GetListDoctors(string identification)
+        #endregion
+
+        #region Patiens
+        public DataTable GetListPatients()
         {
-            return _repo.GetListDoctors(identification);
+            return _repo.GetAllPatients();
         }
+        public DataTable GetUniquePatients(string identification)
+        {
+            return _repo.GetUniquePatients(identification);
+        }
+        public PatientsModel GetPatientsById(int id)
+        {
+            return _repo.GetByIdPatient(id);
+        }
+
+        #endregion
     }
 }
