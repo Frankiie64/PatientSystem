@@ -20,7 +20,6 @@ namespace LogicLayer.Usuario
             _connection = connection;
             DataUsers = new ReposotoryUsers(_connection);
         }
-
         private bool EnviarCorreo(string destinario, string titulo, string cuerpo)
         {
             email = new EmailSender();
@@ -33,9 +32,7 @@ namespace LogicLayer.Usuario
             {
                 return false;
             }
-
         }
-
         public int AddUser(Users rol)
         {
             try
@@ -58,7 +55,6 @@ namespace LogicLayer.Usuario
                     {
                         return 2;
                     }
-
                 }                
                 else
                 {
@@ -98,7 +94,6 @@ namespace LogicLayer.Usuario
                 return false;
             }
         }
-
         public bool DeleteUser(int id)
         {
             return DataUsers.Delete(id);
@@ -111,6 +106,5 @@ namespace LogicLayer.Usuario
         {
             return DataUsers.GetallUsers();
         }
-
     }
 }

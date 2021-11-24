@@ -109,10 +109,15 @@ namespace DataLayer.PatientData
             try
             {
                 _cn.Close();
+                
                 DataTable data = new DataTable();
+                
                 _cn.Open();
+
                 dataAdapter.Fill(data);
+
                 _cn.Close();
+
                 return data;
             }
             catch (Exception)

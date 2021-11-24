@@ -58,13 +58,12 @@ namespace PatientSystem.Keep
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel3, 1, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 3;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 29.23077F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 62.5F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.461538F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(694, 867);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(486, 449);
             this.tableLayoutPanel1.TabIndex = 7;
             // 
             // BtnNext
@@ -76,22 +75,21 @@ namespace PatientSystem.Keep
             this.BtnNext.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.BtnNext.Image = ((System.Drawing.Image)(resources.GetObject("BtnNext.Image")));
             this.BtnNext.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnNext.Location = new System.Drawing.Point(69, 797);
-            this.BtnNext.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.BtnNext.Location = new System.Drawing.Point(48, 413);
             this.BtnNext.Name = "BtnNext";
-            this.BtnNext.Size = new System.Drawing.Size(555, 65);
+            this.BtnNext.Size = new System.Drawing.Size(388, 33);
             this.BtnNext.TabIndex = 4;
             this.BtnNext.Text = "Next step";
             this.BtnNext.UseVisualStyleBackColor = false;
+            this.BtnNext.Click += new System.EventHandler(this.BtnNext_Click);
             // 
             // PtbPatients
             // 
             this.PtbPatients.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PtbPatients.Image = ((System.Drawing.Image)(resources.GetObject("PtbPatients.Image")));
-            this.PtbPatients.Location = new System.Drawing.Point(69, 5);
-            this.PtbPatients.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.PtbPatients.Location = new System.Drawing.Point(48, 3);
             this.PtbPatients.Name = "PtbPatients";
-            this.PtbPatients.Size = new System.Drawing.Size(555, 242);
+            this.PtbPatients.Size = new System.Drawing.Size(388, 124);
             this.PtbPatients.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.PtbPatients.TabIndex = 0;
             this.PtbPatients.TabStop = false;
@@ -100,17 +98,16 @@ namespace PatientSystem.Keep
             // 
             this.tableLayoutPanel3.ColumnCount = 1;
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 29F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel3.Controls.Add(this.DgvPatients, 0, 1);
             this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel4, 0, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(69, 257);
-            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(48, 133);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 2;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.94969F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 88.05032F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(555, 530);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(388, 274);
             this.tableLayoutPanel3.TabIndex = 3;
             // 
             // DgvPatients
@@ -121,16 +118,16 @@ namespace PatientSystem.Keep
             this.DgvPatients.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DgvPatients.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DgvPatients.GridColor = System.Drawing.Color.DarkGray;
-            this.DgvPatients.Location = new System.Drawing.Point(4, 68);
-            this.DgvPatients.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.DgvPatients.Location = new System.Drawing.Point(3, 35);
             this.DgvPatients.MultiSelect = false;
             this.DgvPatients.Name = "DgvPatients";
             this.DgvPatients.ReadOnly = true;
             this.DgvPatients.RowHeadersWidth = 62;
             this.DgvPatients.RowTemplate.Height = 25;
             this.DgvPatients.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DgvPatients.Size = new System.Drawing.Size(547, 457);
+            this.DgvPatients.Size = new System.Drawing.Size(382, 236);
             this.DgvPatients.TabIndex = 1;
+            this.DgvPatients.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvPatients_CellContentClick);
             // 
             // tableLayoutPanel4
             // 
@@ -142,12 +139,11 @@ namespace PatientSystem.Keep
             this.tableLayoutPanel4.Controls.Add(this.MtbCard, 1, 0);
             this.tableLayoutPanel4.Controls.Add(this.BtnSearch, 2, 0);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(4, 5);
-            this.tableLayoutPanel4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 1;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(547, 53);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(382, 26);
             this.tableLayoutPanel4.TabIndex = 2;
             // 
             // LblSearch
@@ -155,21 +151,19 @@ namespace PatientSystem.Keep
             this.LblSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.LblSearch.AutoSize = true;
             this.LblSearch.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.LblSearch.Location = new System.Drawing.Point(46, 0);
-            this.LblSearch.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.LblSearch.Location = new System.Drawing.Point(4, 0);
             this.LblSearch.Name = "LblSearch";
-            this.LblSearch.Size = new System.Drawing.Size(88, 53);
+            this.LblSearch.Size = new System.Drawing.Size(90, 17);
             this.LblSearch.TabIndex = 0;
             this.LblSearch.Text = "Identity Card:";
             // 
             // MtbCard
             // 
             this.MtbCard.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.MtbCard.Location = new System.Drawing.Point(142, 5);
-            this.MtbCard.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.MtbCard.Location = new System.Drawing.Point(100, 3);
             this.MtbCard.Mask = "000-0000000-0";
             this.MtbCard.Name = "MtbCard";
-            this.MtbCard.Size = new System.Drawing.Size(208, 31);
+            this.MtbCard.Size = new System.Drawing.Size(145, 23);
             this.MtbCard.TabIndex = 1;
             // 
             // BtnSearch
@@ -179,21 +173,20 @@ namespace PatientSystem.Keep
             this.BtnSearch.FlatAppearance.BorderSize = 0;
             this.BtnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnSearch.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.BtnSearch.Location = new System.Drawing.Point(358, 5);
-            this.BtnSearch.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.BtnSearch.Location = new System.Drawing.Point(251, 3);
             this.BtnSearch.Name = "BtnSearch";
-            this.BtnSearch.Size = new System.Drawing.Size(185, 43);
+            this.BtnSearch.Size = new System.Drawing.Size(128, 20);
             this.BtnSearch.TabIndex = 2;
             this.BtnSearch.Text = "Search";
             this.BtnSearch.UseVisualStyleBackColor = false;
+            this.BtnSearch.Click += new System.EventHandler(this.BtnSearch_Click);
             // 
             // FrmListPatients
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(694, 867);
+            this.ClientSize = new System.Drawing.Size(486, 449);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "FrmListPatients";
             this.Text = "Patients";
             this.Load += new System.EventHandler(this.FrmListPatients_Load);

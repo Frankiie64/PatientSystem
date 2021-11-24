@@ -11,7 +11,6 @@ namespace PatientSystem.Patients
 {
     public partial class FrmAddPatients : Form
     {
-
         private ServicePatient _service;
         public int? id = null;
         SqlConnection _connection;
@@ -22,7 +21,6 @@ namespace PatientSystem.Patients
             _connection = cn;
             _service = new ServicePatient(cn);
         }
-
         private void FrmAddPatients_Load(object sender, EventArgs e)
         {
 
@@ -32,7 +30,6 @@ namespace PatientSystem.Patients
         {
             AddPhoto();
         }
-
         public void AddPatient()
         {
             PatientsModel item = new PatientsModel();
@@ -56,17 +53,17 @@ namespace PatientSystem.Patients
                     }
                     else
                     {
-                        MessageBox.Show("The patients was not saved bacanamente", "System");
+                        MessageBox.Show("The patients was not saved sad-mente", "System");
                     }
                 }
                 else
                 {
-                    MessageBox.Show("The patients was not saved bacanamente", "System");
+                    MessageBox.Show("The patients was not saved sad-mente", "System");
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("The patients was not saved bacanamente", "System");
+                MessageBox.Show("The patients was not saved sad-mente", "System");
 
             }
         }
@@ -153,7 +150,6 @@ namespace PatientSystem.Patients
 
             }
         }
-
         public void LoadCbx()
         {
             ComboBoxItem defaultOption = new ComboBoxItem();
@@ -182,7 +178,6 @@ namespace PatientSystem.Patients
                 paciente(yesismoke, noidontsmoke);
             }
         }
-
         private void BtnConfirm_Click(object sender, EventArgs e)
         {
             if (GlobalRepositoty.Instance.id == 0)
@@ -195,13 +190,11 @@ namespace PatientSystem.Patients
             }
             this.Close();
         }
-
         private void FrmAddPatients_FormClosed(object sender, FormClosedEventArgs e)
         {
             FrmPatients patients = new FrmPatients(_connection);
             patients.Show();
         }
-
         private void BtnBack_Click(object sender, EventArgs e)
         {
             this.Close();

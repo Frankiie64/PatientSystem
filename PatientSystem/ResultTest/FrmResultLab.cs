@@ -8,11 +8,12 @@ namespace PatientSystem.ResultTest
 {
     public partial class FrmResultLab : Form
     {
-        //SqlConnection _cn;
+        SqlConnection _cn;
         //TestResultService _service;
-        public FrmResultLab()
+        public FrmResultLab(SqlConnection cn)
         {
             InitializeComponent();
+            _cn = cn;
 
         }
 

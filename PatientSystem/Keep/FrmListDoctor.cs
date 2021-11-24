@@ -19,5 +19,12 @@ namespace PatientSystem.Keep
         {
 
         }
+
+        private void BtnNext_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            FrmDate date = new FrmDate();
+            date.Show();
+        }
     }
 }

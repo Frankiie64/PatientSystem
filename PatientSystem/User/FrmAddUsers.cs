@@ -185,9 +185,7 @@ namespace PatientSystem.User
                  else if (_service.AddUser(CreateUse()) == 4)
                 {
                 MessageBox.Show("Error desconocido", "Notficacion");
-
                 }
-
         }
         private void loadUsers()
         {
@@ -235,8 +233,6 @@ namespace PatientSystem.User
             {
                 return false;
             }
-        }
-
-       
+        }       
     }
 }

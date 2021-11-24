@@ -64,23 +64,21 @@ namespace PatientSystem.Keep
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel3, 1, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 3;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 30.44637F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 51.06511F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 18.48853F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(694, 867);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(486, 449);
             this.tableLayoutPanel1.TabIndex = 7;
             // 
             // PtbKeep
             // 
             this.PtbKeep.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PtbKeep.Image = ((System.Drawing.Image)(resources.GetObject("PtbKeep.Image")));
-            this.PtbKeep.Location = new System.Drawing.Point(42, 5);
-            this.PtbKeep.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.PtbKeep.Location = new System.Drawing.Point(29, 3);
             this.PtbKeep.Name = "PtbKeep";
-            this.PtbKeep.Size = new System.Drawing.Size(609, 253);
+            this.PtbKeep.Size = new System.Drawing.Size(426, 130);
             this.PtbKeep.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.PtbKeep.TabIndex = 0;
             this.PtbKeep.TabStop = false;
@@ -94,14 +92,13 @@ namespace PatientSystem.Keep
             this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel4, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.tableLayoutPanel5, 1, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(42, 710);
-            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(29, 368);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 2;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 49.33333F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50.66667F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 33F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(609, 152);
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(426, 78);
             this.tableLayoutPanel2.TabIndex = 2;
             // 
             // BtnDelete
@@ -114,10 +111,9 @@ namespace PatientSystem.Keep
             this.BtnDelete.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.BtnDelete.Image = ((System.Drawing.Image)(resources.GetObject("BtnDelete.Image")));
             this.BtnDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnDelete.Location = new System.Drawing.Point(4, 79);
-            this.BtnDelete.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.BtnDelete.Location = new System.Drawing.Point(3, 41);
             this.BtnDelete.Name = "BtnDelete";
-            this.BtnDelete.Size = new System.Drawing.Size(601, 68);
+            this.BtnDelete.Size = new System.Drawing.Size(420, 34);
             this.BtnDelete.TabIndex = 3;
             this.BtnDelete.Text = "Deleted";
             this.BtnDelete.UseVisualStyleBackColor = false;
@@ -130,13 +126,12 @@ namespace PatientSystem.Keep
             this.tableLayoutPanel4.Controls.Add(this.BtnCheck, 1, 0);
             this.tableLayoutPanel4.Controls.Add(this.BtnConsult, 0, 0);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(4, 5);
-            this.tableLayoutPanel4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 1;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 63F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(296, 64);
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 32F));
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(207, 32);
             this.tableLayoutPanel4.TabIndex = 4;
             // 
             // BtnCheck
@@ -146,10 +141,9 @@ namespace PatientSystem.Keep
             this.BtnCheck.FlatAppearance.BorderSize = 0;
             this.BtnCheck.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnCheck.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.BtnCheck.Location = new System.Drawing.Point(152, 5);
-            this.BtnCheck.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.BtnCheck.Location = new System.Drawing.Point(106, 3);
             this.BtnCheck.Name = "BtnCheck";
-            this.BtnCheck.Size = new System.Drawing.Size(140, 54);
+            this.BtnCheck.Size = new System.Drawing.Size(98, 26);
             this.BtnCheck.TabIndex = 0;
             this.BtnCheck.Text = "Check results";
             this.BtnCheck.UseVisualStyleBackColor = false;
@@ -161,10 +155,9 @@ namespace PatientSystem.Keep
             this.BtnConsult.FlatAppearance.BorderSize = 0;
             this.BtnConsult.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnConsult.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.BtnConsult.Location = new System.Drawing.Point(4, 5);
-            this.BtnConsult.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.BtnConsult.Location = new System.Drawing.Point(3, 3);
             this.BtnConsult.Name = "BtnConsult";
-            this.BtnConsult.Size = new System.Drawing.Size(140, 54);
+            this.BtnConsult.Size = new System.Drawing.Size(97, 26);
             this.BtnConsult.TabIndex = 1;
             this.BtnConsult.Text = "Consult";
             this.BtnConsult.UseVisualStyleBackColor = false;
@@ -177,13 +170,12 @@ namespace PatientSystem.Keep
             this.tableLayoutPanel5.Controls.Add(this.BtnDeselect, 1, 0);
             this.tableLayoutPanel5.Controls.Add(this.BtnSee, 0, 0);
             this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel5.Location = new System.Drawing.Point(308, 5);
-            this.tableLayoutPanel5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(216, 3);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 1;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 63F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(297, 64);
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 32F));
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(207, 32);
             this.tableLayoutPanel5.TabIndex = 5;
             // 
             // BtnDeselect
@@ -194,13 +186,13 @@ namespace PatientSystem.Keep
             this.BtnDeselect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnDeselect.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.BtnDeselect.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnDeselect.Location = new System.Drawing.Point(152, 5);
-            this.BtnDeselect.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.BtnDeselect.Location = new System.Drawing.Point(106, 3);
             this.BtnDeselect.Name = "BtnDeselect";
-            this.BtnDeselect.Size = new System.Drawing.Size(141, 54);
+            this.BtnDeselect.Size = new System.Drawing.Size(98, 26);
             this.BtnDeselect.TabIndex = 3;
             this.BtnDeselect.Text = "Deselect";
             this.BtnDeselect.UseVisualStyleBackColor = false;
+            this.BtnDeselect.Click += new System.EventHandler(this.BtnDeselect_Click);
             // 
             // BtnSee
             // 
@@ -209,10 +201,9 @@ namespace PatientSystem.Keep
             this.BtnSee.FlatAppearance.BorderSize = 0;
             this.BtnSee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnSee.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.BtnSee.Location = new System.Drawing.Point(4, 5);
-            this.BtnSee.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.BtnSee.Location = new System.Drawing.Point(3, 3);
             this.BtnSee.Name = "BtnSee";
-            this.BtnSee.Size = new System.Drawing.Size(140, 54);
+            this.BtnSee.Size = new System.Drawing.Size(97, 26);
             this.BtnSee.TabIndex = 4;
             this.BtnSee.Text = "See Results";
             this.BtnSee.UseVisualStyleBackColor = false;
@@ -221,18 +212,17 @@ namespace PatientSystem.Keep
             // 
             this.tableLayoutPanel3.ColumnCount = 1;
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 29F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel3.Controls.Add(this.BtnAdd, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.DgvKeep, 0, 1);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(42, 268);
-            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(29, 139);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 2;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.98842F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 83.01158F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 33F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(609, 432);
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(426, 223);
             this.tableLayoutPanel3.TabIndex = 3;
             this.tableLayoutPanel3.Paint += new System.Windows.Forms.PaintEventHandler(this.tableLayoutPanel3_Paint);
             // 
@@ -245,13 +235,13 @@ namespace PatientSystem.Keep
             this.BtnAdd.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.BtnAdd.Image = ((System.Drawing.Image)(resources.GetObject("BtnAdd.Image")));
             this.BtnAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnAdd.Location = new System.Drawing.Point(4, 5);
-            this.BtnAdd.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.BtnAdd.Location = new System.Drawing.Point(3, 3);
             this.BtnAdd.Name = "BtnAdd";
-            this.BtnAdd.Size = new System.Drawing.Size(601, 63);
+            this.BtnAdd.Size = new System.Drawing.Size(420, 31);
             this.BtnAdd.TabIndex = 2;
             this.BtnAdd.Text = "Add quotes";
             this.BtnAdd.UseVisualStyleBackColor = false;
+            this.BtnAdd.Click += new System.EventHandler(this.BtnAdd_Click);
             // 
             // DgvKeep
             // 
@@ -261,24 +251,23 @@ namespace PatientSystem.Keep
             this.DgvKeep.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DgvKeep.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DgvKeep.GridColor = System.Drawing.Color.DarkGray;
-            this.DgvKeep.Location = new System.Drawing.Point(4, 78);
-            this.DgvKeep.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.DgvKeep.Location = new System.Drawing.Point(3, 40);
             this.DgvKeep.MultiSelect = false;
             this.DgvKeep.Name = "DgvKeep";
             this.DgvKeep.ReadOnly = true;
             this.DgvKeep.RowHeadersWidth = 62;
             this.DgvKeep.RowTemplate.Height = 25;
             this.DgvKeep.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DgvKeep.Size = new System.Drawing.Size(601, 349);
+            this.DgvKeep.Size = new System.Drawing.Size(420, 180);
             this.DgvKeep.TabIndex = 1;
+            this.DgvKeep.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvKeep_CellClick);
             // 
             // FrmKeep
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(694, 867);
+            this.ClientSize = new System.Drawing.Size(486, 449);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "FrmKeep";
             this.Text = "Keep";
             this.Load += new System.EventHandler(this.FrmKeep_Load);

@@ -58,13 +58,12 @@ namespace PatientSystem.Keep
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel3, 1, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 3;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 30.38461F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60.96154F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.461538F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(694, 867);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(486, 449);
             this.tableLayoutPanel1.TabIndex = 8;
             // 
             // BtnNext
@@ -76,22 +75,21 @@ namespace PatientSystem.Keep
             this.BtnNext.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.BtnNext.Image = ((System.Drawing.Image)(resources.GetObject("BtnNext.Image")));
             this.BtnNext.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnNext.Location = new System.Drawing.Point(69, 797);
-            this.BtnNext.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.BtnNext.Location = new System.Drawing.Point(48, 413);
             this.BtnNext.Name = "BtnNext";
-            this.BtnNext.Size = new System.Drawing.Size(555, 65);
+            this.BtnNext.Size = new System.Drawing.Size(388, 33);
             this.BtnNext.TabIndex = 4;
             this.BtnNext.Text = "Next step";
             this.BtnNext.UseVisualStyleBackColor = false;
+            this.BtnNext.Click += new System.EventHandler(this.BtnNext_Click);
             // 
             // PtbDoctor
             // 
             this.PtbDoctor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PtbDoctor.Image = ((System.Drawing.Image)(resources.GetObject("PtbDoctor.Image")));
-            this.PtbDoctor.Location = new System.Drawing.Point(69, 5);
-            this.PtbDoctor.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.PtbDoctor.Location = new System.Drawing.Point(48, 3);
             this.PtbDoctor.Name = "PtbDoctor";
-            this.PtbDoctor.Size = new System.Drawing.Size(555, 253);
+            this.PtbDoctor.Size = new System.Drawing.Size(388, 130);
             this.PtbDoctor.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.PtbDoctor.TabIndex = 0;
             this.PtbDoctor.TabStop = false;
@@ -100,17 +98,16 @@ namespace PatientSystem.Keep
             // 
             this.tableLayoutPanel3.ColumnCount = 1;
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 29F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel3.Controls.Add(this.DgvDoctor, 0, 1);
             this.tableLayoutPanel3.Controls.Add(this.tableLayoutPanel4, 0, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(69, 268);
-            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(48, 139);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 2;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.54019F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 87.45981F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(555, 519);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(388, 268);
             this.tableLayoutPanel3.TabIndex = 3;
             // 
             // DgvDoctor
@@ -121,15 +118,14 @@ namespace PatientSystem.Keep
             this.DgvDoctor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DgvDoctor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DgvDoctor.GridColor = System.Drawing.Color.DarkGray;
-            this.DgvDoctor.Location = new System.Drawing.Point(4, 70);
-            this.DgvDoctor.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.DgvDoctor.Location = new System.Drawing.Point(3, 36);
             this.DgvDoctor.MultiSelect = false;
             this.DgvDoctor.Name = "DgvDoctor";
             this.DgvDoctor.ReadOnly = true;
             this.DgvDoctor.RowHeadersWidth = 62;
             this.DgvDoctor.RowTemplate.Height = 25;
             this.DgvDoctor.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DgvDoctor.Size = new System.Drawing.Size(547, 444);
+            this.DgvDoctor.Size = new System.Drawing.Size(382, 229);
             this.DgvDoctor.TabIndex = 1;
             // 
             // tableLayoutPanel4
@@ -142,12 +138,11 @@ namespace PatientSystem.Keep
             this.tableLayoutPanel4.Controls.Add(this.MtbCard, 1, 0);
             this.tableLayoutPanel4.Controls.Add(this.BtnSearch, 2, 0);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(4, 5);
-            this.tableLayoutPanel4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 1;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(547, 55);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(382, 27);
             this.tableLayoutPanel4.TabIndex = 2;
             // 
             // LblSearch
@@ -155,21 +150,19 @@ namespace PatientSystem.Keep
             this.LblSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.LblSearch.AutoSize = true;
             this.LblSearch.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.LblSearch.Location = new System.Drawing.Point(46, 0);
-            this.LblSearch.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.LblSearch.Location = new System.Drawing.Point(4, 0);
             this.LblSearch.Name = "LblSearch";
-            this.LblSearch.Size = new System.Drawing.Size(88, 55);
+            this.LblSearch.Size = new System.Drawing.Size(90, 17);
             this.LblSearch.TabIndex = 0;
             this.LblSearch.Text = "Identity Card:";
             // 
             // MtbCard
             // 
             this.MtbCard.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.MtbCard.Location = new System.Drawing.Point(142, 5);
-            this.MtbCard.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.MtbCard.Location = new System.Drawing.Point(100, 3);
             this.MtbCard.Mask = "000-0000000-0";
             this.MtbCard.Name = "MtbCard";
-            this.MtbCard.Size = new System.Drawing.Size(208, 31);
+            this.MtbCard.Size = new System.Drawing.Size(145, 23);
             this.MtbCard.TabIndex = 1;
             // 
             // BtnSearch
@@ -179,21 +172,19 @@ namespace PatientSystem.Keep
             this.BtnSearch.FlatAppearance.BorderSize = 0;
             this.BtnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnSearch.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.BtnSearch.Location = new System.Drawing.Point(358, 5);
-            this.BtnSearch.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.BtnSearch.Location = new System.Drawing.Point(251, 3);
             this.BtnSearch.Name = "BtnSearch";
-            this.BtnSearch.Size = new System.Drawing.Size(185, 45);
+            this.BtnSearch.Size = new System.Drawing.Size(128, 21);
             this.BtnSearch.TabIndex = 2;
             this.BtnSearch.Text = "Search";
             this.BtnSearch.UseVisualStyleBackColor = false;
             // 
             // FrmListDoctor
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(694, 867);
+            this.ClientSize = new System.Drawing.Size(486, 449);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "FrmListDoctor";
             this.Text = "Doctor";
             this.Load += new System.EventHandler(this.FrmListDoctor_Load);

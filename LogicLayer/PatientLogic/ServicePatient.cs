@@ -11,22 +11,21 @@ namespace LogicLayer.PatientLogic
     public class ServicePatient
     {
         private SqlConnection _connection;
-        private PatientsRepository repo;
+        private PatientsRepository _repo;
         public ServicePatient(SqlConnection connection)
         {
             _connection = connection;
-            repo = new PatientsRepository(_connection);
+            _repo = new PatientsRepository(_connection);
         }
         public bool Add(PatientsModel item)
         {
             try
             {
-                string identification = (repo.ValidationExist(item.Identification).Identification != item.Identification ? "" : (repo.ValidationExist(item.Identification)).Identification.Trim());
-
+                string identification = (_repo.ValidationExist(item.Identification).Identification != item.Identification ? "" : (_repo.ValidationExist(item.Identification)).Identification.Trim());
 
                 if (identification != item.Identification)
                 {
-                    return repo.Add(item);                                      
+                    return _repo.Add(item);                                      
                 }
                 else
                 {
@@ -38,10 +37,9 @@ namespace LogicLayer.PatientLogic
                 return false;
             }
         }
-
         public bool SavePhoto(int id, string Photo)
         {
-            return repo.SavePhoto(Photo, id);
+            return _repo.SavePhoto(Photo, id);
         }
         public bool Edit(PatientsModel item, string Identification)
         {
@@ -49,15 +47,15 @@ namespace LogicLayer.PatientLogic
             {
                 if (item.Identification == Identification)
                 {
-                    return repo.Edit(item, GlobalRepositoty.Instance.id);
+                    return _repo.Edit(item, GlobalRepositoty.Instance.id);
                 }
-                else if (repo.ValidationExist(item.Identification).Identification != item.Identification)
+                else if (_repo.ValidationExist(item.Identification).Identification != item.Identification)
                 {
-                    return repo.Edit(item, GlobalRepositoty.Instance.id);
+                    return _repo.Edit(item, GlobalRepositoty.Instance.id);
                 }
-                else if (repo.ValidationExist(item.Identification).Identification.Trim() != item.Identification)
+                else if (_repo.ValidationExist(item.Identification).Identification.Trim() != item.Identification)
                 {
-                    return repo.Edit(item, GlobalRepositoty.Instance.id);
+                    return _repo.Edit(item, GlobalRepositoty.Instance.id);
                 }
                 else
                 {
@@ -72,20 +70,19 @@ namespace LogicLayer.PatientLogic
         }
         public bool Delete(int id)
         {
-            return repo.Delete(id);
+            return _repo.Delete(id);
         }
         public int GetLastId()
         {
-            return repo.GetLastId();
+            return _repo.GetLastId();
         }
         public PatientsModel GetById(int id)
         {
-            return repo.GetById(id);
+            return _repo.GetById(id);
         }
         public DataTable GetAll()
         {
-            return  repo.GetAll();
+            return  _repo.GetAll();
         }
-
     }
 }

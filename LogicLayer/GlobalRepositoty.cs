@@ -16,6 +16,7 @@ namespace LogicLayer
         public LabTest test = new LabTest();
         public LabResult result = new LabResult();
         public Doctors Doc = new Doctors();
+        public Appointment appointment = new Appointment();
 
         public int TyperUser = new int();
         private GlobalRepositoty()
