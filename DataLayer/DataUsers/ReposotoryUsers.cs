@@ -101,7 +101,7 @@ namespace DataLayer.DataUsers
 
         public DataTable GetallUsers()
         {
-            SqlCommand command = new SqlCommand("select * from Users", _connection);
+            SqlCommand command = new SqlCommand("select Users.Id, Users.FName as 'First name', Users.LastName as 'Last Name', Users.Email,Users.NickName as 'Users', Rol.Nombre as 'Rol' from Users inner join Rol on Users.TypeUsers = Rol.id", _connection);
             command.CommandType = CommandType.Text;
             
             SqlDataAdapter query = new SqlDataAdapter(command);

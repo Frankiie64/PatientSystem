@@ -98,7 +98,7 @@ namespace PatientSystem.Lab
         {
             if (GlobalRepositoty.Instance.index < 0)
             {
-                MessageBox.Show("Por favor seleccione el usario que desea Editar", "Error");
+                MessageBox.Show("Por favor seleccione el usario que desea Eliminar", "Error");
             }
             else
             {
@@ -109,6 +109,7 @@ namespace PatientSystem.Lab
                     if (service.DeleteLabTest(GlobalRepositoty.Instance.id))
                     {
                         MessageBox.Show("Se ha elimanado correctamente la prueba", "Notificacion");
+                        Deselect();
                     }
                 }
                 else

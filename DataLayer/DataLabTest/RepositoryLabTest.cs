@@ -47,7 +47,7 @@ namespace DataLayer.DataLabTest
 
         public DataTable GetallUsers()
         {
-            SqlCommand command = new SqlCommand("select * from LabTest", _connection);
+            SqlCommand command = new SqlCommand("select id,Title as 'Name of Test' from LabTest", _connection);
             command.CommandType = CommandType.Text;
 
             SqlDataAdapter query = new SqlDataAdapter(command);
