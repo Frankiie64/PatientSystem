@@ -33,31 +33,60 @@ namespace PatientSystem.Keep
 
         private void BtnNext_Click(object sender, EventArgs e)
         {
-            Appointment item = new Appointment();
             try
             {
-                item.Id = GlobalRepositoty.Instance.id;
-                item.Id_Patients = GlobalRepositoty.Instance.Patient.Id;
-                item.Id_Doctor = GlobalRepositoty.Instance.Doc.Id;
-                item.Date_Appointment = Convert.ToDateTime(MtbDate.Text);
-                item.StatusAppointment = GlobalRepositoty.Instance.appointment.StatusAppointment;
-                item.Cause = TxbReason.Text;
+                if (Validation())
+                {
+                    Appointment item = new Appointment();
 
-                _service.AddApointment(item);
+                    item.Id_Patients = GlobalRepositoty.Instance.Patient.Id;
+                    item.Id_Doctor = GlobalRepositoty.Instance.Doc.Id;
+                    item.Date_Appointment = Convert.ToDateTime($"{MtbDate.Text} {MtbHour.Text}");
+                    item.StatusAppointment = 1;
+                    item.Cause = TxbReason.Text;
 
-                this.Close();
+                   if( _service.AddApointment(item))
+                    {
+                        MessageBox.Show("The appointmet was create sucessfull", "Notification");
+                        this.Close();
+                    }
+                   else
+                    {
+                        MessageBox.Show("The appointmet wasn't create sucessfull", "Notification");
+                    }
+
+                }            
             }
             catch (Exception)
             {
-                MessageBox.Show("The Appointment was not saved :/", "System");
+                
             }
-        }
+}
 
         private void FrmDate_FormClosed(object sender, FormClosedEventArgs e)
         {
-            MessageBox.Show("We'll go to the principal menu", "System");
-            FrmHome home = new FrmHome(_cn);
-            home.Show();
+            MessageBox.Show("We'll go to the keep menu", "System");
+            FrmKeep Apoint = new FrmKeep(_cn);
+            Apoint.Show();
+        }
+
+        private bool Validation()
+        {
+            DateTime dt;
+            if (!DateTime.TryParse(MtbDate.Text, out dt))
+            {
+                MessageBox.Show("Por favor introduzca una fecha que petenerzca al calendiario romano.", "ERROR");
+                return false;
+            }
+            else if (!DateTime.TryParse(MtbHour.Text, out dt))
+            {
+                MessageBox.Show("Por favor introduzca una del formato que petenerzca al 24H.", "ERROR");
+                return false;
+            }
+            else
+            {
+                return true;
+            }
         }
     }
 }

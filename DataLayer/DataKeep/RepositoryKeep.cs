@@ -153,6 +153,8 @@ namespace DataLayer.DataKeep
             SqlCommand command = new SqlCommand("select * from Doctors where Identification = @identification", _connection);
             command.CommandType = CommandType.Text;
 
+            command.Parameters.AddWithValue("@identification", identification);
+
             SqlDataAdapter query = new SqlDataAdapter(command);
 
             return LoadTable(query);
@@ -190,7 +192,7 @@ namespace DataLayer.DataKeep
         }
         public DataTable GetallDoctors()
         {
-            SqlCommand command = new SqlCommand("select * from Doctors", _connection);
+            SqlCommand command = new SqlCommand("select Id,FName as 'Name', LastName as 'Last name', Email, PhoneNumber, Identification,Photos from Doctors", _connection);
             command.CommandType = CommandType.Text;
 
             SqlDataAdapter query = new SqlDataAdapter(command);

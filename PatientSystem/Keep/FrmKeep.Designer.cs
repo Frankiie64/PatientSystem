@@ -136,7 +136,7 @@ namespace PatientSystem.Keep
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 1;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 53F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 54F));
             this.tableLayoutPanel4.Size = new System.Drawing.Size(296, 54);
             this.tableLayoutPanel4.TabIndex = 4;
             // 
@@ -169,6 +169,7 @@ namespace PatientSystem.Keep
             this.BtnConsult.TabIndex = 1;
             this.BtnConsult.Text = "Consult";
             this.BtnConsult.UseVisualStyleBackColor = false;
+            this.BtnConsult.Click += new System.EventHandler(this.BtnConsult_Click);
             // 
             // tableLayoutPanel5
             // 
@@ -183,7 +184,7 @@ namespace PatientSystem.Keep
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 1;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 53F));
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 54F));
             this.tableLayoutPanel5.Size = new System.Drawing.Size(297, 54);
             this.tableLayoutPanel5.TabIndex = 5;
             // 

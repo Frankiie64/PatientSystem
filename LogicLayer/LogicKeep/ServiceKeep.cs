@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
 using System.Text;
+using DataLayer.DataLabTest;
 
 namespace LogicLayer.LogicKeep
 {
@@ -14,10 +15,13 @@ namespace LogicLayer.LogicKeep
 
         SqlConnection _connection;
         RepositoryKeep _repo;
+        RepositoryLabTest labTest;
+
         public ServiceKeep(SqlConnection connection)
         {
             _connection = connection;
             _repo = new RepositoryKeep(_connection);
+            labTest = new RepositoryLabTest(_connection);
         }
 
         #region Keeps
@@ -67,6 +71,14 @@ namespace LogicLayer.LogicKeep
             return _repo.GetByIdPatient(id);
         }
 
+        #endregion
+
+        #region LabTest
+
+        public DataTable GetListTest()
+        {
+            return labTest.GetallUsers();
+        }
         #endregion
     }
 }

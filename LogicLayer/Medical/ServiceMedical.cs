@@ -31,7 +31,7 @@ namespace LogicLayer.Medical
                 {                    
                     if (DataMedical.AddDoc(Doc))
                     {
-                        if(EnviarCorreo(Doc.Email, "titulo", "correcto"))
+                        if(EnviarCorreo(Doc.Email, "Se ha creado correctamente el doctor", $"El doctor {Doc.FName} con la identificacion {Doc.Identification} se ha registrado correctamente."))
                         {
                             return 1;
                         }

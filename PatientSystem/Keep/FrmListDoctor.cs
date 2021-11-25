@@ -26,6 +26,10 @@ namespace PatientSystem.Keep
             LoadData();
            
         }
+        private void BtnDeselect_Click(object sender, EventArgs e)
+        {
+            Deselect();
+        }
         private void LoadData()
         {
             DgvDoctor.DataSource = _service.GetListDoctors();
@@ -37,6 +41,8 @@ namespace PatientSystem.Keep
         {
             if (ValidtionNextSteph())
             {
+                GlobalRepositoty.Instance.Doc = _service.GetDoctorsById(GlobalRepositoty.Instance.id);
+                Deselect();
                 FrmDate date = new FrmDate(_cn);
                 date.Show();
                 this.Close();
@@ -48,15 +54,16 @@ namespace PatientSystem.Keep
         }
         private bool ValidtionNextSteph()
         {
-            return GlobalRepositoty.Instance.index >= 0 ? true : false;
-        }      
+            return GlobalRepositoty.Instance.id > 0 ? true : false;
+        }
         private void DgvDoctor_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
             {
                 GlobalRepositoty.Instance.id = Convert.ToInt32(DgvDoctor.CurrentRow.Cells[0].Value);
-                GlobalRepositoty.Instance.index = e.RowIndex;
-                GlobalRepositoty.Instance.Doc = _service.GetDoctorsById(GlobalRepositoty.Instance.id);
+
+                BtnDeselect.Visible = true;
+
             }
         }
         private bool validationSearch()
@@ -67,10 +74,17 @@ namespace PatientSystem.Keep
         {
             if (validationSearch())
             {
-                DgvDoctor.DataSource = _service.GetUniquePatients(MtbCard.Text);
+                DgvDoctor.DataSource = _service.GetUniqueDoctors(MtbCard.Text);
+                BtnDeselect.Visible = true;
                 if (DgvDoctor.Rows.Count == 0)
                 {
                     MessageBox.Show($"The id {DgvDoctor.DataSource} does not exist in the current context.Please try again :)");
+                }
+                else
+                {
+                    DgvDoctor.Rows[0].Selected = true;
+                    GlobalRepositoty.Instance.id = Convert.ToInt32(DgvDoctor.CurrentRow.Cells[0].Value);
+
                 }
             }
             else
@@ -78,5 +92,19 @@ namespace PatientSystem.Keep
                 MessageBox.Show("Please, complete the form");
             }
         }
+       
+        private void Deselect()
+        {
+
+
+            MtbCard.Clear();
+            DgvDoctor.ClearSelection();
+            BtnDeselect.Visible = false;
+            LoadData();
+
+            GlobalRepositoty.Instance.id = new int();
+
+        }
+        
     }
 }

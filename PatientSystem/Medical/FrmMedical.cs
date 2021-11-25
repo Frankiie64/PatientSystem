@@ -101,8 +101,15 @@ namespace PatientSystem.Medical
                 GlobalRepositoty.Instance.index = e.RowIndex;
                 GlobalRepositoty.Instance._filename = Convert.ToString(DgvDoctor.CurrentRow.Cells[6].Value);
 
-                PtbDoctor.ImageLocation = GlobalRepositoty.Instance._filename;
-                PtbDoctor.SizeMode = PictureBoxSizeMode.StretchImage;
+                if(GlobalRepositoty.Instance._filename == "")
+                {
+                    PtbDoctor.SizeMode = PictureBoxSizeMode.CenterImage;
+                }
+                else
+                {
+                    PtbDoctor.ImageLocation = GlobalRepositoty.Instance._filename;
+                    PtbDoctor.SizeMode = PictureBoxSizeMode.StretchImage;
+                }             
                 BtnDeselect.Visible = true;
 
                 GlobalRepositoty.Instance.Doc = service.GetById(GlobalRepositoty.Instance.id);

@@ -28,6 +28,12 @@ namespace PatientSystem.Keep
                     MessageBox.Show("the id you try to find does not exist in the data base");
                     Deselect();
                 }
+                else
+                {
+                    DgvPatients.Rows[0].Selected = true;
+                    GlobalRepositoty.Instance.id = Convert.ToInt32(DgvPatients.CurrentRow.Cells[0].Value);
+
+                }
             }
             else
             {
@@ -46,6 +52,8 @@ namespace PatientSystem.Keep
         {
             if(ValidtionNextSteph())
             {
+                GlobalRepositoty.Instance.Patient = _service.GetPatientsById(GlobalRepositoty.Instance.id);
+                Deselect();
                 this.Close();
                 FrmListDoctor listDoctors = new FrmListDoctor(_cn);
                 listDoctors.Show();
@@ -60,19 +68,15 @@ namespace PatientSystem.Keep
             if (e.RowIndex >= 0)
             {
                 GlobalRepositoty.Instance.id = Convert.ToInt32(DgvPatients.CurrentRow.Cells[0].Value);
-                GlobalRepositoty.Instance.index = e.RowIndex;
 
                 BtnDeselect.Visible = true;
-
-                GlobalRepositoty.Instance.Patient = _service.GetPatientsById(GlobalRepositoty.Instance.id);
-
             }
         }
         #endregion
         #region Metodos Private
         private bool ValidtionNextSteph()
         {
-            return GlobalRepositoty.Instance.index >= 0 ? true : false;
+            return GlobalRepositoty.Instance.id > 0 ? true : false;
         }
         private void Deselect()
         {
@@ -81,8 +85,7 @@ namespace PatientSystem.Keep
             BtnDeselect.Visible = false;
             Loadata();
 
-            GlobalRepositoty.Instance.index = -1;
-            GlobalRepositoty.Instance.Patient = new DataLayer.Models.PatientsModel();
+            GlobalRepositoty.Instance.id = new int();
         }
         private void Loadata()
         {          

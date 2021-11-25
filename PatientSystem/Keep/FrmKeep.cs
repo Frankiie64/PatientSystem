@@ -99,5 +99,11 @@ namespace PatientSystem.Keep
         }
         #endregion
 
+        private void BtnConsult_Click(object sender, EventArgs e)
+        {
+            FrmListTest listTest = new FrmListTest(_connection);
+            this.Close();
+            listTest.Show();
+        }
     }
 }

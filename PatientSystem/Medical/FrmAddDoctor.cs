@@ -57,10 +57,7 @@ namespace PatientSystem.Medical
                     if (_service.EditDoc(createDoc(), GlobalRepositoty.Instance.Doc.Identification))
                     {
                         MessageBox.Show("Se ha editado correctamente el usuario", "Notficacion");
-                        if (!SavePhoto())
-                        {
-                            MessageBox.Show("Uhy error de subida en la foto.");
-                        };
+                        SavePhoto();
                         this.Close();
                     }
                     else
