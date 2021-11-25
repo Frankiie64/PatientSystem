@@ -16,7 +16,6 @@ namespace PatientSystem.Keep
             _cn = cn;
             _service = new ServiceKeep(_cn);
         }
-
         #region Events
         private void BtnSearch_Click_1(object sender, EventArgs e)
         {
@@ -54,12 +53,8 @@ namespace PatientSystem.Keep
             else
             {
                 MessageBox.Show("Select a patients, to continue.");
-            }
-       
-            
-        }
-
-       
+            }           
+        }      
         private void DgvPatients_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
@@ -75,7 +70,6 @@ namespace PatientSystem.Keep
         }
         #endregion
         #region Metodos Private
-
         private bool ValidtionNextSteph()
         {
             return GlobalRepositoty.Instance.index >= 0 ? true : false;
@@ -90,24 +84,18 @@ namespace PatientSystem.Keep
             GlobalRepositoty.Instance.index = -1;
             GlobalRepositoty.Instance.Patient = new DataLayer.Models.PatientsModel();
         }
-
         private void Loadata()
-        {
-            
+        {          
             DgvPatients.DataSource = _service.GetListPatients();
             DgvPatients.ClearSelection();
             DgvPatients.Columns[0].Visible = false;
-            DgvPatients.Columns[9].Visible = false;
-            
+            DgvPatients.Columns[9].Visible = false;           
         }
         private bool validationSearch()
         {
             return (MtbCard.MaskFull);
         }
-
-
         #endregion
-
-       
+      
     }
 }

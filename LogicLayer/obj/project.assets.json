@@ -530,19 +530,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Franklyn\\.nuget\\packages\\": {}
+    "C:\\Users\\Panda\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Franklyn\\source\\Keeps\\LogicLayer\\LogicLayer.csproj",
+      "projectUniqueName": "C:\\Users\\Panda\\Source\\Repos\\PatientSystem\\LogicLayer\\LogicLayer.csproj",
       "projectName": "LogicLayer",
-      "projectPath": "C:\\Users\\Franklyn\\source\\Keeps\\LogicLayer\\LogicLayer.csproj",
-      "packagesPath": "C:\\Users\\Franklyn\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Franklyn\\source\\Keeps\\LogicLayer\\obj\\",
+      "projectPath": "C:\\Users\\Panda\\Source\\Repos\\PatientSystem\\LogicLayer\\LogicLayer.csproj",
+      "packagesPath": "C:\\Users\\Panda\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Panda\\Source\\Repos\\PatientSystem\\LogicLayer\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Franklyn\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Panda\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -556,11 +556,11 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "C:\\Users\\Franklyn\\source\\Keeps\\DataLayer\\DataLayer.csproj": {
-              "projectPath": "C:\\Users\\Franklyn\\source\\Keeps\\DataLayer\\DataLayer.csproj"
+            "C:\\Users\\Panda\\Source\\Repos\\PatientSystem\\DataLayer\\DataLayer.csproj": {
+              "projectPath": "C:\\Users\\Panda\\Source\\Repos\\PatientSystem\\DataLayer\\DataLayer.csproj"
             },
-            "C:\\Users\\Franklyn\\source\\Keeps\\EmailLayer\\EmailLayer.csproj": {
-              "projectPath": "C:\\Users\\Franklyn\\source\\Keeps\\EmailLayer\\EmailLayer.csproj"
+            "C:\\Users\\Panda\\Source\\Repos\\PatientSystem\\EmailLayer\\EmailLayer.csproj": {
+              "projectPath": "C:\\Users\\Panda\\Source\\Repos\\PatientSystem\\EmailLayer\\EmailLayer.csproj"
             }
           }
         }
@@ -599,7 +599,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
       }
     }
   }

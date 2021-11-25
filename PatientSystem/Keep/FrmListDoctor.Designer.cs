@@ -127,6 +127,7 @@ namespace PatientSystem.Keep
             this.DgvDoctor.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DgvDoctor.Size = new System.Drawing.Size(382, 229);
             this.DgvDoctor.TabIndex = 1;
+            this.DgvDoctor.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvDoctor_CellClick);
             // 
             // tableLayoutPanel4
             // 
@@ -178,6 +179,7 @@ namespace PatientSystem.Keep
             this.BtnSearch.TabIndex = 2;
             this.BtnSearch.Text = "Search";
             this.BtnSearch.UseVisualStyleBackColor = false;
+            this.BtnSearch.Click += new System.EventHandler(this.BtnSearch_Click);
             // 
             // FrmListDoctor
             // 

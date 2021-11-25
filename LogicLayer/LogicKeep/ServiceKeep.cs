@@ -39,11 +39,14 @@ namespace LogicLayer.LogicKeep
         }
         #endregion
         #region Doctor
-        public Doctors GetDoctorsById(int id)
+        public DataTable GetListDoctors()
+        {
+            return _repo.GetallDoctors();
+        }
+        public Doctors GetDoctorsById(int id) 
         {
             return _repo.GetByIdDoc(id);
         }
-       
         public DataTable GetUniqueDoctors(string identification)
         {
             return _repo.GetUniqueDoctors(identification);

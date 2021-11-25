@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "AjztGCVjriBADB2b5oT6Rz2rAfmaPJdbcUckzUckfYZZsYwzrA04eH8uLOwypd8HBfI4tT3ZNKuYHiR9LpK24Q==",
+  "dgSpecHash": "HvYS+Y/MxwxwIhsgElKRki+GMzwIvZhI2wzpRgd62TXtB5225qzgC3PAm9QIViYrONNtdQ6LIvJTzCJK6lrtjg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Franklyn\\source\\Keeps\\EmailLayer\\EmailLayer.csproj",
+  "projectFilePath": "C:\\Users\\Panda\\Source\\Repos\\PatientSystem\\EmailLayer\\EmailLayer.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Franklyn\\.nuget\\packages\\easendmail\\7.8.0.1\\easendmail.7.8.0.1.nupkg.sha512"
+    "C:\\Users\\Panda\\.nuget\\packages\\easendmail\\7.8.0.1\\easendmail.7.8.0.1.nupkg.sha512"
   ],
   "logs": []
 }

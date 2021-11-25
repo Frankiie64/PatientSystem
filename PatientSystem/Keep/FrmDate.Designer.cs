@@ -40,7 +40,7 @@ namespace PatientSystem.Keep
             this.LblHour = new System.Windows.Forms.Label();
             this.LblReason = new System.Windows.Forms.Label();
             this.TxbPatient = new System.Windows.Forms.TextBox();
-            this.TxbLastName = new System.Windows.Forms.TextBox();
+            this.TxbDoctorName = new System.Windows.Forms.TextBox();
             this.MtbDate = new System.Windows.Forms.MaskedTextBox();
             this.MtbHour = new System.Windows.Forms.MaskedTextBox();
             this.TxbReason = new System.Windows.Forms.TextBox();
@@ -109,7 +109,7 @@ namespace PatientSystem.Keep
             this.tableLayoutPanel1.Controls.Add(this.LblHour, 0, 3);
             this.tableLayoutPanel1.Controls.Add(this.LblReason, 0, 4);
             this.tableLayoutPanel1.Controls.Add(this.TxbPatient, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.TxbLastName, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.TxbDoctorName, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.MtbDate, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.MtbHour, 1, 3);
             this.tableLayoutPanel1.Controls.Add(this.TxbReason, 1, 4);
@@ -191,14 +191,14 @@ namespace PatientSystem.Keep
             this.TxbPatient.Size = new System.Drawing.Size(163, 23);
             this.TxbPatient.TabIndex = 5;
             // 
-            // TxbLastName
+            // TxbDoctorName
             // 
-            this.TxbLastName.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.TxbLastName.Location = new System.Drawing.Point(171, 51);
-            this.TxbLastName.Name = "TxbLastName";
-            this.TxbLastName.ReadOnly = true;
-            this.TxbLastName.Size = new System.Drawing.Size(163, 23);
-            this.TxbLastName.TabIndex = 6;
+            this.TxbDoctorName.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.TxbDoctorName.Location = new System.Drawing.Point(171, 51);
+            this.TxbDoctorName.Name = "TxbDoctorName";
+            this.TxbDoctorName.ReadOnly = true;
+            this.TxbDoctorName.Size = new System.Drawing.Size(163, 23);
+            this.TxbDoctorName.TabIndex = 6;
             // 
             // MtbDate
             // 
@@ -236,6 +236,7 @@ namespace PatientSystem.Keep
             this.Controls.Add(this.TblRegister);
             this.Name = "FrmDate";
             this.Text = "Date";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmDate_FormClosed);
             this.Load += new System.EventHandler(this.FrmDate_Load);
             this.TblRegister.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.PtbDate)).EndInit();
@@ -256,7 +257,7 @@ namespace PatientSystem.Keep
         private System.Windows.Forms.Label LblHour;
         private System.Windows.Forms.Label LblReason;
         private System.Windows.Forms.TextBox TxbPatient;
-        private System.Windows.Forms.TextBox TxbLastName;
+        private System.Windows.Forms.TextBox TxbDoctorName;
         private System.Windows.Forms.Button BtnNext;
         private System.Windows.Forms.MaskedTextBox MtbDate;
         private System.Windows.Forms.MaskedTextBox MtbHour;
