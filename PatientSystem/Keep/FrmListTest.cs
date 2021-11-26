@@ -42,7 +42,7 @@ namespace PatientSystem.Keep
                 GlobalRepositoty.Instance.id = Convert.ToInt32(DgvTest.CurrentRow.Cells[0].Value);              
             }
         }
-        public void AddResult()
+        public bool AddResult()
         {
             LabResult item = new LabResult();
             try
@@ -52,16 +52,38 @@ namespace PatientSystem.Keep
                 item.Id_Appointment = GlobalRepositoty.Instance.appointment.Id;
                 item.Id_LabTest = GlobalRepositoty.Instance.id;
 
-                service.AddResult(item);
+                return service.AddResult(item);
             }
             catch (Exception)
             {
-                MessageBox.Show("The patients was not saved sad-mente", "System");
+              
+                return false;
             }
         }
         private void BtnSelected_Click(object sender, EventArgs e)
         {
-            AddResult();
+            ValidationResult();
+        }
+
+        private void ValidationResult()
+        {
+            if(AddResult())
+            {
+                MessageBox.Show("The tests have been correctly added to the result list.", "Notification");
+                FrmKeep keep = new FrmKeep(_connection);
+                this.Close();
+                keep.Show();
+            }
+            else
+            {
+                MessageBox.Show("The tests could not be added to the result list.", "Notification");
+            }
+
+        }
+
+        private void BtnSearch_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

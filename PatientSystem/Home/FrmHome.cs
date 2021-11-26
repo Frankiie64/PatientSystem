@@ -14,44 +14,44 @@ namespace PatientSystem.Home
             InitializeComponent();
             _conection = connection;
         }
-        #region
+        #region Mantenice
         private void BtnUser_Click(object sender, EventArgs e)
         {
             User.FrmUser Users = new User.FrmUser(_conection);
-            this.Close();
+            this.Hide();
             Users.Show();
         }
         private void BtnMedical_Click(object sender, EventArgs e)
         {
            Medical.FrmMedical medical = new Medical.FrmMedical(_conection);
-            this.Close();
+            this.Hide();
             medical.Show();
         }
         private void BtnTestLab_Click(object sender, EventArgs e)
         {
             Lab.FrmLabTest labTest = new Lab.FrmLabTest(_conection);
-            this.Close();
+            this.Hide();
             labTest.Show();
         }
         private void BtnPatient_Click(object sender, EventArgs e)
         {
             Patients.FrmPatients patients = new Patients.FrmPatients(_conection);
-            this.Close();
+            this.Hide();
             patients.Show();
         }
         private void BtnKeep_Click(object sender, EventArgs e)
         {
             Keep.FrmKeep keep = new Keep.FrmKeep(_conection);
-            this.Close();
+            this.Hide();
             keep.Show();
         }
         private void BtnTestResult_Click(object sender, EventArgs e)
         {
             ResultTest.FrmResultLab resultLab = new ResultTest.FrmResultLab(_conection);
-            this.Close();
+            this.Hide();
             resultLab.Show();
         }   
-        #endregion
+        #endregion 
         private void FrmHome_Load(object sender, EventArgs e)
         {
             if(GlobalRepositoty.Instance.TyperUser == 0)

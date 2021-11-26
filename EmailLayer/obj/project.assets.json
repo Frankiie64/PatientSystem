@@ -48,19 +48,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Panda\\.nuget\\packages\\": {}
+    "C:\\Users\\Franklyn\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Panda\\Source\\Repos\\PatientSystem\\EmailLayer\\EmailLayer.csproj",
+      "projectUniqueName": "C:\\Users\\Franklyn\\source\\KeepX3\\EmailLayer\\EmailLayer.csproj",
       "projectName": "EmailLayer",
-      "projectPath": "C:\\Users\\Panda\\Source\\Repos\\PatientSystem\\EmailLayer\\EmailLayer.csproj",
-      "packagesPath": "C:\\Users\\Panda\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Panda\\Source\\Repos\\PatientSystem\\EmailLayer\\obj\\",
+      "projectPath": "C:\\Users\\Franklyn\\source\\KeepX3\\EmailLayer\\EmailLayer.csproj",
+      "packagesPath": "C:\\Users\\Franklyn\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Franklyn\\source\\KeepX3\\EmailLayer\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Panda\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Franklyn\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -106,7 +106,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
       }
     }
   }

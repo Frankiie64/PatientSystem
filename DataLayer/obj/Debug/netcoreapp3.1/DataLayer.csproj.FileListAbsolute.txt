@@ -57,3 +57,13 @@ C:\Users\Franklyn\source\KeepsX2\DataLayer\obj\Debug\netcoreapp3.1\DataLayer.Ass
 C:\Users\Franklyn\source\KeepsX2\DataLayer\obj\Debug\netcoreapp3.1\DataLayer.csproj.CoreCompileInputs.cache
 C:\Users\Franklyn\source\KeepsX2\DataLayer\obj\Debug\netcoreapp3.1\DataLayer.dll
 C:\Users\Franklyn\source\KeepsX2\DataLayer\obj\Debug\netcoreapp3.1\DataLayer.pdb
+C:\Users\Franklyn\source\KeepX3\DataLayer\bin\Debug\netcoreapp3.1\DataLayer.deps.json
+C:\Users\Franklyn\source\KeepX3\DataLayer\bin\Debug\netcoreapp3.1\DataLayer.dll
+C:\Users\Franklyn\source\KeepX3\DataLayer\bin\Debug\netcoreapp3.1\DataLayer.pdb
+C:\Users\Franklyn\source\KeepX3\DataLayer\obj\Debug\netcoreapp3.1\DataLayer.csproj.AssemblyReference.cache
+C:\Users\Franklyn\source\KeepX3\DataLayer\obj\Debug\netcoreapp3.1\DataLayer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Franklyn\source\KeepX3\DataLayer\obj\Debug\netcoreapp3.1\DataLayer.AssemblyInfoInputs.cache
+C:\Users\Franklyn\source\KeepX3\DataLayer\obj\Debug\netcoreapp3.1\DataLayer.AssemblyInfo.cs
+C:\Users\Franklyn\source\KeepX3\DataLayer\obj\Debug\netcoreapp3.1\DataLayer.csproj.CoreCompileInputs.cache
+C:\Users\Franklyn\source\KeepX3\DataLayer\obj\Debug\netcoreapp3.1\DataLayer.dll
+C:\Users\Franklyn\source\KeepX3\DataLayer\obj\Debug\netcoreapp3.1\DataLayer.pdb

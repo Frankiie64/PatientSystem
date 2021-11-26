@@ -26,6 +26,21 @@ namespace DataLayer.ResultTestData
             return LoadTable(query);           
         }
 
+        public bool UpdateStatus(int id)
+        {
+            try
+            {
+                SqlCommand cmd = new SqlCommand("update Appointment set StatusAppointment = 3 where Id = @id", _cn);
+                cmd.Parameters.AddWithValue("@id", id);
+
+                return ExecuteDml(cmd);
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
         public bool AddResult(int id, LabResult result)
         {
             SqlCommand cmd = new SqlCommand("update LabResult set TestResult = @TestResult, StatusResult = 3 where id = @id", _cn);
@@ -39,7 +54,7 @@ namespace DataLayer.ResultTestData
         }
         public DataTable GetAll()
         {
-            SqlCommand cmd = new SqlCommand("select LabResult.Id, Patients.FName as 'Name', Patients.LastName as 'Last Name', Patients.identification,LabTest.Title from LabResult inner join Patients ON id_Patients = Patients.id INNER JOIN LabTest ON id_LabTest = LabTest.id", _cn);
+            SqlCommand cmd = new SqlCommand("select LabResult.Id, Patients.FName as 'Name', Patients.LastName as 'Last Name', Patients.identification,LabTest.Title from LabResult inner join Patients ON id_Patients = Patients.id INNER JOIN LabTest ON id_LabTest = LabTest.id where LabResult.StatusResult = 2", _cn);
             cmd.CommandType = CommandType.Text;
 
             SqlDataAdapter query = new SqlDataAdapter(cmd);

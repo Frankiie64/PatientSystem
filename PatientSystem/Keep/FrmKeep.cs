@@ -24,12 +24,19 @@ namespace PatientSystem.Keep
         }
 
         #region Events
+
+        private void BtnConsult_Click(object sender, EventArgs e)
+        {
+            FrmListTest listTest = new FrmListTest(_connection);
+            this.Hide();
+            listTest.Show();
+        }
         private void BtnAdd_Click(object sender, EventArgs e)
         {
             Deselect();
             FrmListPatients date = new FrmListPatients(_connection);
             date.Show();
-            this.Close();
+            this.Hide();
         }
 
         private void DgvKeep_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -67,7 +74,14 @@ namespace PatientSystem.Keep
 
         private void BtnDelete_Click(object sender, EventArgs e)
         {
-            serviceKeep.Delete(GlobalRepositoty.Instance.id);
+            if(serviceKeep.Delete(GlobalRepositoty.Instance.id))
+            {
+                MessageBox.Show("Se ha eliminado correctamente", "Notification");
+            }
+            else
+            {
+                MessageBox.Show("No se ha podido eliminar.", "ERROR");
+            }
             LoadData();
         }
         private void tableLayoutPanel3_Paint(object sender, PaintEventArgs e)
@@ -95,15 +109,19 @@ namespace PatientSystem.Keep
             BtnDeselect.Enabled = false;
 
             GlobalRepositoty.Instance.id = new int();
-            GlobalRepositoty.Instance.index = -1;            
+            GlobalRepositoty.Instance.index = -1;
+            GlobalRepositoty.Instance.appointment = new DataLayer.Models.Appointment();
+            GlobalRepositoty.Instance.Patient = new DataLayer.Models.PatientsModel();
+            GlobalRepositoty.Instance.Doc = new DataLayer.Models.Doctors();
+            GlobalRepositoty.Instance.result = new DataLayer.Models.LabResult();
         }
+
         #endregion
 
-        private void BtnConsult_Click(object sender, EventArgs e)
+        private void FrmKeep_FormClosed(object sender, FormClosedEventArgs e)
         {
-            FrmListTest listTest = new FrmListTest(_connection);
-            this.Close();
-            listTest.Show();
+            Home.FrmHome Home = new Home.FrmHome(_connection);
+            Home.Show();
         }
     }
 }

@@ -240,6 +240,7 @@ namespace PatientSystem.ResultTest
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "FrmResultLab";
             this.Text = "ResultLab";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmResultLab_FormClosed);
             this.Load += new System.EventHandler(this.FrmResultLab_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.PbLab)).EndInit();

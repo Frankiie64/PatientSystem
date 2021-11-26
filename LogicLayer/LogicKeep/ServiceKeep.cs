@@ -31,7 +31,11 @@ namespace LogicLayer.LogicKeep
         }
         public bool Delete(int id)
         {
-            return _repo.Delete(id);
+            if(_repo.DeleteResult(id))
+            {
+                return _repo.Delete(id);
+            }
+            return false;
         }
         public Appointment GetById(int id)
         {
@@ -82,12 +86,12 @@ namespace LogicLayer.LogicKeep
         #endregion
 
         #region LabResult
+
         public bool AddResult(LabResult result)
         {            
             if (_repo.AddResult(result))
             {
-                _repo.UpdateToCheck(GlobalRepositoty.Instance.appointment.Id);
-                return true;
+                return _repo.UpdateToCheck(GlobalRepositoty.Instance.appointment.Id);                 
             }
             else
             {

@@ -23,9 +23,16 @@ namespace LogicLayer.LogicTestResult
         {
             return _repo.GetResultByIdent(identification);
         }
-        public bool AddResult(int id, LabResult result )
+        public bool AddResult(LabResult result,int id )
         {
-            return _repo.AddResult(id, result);
+            if (_repo.AddResult(id,result))
+            {
+                return _repo.UpdateStatus(result.Id_Appointment);
+            }
+            else
+            {
+                return false;
+            }
         }
         public DataTable GetList()
         {

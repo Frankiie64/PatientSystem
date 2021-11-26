@@ -50,6 +50,14 @@ namespace DataLayer.DataKeep
 
             return ExecuteDml(sqlCommand);
         }
+        public bool DeleteResult(int Id_Appointment)
+        {
+            SqlCommand sqlCommand = new SqlCommand(" delete LabResult where Id_Appointment=@Id_Appointment", _connection);
+
+            sqlCommand.Parameters.AddWithValue("@Id_Appointment", Id_Appointment);
+
+            return ExecuteDml(sqlCommand);
+        }
         public Appointment GetId(int id)
         {
             try
@@ -280,6 +288,7 @@ namespace DataLayer.DataKeep
             {
                 DataTable Data = new DataTable();
 
+                _connection.Close();
                 _connection.Open();
 
                 Query.Fill(Data);

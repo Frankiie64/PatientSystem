@@ -113,5 +113,13 @@ namespace PatientSystem.ResultTest
                 GlobalRepositoty.Instance.result = _service.GetById(GlobalRepositoty.Instance.id);
             }
         }
+
+        private void FrmResultLab_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            PatientSystem.Home.FrmHome home = new Home.FrmHome(_cn);
+            Deselect();
+            home.Show();
+
+        }
     }
 }

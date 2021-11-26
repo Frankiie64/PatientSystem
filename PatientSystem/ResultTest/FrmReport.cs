@@ -29,9 +29,11 @@ namespace PatientSystem.ResultTest
         {
             if(!string.IsNullOrWhiteSpace(TxbResult.Text))
             {
-                if(_service.AddResult(GlobalRepositoty.Instance.id,CreateReport()))
+                if(_service.AddResult(CreateReport(),CreateReport().Id))
                 {
                     MessageBox.Show("The result was insert correctly", "Notification");
+                    this.Close();
+                   
                 }
                 else
                 {
@@ -50,11 +52,10 @@ namespace PatientSystem.ResultTest
 
         private LabResult CreateReport()
         {
-            LabResult result = new LabResult();
-            {
-                result.Id = GlobalRepositoty.Instance.id;
-                result.TestResult = TxbResult.Text;
-            }
+
+            LabResult result = _service.GetById(GlobalRepositoty.Instance.id);
+            result.TestResult = TxbResult.Text;
+         
             return result;
         }
       
@@ -71,6 +72,11 @@ namespace PatientSystem.ResultTest
         {
             FrmResultLab resultLab = new FrmResultLab(_connection);
             resultLab.Show();
+
+        }
+
+        private void FrmReport_Load(object sender, EventArgs e)
+        {
 
         }
     }

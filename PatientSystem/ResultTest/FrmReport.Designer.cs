@@ -182,6 +182,7 @@ namespace PatientSystem.ResultTest
             this.Name = "FrmReport";
             this.Text = "Report";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmReport_FormClosed);
+            this.Load += new System.EventHandler(this.FrmReport_Load);
             this.TblRegister.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.PtbReport)).EndInit();
             this.tableLayoutPanel4.ResumeLayout(false);
