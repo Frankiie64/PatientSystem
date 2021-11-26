@@ -35,7 +35,7 @@ namespace PatientSystem.Keep
         {
             try
             {
-                if (Validation())
+                if (Validation() && (!string.IsNullOrWhiteSpace(TxbReason.Text)))
                 {
                     Appointment item = new Appointment();
 
@@ -55,7 +55,11 @@ namespace PatientSystem.Keep
                         MessageBox.Show("The appointmet wasn't create sucessfull", "Notification");
                     }
 
-                }            
+                }   
+                else
+                {
+                    MessageBox.Show("the cause box is empty. Please, especify the cause.", "ERROR");
+                }
             }
             catch (Exception)
             {

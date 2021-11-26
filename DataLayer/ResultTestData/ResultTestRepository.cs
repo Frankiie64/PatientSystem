@@ -28,7 +28,7 @@ namespace DataLayer.ResultTestData
 
         public bool AddResult(int id, LabResult result)
         {
-            SqlCommand cmd = new SqlCommand("update LabResult set TestResult = @TestResult, StatusResult = 2 where id = @id", _cn);
+            SqlCommand cmd = new SqlCommand("update LabResult set TestResult = @TestResult, StatusResult = 3 where id = @id", _cn);
             cmd.CommandType = CommandType.Text;
 
             cmd.Parameters.AddWithValue("@id", id);

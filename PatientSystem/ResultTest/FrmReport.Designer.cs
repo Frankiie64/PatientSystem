@@ -152,6 +152,7 @@ namespace PatientSystem.ResultTest
             this.BtnBack.TabIndex = 0;
             this.BtnBack.Text = "Back";
             this.BtnBack.UseVisualStyleBackColor = false;
+            this.BtnBack.Click += new System.EventHandler(this.BtnBack_Click);
             // 
             // BtnFinish
             // 
@@ -180,6 +181,7 @@ namespace PatientSystem.ResultTest
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "FrmReport";
             this.Text = "Report";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmReport_FormClosed);
             this.TblRegister.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.PtbReport)).EndInit();
             this.tableLayoutPanel4.ResumeLayout(false);

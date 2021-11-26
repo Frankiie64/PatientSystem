@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using LogicLayer.LogicTestResult;
 using DataLayer.Models;
+using LogicLayer;
 
 namespace PatientSystem.ResultTest
 {
@@ -26,22 +27,51 @@ namespace PatientSystem.ResultTest
 
         private void BtnFinish_Click(object sender, EventArgs e)
         {
-            if(ValidationResult())
+            if(!string.IsNullOrWhiteSpace(TxbResult.Text))
             {
-                //_service.AddResult();
+                if(_service.AddResult(GlobalRepositoty.Instance.id,CreateReport()))
+                {
+                    MessageBox.Show("The result was insert correctly", "Notification");
+                }
+                else
+                {
+                    MessageBox.Show("The result wasn't inserted sucessfully ", "Notification");
+                }
+
+            }
+            else
+            {
+                MessageBox.Show("Insert the result in the textbox before to continue.", "WARNIGN");
             }
         }
 
         #endregion
         #region Methodos Privates
 
-        private bool ValidationResult()
+        private LabResult CreateReport()
         {
-            return string.IsNullOrWhiteSpace(TxbResult.Text);
+            LabResult result = new LabResult();
+            {
+                result.Id = GlobalRepositoty.Instance.id;
+                result.TestResult = TxbResult.Text;
+            }
+            return result;
         }
+      
 
-       
+
         #endregion
 
+        private void BtnBack_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void FrmReport_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            FrmResultLab resultLab = new FrmResultLab(_connection);
+            resultLab.Show();
+
+        }
     }
 }

@@ -38,6 +38,11 @@ namespace PatientSystem.ResultTest
 
                 }
             }
+            else
+            {
+                MessageBox.Show("Complete de id", "WARNING");
+
+            }
         }
 
         #endregion
@@ -69,7 +74,6 @@ namespace PatientSystem.ResultTest
 
             GlobalRepositoty.Instance.result = new DataLayer.Models.LabResult();
             GlobalRepositoty.Instance.id = new int();
-            GlobalRepositoty.Instance.index = new int();
 
             LoadData();
 
@@ -79,9 +83,17 @@ namespace PatientSystem.ResultTest
 
         private void BtnReport_Click_1(object sender, EventArgs e)
         {
-            FrmReport report = new FrmReport(_cn);
-            this.Hide();
-            report.Show();
+            if(GlobalRepositoty.Instance.id > 0)
+            {
+                FrmReport report = new FrmReport(_cn);
+                this.Hide();
+                report.Show();
+            }
+            else
+            {
+                MessageBox.Show("Selected a result to declared a report.");
+            }
+          
         }
 
         private void BtnDeselect_Click_1(object sender, EventArgs e)
@@ -95,7 +107,6 @@ namespace PatientSystem.ResultTest
             if (e.RowIndex >= 0)
             {
                 GlobalRepositoty.Instance.id = Convert.ToInt32(DgvResultLab.CurrentRow.Cells[0].Value);
-                GlobalRepositoty.Instance.index = e.RowIndex;
 
                 BtnDeselect.Visible = true;
 
