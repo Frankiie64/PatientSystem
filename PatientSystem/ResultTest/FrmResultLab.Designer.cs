@@ -116,6 +116,7 @@ namespace PatientSystem.ResultTest
             this.BtnReport.TabIndex = 0;
             this.BtnReport.Text = "Report Result";
             this.BtnReport.UseVisualStyleBackColor = false;
+            this.BtnReport.Click += new System.EventHandler(this.BtnReport_Click_1);
             // 
             // BtnDeselect
             // 
@@ -134,6 +135,8 @@ namespace PatientSystem.ResultTest
             this.BtnDeselect.TabIndex = 2;
             this.BtnDeselect.Text = "Deselect";
             this.BtnDeselect.UseVisualStyleBackColor = false;
+            this.BtnDeselect.Visible = false;
+            this.BtnDeselect.Click += new System.EventHandler(this.BtnDeselect_Click_1);
             // 
             // tableLayoutPanel3
             // 
@@ -170,6 +173,7 @@ namespace PatientSystem.ResultTest
             this.DgvResultLab.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DgvResultLab.Size = new System.Drawing.Size(547, 321);
             this.DgvResultLab.TabIndex = 1;
+            this.DgvResultLab.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvResultLab_CellClick);
             // 
             // tableLayoutPanel4
             // 
@@ -225,6 +229,7 @@ namespace PatientSystem.ResultTest
             this.BtnSearch.TabIndex = 2;
             this.BtnSearch.Text = "Search";
             this.BtnSearch.UseVisualStyleBackColor = false;
+            this.BtnSearch.Click += new System.EventHandler(this.BtnSearch_Click);
             // 
             // FrmResultLab
             // 

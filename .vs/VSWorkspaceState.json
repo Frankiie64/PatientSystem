@@ -1,7 +1,14 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\DataLayer",
+    "\\DataLayer\\DataKeep",
+    "\\LogicLayer",
+    "\\LogicLayer\\LogicKeep",
+    "\\PatientSystem",
+    "\\PatientSystem\\Home",
+    "\\PatientSystem\\Keep"
   ],
-  "SelectedNode": "\\PatientSystem.sln",
+  "SelectedNode": "\\PatientSystem\\Keep\\FrmListTest.cs",
   "PreviewInSolutionExplorer": false
 }
