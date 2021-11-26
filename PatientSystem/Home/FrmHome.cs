@@ -2,7 +2,7 @@
 using System.Data.SqlClient;
 using System.Windows.Forms;
 using LogicLayer;
-
+using PatientSystem.Login;
 
 namespace PatientSystem.Home
 {
@@ -66,8 +66,21 @@ namespace PatientSystem.Home
                 BtnMedical.Enabled = false;
                 BtnTestLab.Enabled = false;
             }
-
-
+        }
+        private void FrmHome_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            FrmLogin.Intance.Show();
+        }
+        private void FrmHome_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (MessageBox.Show("Are you sure you want to exit?", "Confirm exit", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+            {
+                e.Cancel = true;
+            }
+            else
+            {
+                e.Cancel = false;
+            }
         }
     }
 }
