@@ -15,7 +15,6 @@ namespace DataLayer.DataKeep
         {
             _connection = connection;
         }
-
         #region Keeps
         public bool AddDate(Appointment date)
         {
@@ -97,7 +96,6 @@ namespace DataLayer.DataKeep
             return LoadTable(query);
         }
         #endregion
-
         #region Patiens
         public PatientsModel GetByIdPatient(int id)
         {
@@ -200,9 +198,61 @@ namespace DataLayer.DataKeep
             return LoadTable(query);
         }
 
+        #endregion  
+
+
+
+
+        #region Result
+        //public bool GetResultById()
+        //{
+        //    try
+        //    {
+        //        SqlCommand cmd = new SqlCommand("select * from LabResult where id = @id", _connection);
+        //        cmd.Parameters.AddWithValue("@id",id);
+
+        //    }
+        //    catch (Exception)
+        //    {
+        //        return false;
+        //    }
+        //}
+        public bool AddResult(LabResult result)
+        {
+            try
+            {               
+                SqlCommand cmd = new SqlCommand("insert into LabResult(Id_Patients,Id_Doctor,Id_Appointment,Id_LabTest,TestResult,StatusResult) values(@id_patients,@id_doctor,@id_appointment,@lab_test,null,2)", _connection);
+                cmd.Parameters.AddWithValue("@id_patients", result.Id_Patients);
+                cmd.Parameters.AddWithValue("@id_doctor", result.Id_Doctor);
+                cmd.Parameters.AddWithValue("@id_appointment", result.Id_Appointment);
+                cmd.Parameters.AddWithValue("@lab_test", result.Id_LabTest);
+
+                return ExecuteDml(cmd);
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+        public bool UpdateToCheck(int id)
+        {
+            try
+            {
+                SqlCommand cmd = new SqlCommand("update Appointment set StatusAppointment = 2 where Id = @id", _connection);
+                cmd.Parameters.AddWithValue("@id", id);
+                
+                return ExecuteDml(cmd);
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
         #endregion
 
-       
+
+
         #region Consult Genaral
         private bool ExecuteDml(SqlCommand command)
         {
@@ -223,9 +273,7 @@ namespace DataLayer.DataKeep
             }
 
         }
-        
 
-       
         private DataTable LoadTable(SqlDataAdapter Query)
         {
             try
@@ -248,4 +296,5 @@ namespace DataLayer.DataKeep
         }
         #endregion
     }
+
 }

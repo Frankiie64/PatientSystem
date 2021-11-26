@@ -80,5 +80,22 @@ namespace LogicLayer.LogicKeep
             return labTest.GetallUsers();
         }
         #endregion
+
+        #region LabResult
+        public bool AddResult(LabResult result)
+        {            
+            if (_repo.AddResult(result))
+            {
+                _repo.UpdateToCheck(GlobalRepositoty.Instance.appointment.Id);
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+        
+
+        #endregion
     }
 }

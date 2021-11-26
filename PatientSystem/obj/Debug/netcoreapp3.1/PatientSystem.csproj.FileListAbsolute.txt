@@ -271,3 +271,4 @@ C:\Users\Franklyn\source\KeepsX2\PatientSystem\obj\Debug\netcoreapp3.1\PatientSy
 C:\Users\Franklyn\source\KeepsX2\PatientSystem\obj\Debug\netcoreapp3.1\PatientSystem.pdb
 C:\Users\Franklyn\source\KeepsX2\PatientSystem\obj\Debug\netcoreapp3.1\PatientSystem.genruntimeconfig.cache
 C:\Users\Franklyn\source\KeepsX2\PatientSystem\obj\Debug\netcoreapp3.1\PatientSystem.Keep.FrmListTest.resources
+C:\Users\Panda\Source\Repos\PatientSystem\PatientSystem\obj\Debug\netcoreapp3.1\PatientSystem.Keep.FrmListTest.resources

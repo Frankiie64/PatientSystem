@@ -35,7 +35,7 @@ namespace PatientSystem.Keep
         {
             try
             {
-                if (Validation() && (!string.IsNullOrWhiteSpace(TxbReason.Text)))
+                if (Validation())
                 {
                     Appointment item = new Appointment();
 
@@ -45,27 +45,22 @@ namespace PatientSystem.Keep
                     item.StatusAppointment = 1;
                     item.Cause = TxbReason.Text;
 
-                   if( _service.AddApointment(item))
+                    if (_service.AddApointment(item))
                     {
                         MessageBox.Show("The appointmet was create sucessfull", "Notification");
                         this.Close();
                     }
-                   else
+                    else
                     {
                         MessageBox.Show("The appointmet wasn't create sucessfull", "Notification");
                     }
-
-                }   
-                else
-                {
-                    MessageBox.Show("the cause box is empty. Please, especify the cause.", "ERROR");
                 }
             }
             catch (Exception)
             {
-                
+
             }
-}
+        }
 
         private void FrmDate_FormClosed(object sender, FormClosedEventArgs e)
         {
@@ -85,6 +80,11 @@ namespace PatientSystem.Keep
             else if (!DateTime.TryParse(MtbHour.Text, out dt))
             {
                 MessageBox.Show("Por favor introduzca una del formato que petenerzca al 24H.", "ERROR");
+                return false;
+            }
+            else if (string.IsNullOrWhiteSpace(TxbReason.Text))
+            { 
+                MessageBox.Show("the cause box is empty. Please, especify the cause.", "ERROR");
                 return false;
             }
             else
