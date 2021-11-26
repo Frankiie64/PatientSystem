@@ -51,13 +51,12 @@ namespace PatientSystem.Home
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 1, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 34.85149F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 65.14851F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 33F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(694, 842);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(486, 449);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
             // tableLayoutPanel2
@@ -73,8 +72,7 @@ namespace PatientSystem.Home
             this.tableLayoutPanel2.Controls.Add(this.BtnKeep, 1, 4);
             this.tableLayoutPanel2.Controls.Add(this.BtnTestResult, 1, 5);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(92, 298);
-            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(65, 159);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 6;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66666F));
@@ -83,7 +81,7 @@ namespace PatientSystem.Home
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.80328F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.80328F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.80328F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(496, 539);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(347, 287);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
             // BtnUser
@@ -93,10 +91,9 @@ namespace PatientSystem.Home
             this.BtnUser.FlatAppearance.BorderSize = 0;
             this.BtnUser.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnUser.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.BtnUser.Location = new System.Drawing.Point(131, 5);
-            this.BtnUser.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.BtnUser.Location = new System.Drawing.Point(92, 3);
             this.BtnUser.Name = "BtnUser";
-            this.BtnUser.Size = new System.Drawing.Size(232, 79);
+            this.BtnUser.Size = new System.Drawing.Size(162, 41);
             this.BtnUser.TabIndex = 0;
             this.BtnUser.Text = "User maintenance";
             this.BtnUser.UseVisualStyleBackColor = false;
@@ -109,10 +106,9 @@ namespace PatientSystem.Home
             this.BtnMedical.FlatAppearance.BorderSize = 0;
             this.BtnMedical.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnMedical.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.BtnMedical.Location = new System.Drawing.Point(131, 94);
-            this.BtnMedical.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.BtnMedical.Location = new System.Drawing.Point(92, 50);
             this.BtnMedical.Name = "BtnMedical";
-            this.BtnMedical.Size = new System.Drawing.Size(232, 80);
+            this.BtnMedical.Size = new System.Drawing.Size(162, 42);
             this.BtnMedical.TabIndex = 1;
             this.BtnMedical.Text = "Medical maintenance";
             this.BtnMedical.UseVisualStyleBackColor = false;
@@ -125,10 +121,9 @@ namespace PatientSystem.Home
             this.BtnTestLab.FlatAppearance.BorderSize = 0;
             this.BtnTestLab.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnTestLab.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.BtnTestLab.Location = new System.Drawing.Point(131, 184);
-            this.BtnTestLab.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.BtnTestLab.Location = new System.Drawing.Point(92, 98);
             this.BtnTestLab.Name = "BtnTestLab";
-            this.BtnTestLab.Size = new System.Drawing.Size(232, 76);
+            this.BtnTestLab.Size = new System.Drawing.Size(162, 39);
             this.BtnTestLab.TabIndex = 2;
             this.BtnTestLab.Text = "Laboratory Test maintenance";
             this.BtnTestLab.UseVisualStyleBackColor = false;
@@ -141,10 +136,9 @@ namespace PatientSystem.Home
             this.BtnPatient.FlatAppearance.BorderSize = 0;
             this.BtnPatient.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnPatient.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.BtnPatient.Location = new System.Drawing.Point(131, 270);
-            this.BtnPatient.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.BtnPatient.Location = new System.Drawing.Point(92, 143);
             this.BtnPatient.Name = "BtnPatient";
-            this.BtnPatient.Size = new System.Drawing.Size(232, 80);
+            this.BtnPatient.Size = new System.Drawing.Size(162, 42);
             this.BtnPatient.TabIndex = 3;
             this.BtnPatient.Text = "Patient maintenance";
             this.BtnPatient.UseVisualStyleBackColor = false;
@@ -157,10 +151,9 @@ namespace PatientSystem.Home
             this.BtnKeep.FlatAppearance.BorderSize = 0;
             this.BtnKeep.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnKeep.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.BtnKeep.Location = new System.Drawing.Point(131, 360);
-            this.BtnKeep.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.BtnKeep.Location = new System.Drawing.Point(92, 191);
             this.BtnKeep.Name = "BtnKeep";
-            this.BtnKeep.Size = new System.Drawing.Size(232, 80);
+            this.BtnKeep.Size = new System.Drawing.Size(162, 42);
             this.BtnKeep.TabIndex = 4;
             this.BtnKeep.Text = "Keeping maintenance";
             this.BtnKeep.UseVisualStyleBackColor = false;
@@ -173,10 +166,9 @@ namespace PatientSystem.Home
             this.BtnTestResult.FlatAppearance.BorderSize = 0;
             this.BtnTestResult.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnTestResult.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.BtnTestResult.Location = new System.Drawing.Point(131, 450);
-            this.BtnTestResult.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.BtnTestResult.Location = new System.Drawing.Point(92, 239);
             this.BtnTestResult.Name = "BtnTestResult";
-            this.BtnTestResult.Size = new System.Drawing.Size(232, 84);
+            this.BtnTestResult.Size = new System.Drawing.Size(162, 45);
             this.BtnTestResult.TabIndex = 5;
             this.BtnTestResult.Text = "Maintaining laboratory test results";
             this.BtnTestResult.UseVisualStyleBackColor = false;
@@ -184,13 +176,14 @@ namespace PatientSystem.Home
             // 
             // FrmHome
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(694, 842);
+            this.ClientSize = new System.Drawing.Size(486, 449);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "FrmHome";
             this.Text = "HOME";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmHome_FormClosing);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmHome_FormClosed);
             this.Load += new System.EventHandler(this.FrmHome_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
