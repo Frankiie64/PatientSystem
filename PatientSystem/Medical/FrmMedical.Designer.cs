@@ -39,11 +39,23 @@ namespace PatientSystem.Medical
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.BtnAdd = new System.Windows.Forms.Button();
             this.DgvDoctor = new System.Windows.Forms.DataGridView();
+            this.MenuP = new System.Windows.Forms.MenuStrip();
+            this.homeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.logOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.goBackHomeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.MaintenaceAdministrator = new System.Windows.Forms.ToolStripMenuItem();
+            this.maintenanceUsersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editUsersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.deleteUsersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.MenuDoctors = new System.Windows.Forms.ToolStripMenuItem();
+            this.MantenimientoUsers = new System.Windows.Forms.ToolStripMenuItem();
+            this.keepingMaintenanceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PtbDoctor)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvDoctor)).BeginInit();
+            this.MenuP.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -207,11 +219,103 @@ namespace PatientSystem.Medical
             this.DgvDoctor.TabIndex = 1;
             this.DgvDoctor.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvDoctor_CellClick);
             // 
+            // MenuP
+            // 
+            this.MenuP.GripStyle = System.Windows.Forms.ToolStripGripStyle.Visible;
+            this.MenuP.ImageScalingSize = new System.Drawing.Size(24, 24);
+            this.MenuP.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.homeToolStripMenuItem,
+            this.MaintenaceAdministrator,
+            this.MenuDoctors});
+            this.MenuP.Location = new System.Drawing.Point(0, 0);
+            this.MenuP.Name = "MenuP";
+            this.MenuP.Size = new System.Drawing.Size(694, 33);
+            this.MenuP.TabIndex = 4;
+            this.MenuP.Text = "MainMenu";
+            // 
+            // homeToolStripMenuItem
+            // 
+            this.homeToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.logOutToolStripMenuItem,
+            this.goBackHomeToolStripMenuItem});
+            this.homeToolStripMenuItem.Name = "homeToolStripMenuItem";
+            this.homeToolStripMenuItem.Size = new System.Drawing.Size(77, 29);
+            this.homeToolStripMenuItem.Text = "Home";
+            // 
+            // logOutToolStripMenuItem
+            // 
+            this.logOutToolStripMenuItem.Name = "logOutToolStripMenuItem";
+            this.logOutToolStripMenuItem.Size = new System.Drawing.Size(230, 34);
+            this.logOutToolStripMenuItem.Text = "Sing out";
+            this.logOutToolStripMenuItem.Click += new System.EventHandler(this.logOutToolStripMenuItem_Click);
+            // 
+            // goBackHomeToolStripMenuItem
+            // 
+            this.goBackHomeToolStripMenuItem.Name = "goBackHomeToolStripMenuItem";
+            this.goBackHomeToolStripMenuItem.Size = new System.Drawing.Size(230, 34);
+            this.goBackHomeToolStripMenuItem.Text = "Go back home";
+            this.goBackHomeToolStripMenuItem.Click += new System.EventHandler(this.goBackHomeToolStripMenuItem_Click);
+            // 
+            // MaintenaceAdministrator
+            // 
+            this.MaintenaceAdministrator.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.maintenanceUsersToolStripMenuItem,
+            this.editUsersToolStripMenuItem,
+            this.deleteUsersToolStripMenuItem});
+            this.MaintenaceAdministrator.Name = "MaintenaceAdministrator";
+            this.MaintenaceAdministrator.Size = new System.Drawing.Size(196, 29);
+            this.MaintenaceAdministrator.Text = "Maintenance Doctors";
+            // 
+            // maintenanceUsersToolStripMenuItem
+            // 
+            this.maintenanceUsersToolStripMenuItem.Name = "maintenanceUsersToolStripMenuItem";
+            this.maintenanceUsersToolStripMenuItem.Size = new System.Drawing.Size(232, 34);
+            this.maintenanceUsersToolStripMenuItem.Text = "Add Doctors";
+            this.maintenanceUsersToolStripMenuItem.Click += new System.EventHandler(this.maintenanceUsersToolStripMenuItem_Click);
+            // 
+            // editUsersToolStripMenuItem
+            // 
+            this.editUsersToolStripMenuItem.Name = "editUsersToolStripMenuItem";
+            this.editUsersToolStripMenuItem.Size = new System.Drawing.Size(232, 34);
+            this.editUsersToolStripMenuItem.Text = "Edit Doctors";
+            this.editUsersToolStripMenuItem.Click += new System.EventHandler(this.editUsersToolStripMenuItem_Click);
+            // 
+            // deleteUsersToolStripMenuItem
+            // 
+            this.deleteUsersToolStripMenuItem.Name = "deleteUsersToolStripMenuItem";
+            this.deleteUsersToolStripMenuItem.Size = new System.Drawing.Size(232, 34);
+            this.deleteUsersToolStripMenuItem.Text = "Delete Doctors";
+            this.deleteUsersToolStripMenuItem.Click += new System.EventHandler(this.deleteUsersToolStripMenuItem_Click);
+            // 
+            // MenuDoctors
+            // 
+            this.MenuDoctors.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.MantenimientoUsers,
+            this.keepingMaintenanceToolStripMenuItem});
+            this.MenuDoctors.Name = "MenuDoctors";
+            this.MenuDoctors.Size = new System.Drawing.Size(175, 29);
+            this.MenuDoctors.Text = "More Maintenance";
+            // 
+            // MantenimientoUsers
+            // 
+            this.MantenimientoUsers.Name = "MantenimientoUsers";
+            this.MantenimientoUsers.Size = new System.Drawing.Size(263, 34);
+            this.MantenimientoUsers.Text = "Matenice Users";
+            this.MantenimientoUsers.Click += new System.EventHandler(this.MantenimientoUsers_Click);
+            // 
+            // keepingMaintenanceToolStripMenuItem
+            // 
+            this.keepingMaintenanceToolStripMenuItem.Name = "keepingMaintenanceToolStripMenuItem";
+            this.keepingMaintenanceToolStripMenuItem.Size = new System.Drawing.Size(263, 34);
+            this.keepingMaintenanceToolStripMenuItem.Text = "Mantenice Lab Test";
+            this.keepingMaintenanceToolStripMenuItem.Click += new System.EventHandler(this.keepingMaintenanceToolStripMenuItem_Click);
+            // 
             // FrmMedical
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(694, 867);
+            this.Controls.Add(this.MenuP);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "FrmMedical";
@@ -223,7 +327,10 @@ namespace PatientSystem.Medical
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DgvDoctor)).EndInit();
+            this.MenuP.ResumeLayout(false);
+            this.MenuP.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -238,5 +345,16 @@ namespace PatientSystem.Medical
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.Button BtnAdd;
         private System.Windows.Forms.DataGridView DgvDoctor;
+        private System.Windows.Forms.MenuStrip MenuP;
+        private System.Windows.Forms.ToolStripMenuItem homeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem logOutToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem goBackHomeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem MaintenaceAdministrator;
+        private System.Windows.Forms.ToolStripMenuItem maintenanceUsersToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem editUsersToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem deleteUsersToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem MenuDoctors;
+        private System.Windows.Forms.ToolStripMenuItem MantenimientoUsers;
+        private System.Windows.Forms.ToolStripMenuItem keepingMaintenanceToolStripMenuItem;
     }
 }

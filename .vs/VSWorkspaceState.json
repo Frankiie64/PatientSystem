@@ -9,8 +9,9 @@
     "\\PatientSystem",
     "\\PatientSystem\\Home",
     "\\PatientSystem\\Keep",
-    "\\PatientSystem\\ResultTest"
+    "\\PatientSystem\\ResultTest",
+    "\\PatientSystem\\User"
   ],
-  "SelectedNode": "\\PatientSystem\\Keep\\FrmKeep.cs",
+  "SelectedNode": "\\PatientSystem\\User\\FrmUser.cs",
   "PreviewInSolutionExplorer": false
 }

@@ -10,6 +10,7 @@ using LogicLayer.FolderLabTest;
 using LogicLayer;
 using DataLayer.Models;
 using PatientSystem.Home;
+using PatientSystem.Login;
 
 namespace PatientSystem.Lab
 {
@@ -17,6 +18,8 @@ namespace PatientSystem.Lab
     {
         SqlConnection _connection;
         ServiceLabTest service;
+        private bool Login = false;
+        private object Mantenices = new object();
         public FrmLabTest(SqlConnection connection)
         {
             InitializeComponent();
@@ -24,10 +27,62 @@ namespace PatientSystem.Lab
             service = new ServiceLabTest(_connection);
 
         }
-        private void FrmLabTest_FormClosing(object sender, FormClosingEventArgs e)
+
+        // Eventos del menu strip
+        #region Menu Options
+        private void MantenimientoUsers_Click(object sender, EventArgs e)
         {
-            FrmHome home = new FrmHome(_connection);
-            home.Show();
+            Login = true; 
+            Mantenices = true;
+            this.Close();
+        }
+
+        private void keepingMaintenanceToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Login = true;
+            Mantenices = false;
+            this.Close();
+        }
+        private void logOutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Login = true;
+            this.Close();
+        }
+
+        private void goBackHomeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+        private void MenuTest_Click(object sender, EventArgs e)
+        {
+            AddTestLab();
+        }
+        private void MenuEdit_Click(object sender, EventArgs e)
+        {
+            EditLabTest();
+        }
+        private void DeleteTest_Click(object sender, EventArgs e)
+        {
+            DeleteByIdTest();
+        }
+
+        #endregion
+
+        // Eventos generales
+        #region Events
+        private void BtnEdit_Click(object sender, EventArgs e)
+        {
+            EditLabTest();
+        }
+
+        private void BtnDelete_Click(object sender, EventArgs e)
+        {
+            DeleteByIdTest();
+        }
+
+        private void FrmLabTest_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Clucht();
         }
         private void BtnAdd_Click(object sender, EventArgs e)
         {
@@ -55,6 +110,87 @@ namespace PatientSystem.Lab
                 GlobalRepositoty.Instance.test = service.GetById(GlobalRepositoty.Instance.id);
             }
         }
+        #endregion
+
+        //Metodos para el desarrllo de lo anterior
+        #region Metodos Privados
+        private void EditLabTest()
+        {
+            if (GlobalRepositoty.Instance.index < 0)
+            {
+                MessageBox.Show("Por favor seleccione el usario que desea Editar", "Error");
+            }
+            else
+            {
+                FrmAddTest Edit = new FrmAddTest(_connection);
+
+                this.Hide();
+                Edit.Show();
+            }
+        }
+
+        private void DeleteByIdTest()
+        {
+            if (GlobalRepositoty.Instance.index < 0)
+            {
+                MessageBox.Show("Por favor seleccione el usario que desea Eliminar", "Error");
+            }
+            else
+            {
+
+                DialogResult result = MessageBox.Show("Estas seguro que deseas eliminar esta prueba ?", "QUESTION", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+                if (result == DialogResult.OK)
+                {
+                    if (service.DeleteLabTest(GlobalRepositoty.Instance.id))
+                    {
+                        MessageBox.Show("Se ha elimanado correctamente la prueba", "Notificacion");
+                        Deselect();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("No se ha elimanado  la prueba", "Notificacion");
+                }
+            }
+            loadData();
+        }
+        private void GoBackHome()
+        {
+            FrmHome home = new FrmHome(_connection);
+            home.Show();
+        }
+        private void Clucht()
+        {
+            try
+            {
+                if (Login)
+                {
+                    if (Mantenices == new object())
+                    {
+                        FrmLogin.Intance.Show();
+                    }
+                    else if ((bool)Mantenices)
+                    {
+                        User.FrmUser user = new User.FrmUser(_connection);
+                        user.Show();
+                    }
+                    else if (!(bool)Mantenices)
+                    {
+                        Medical.FrmMedical doc = new Medical.FrmMedical(_connection);
+                        doc.Show();
+                    }
+
+                }
+                else
+                {
+                    GoBackHome();
+                }
+            }
+            catch (Exception ex)
+            {
+                FrmLogin.Intance.Show();
+            }
+        }
 
         private void AddTestLab()
         {
@@ -79,48 +215,12 @@ namespace PatientSystem.Lab
 
         }
 
-        private void BtnEdit_Click(object sender, EventArgs e)
-        {
-            if (GlobalRepositoty.Instance.index < 0)
-            {
-                MessageBox.Show("Por favor seleccione el usario que desea Editar", "Error");
-            }
-            else
-            {
-                FrmAddTest Edit = new FrmAddTest(_connection);
+        #endregion
 
-                this.Hide();
-                Edit.Show();
-            }
-        }
 
-        private void BtnDelete_Click(object sender, EventArgs e)
-        {
-            if (GlobalRepositoty.Instance.index < 0)
-            {
-                MessageBox.Show("Por favor seleccione el usario que desea Eliminar", "Error");
-            }
-            else
-            {
-
-                DialogResult result = MessageBox.Show("Estas seguro que deseas eliminar esta prueba ?", "QUESTION", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-                if (result == DialogResult.OK)
-                {
-                    if (service.DeleteLabTest(GlobalRepositoty.Instance.id))
-                    {
-                        MessageBox.Show("Se ha elimanado correctamente la prueba", "Notificacion");
-                        Deselect();
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("No se ha elimanado  la prueba", "Notificacion");
-                }
-            }
-            loadData();
-
-        }
 
         
+        
+
     }
 }

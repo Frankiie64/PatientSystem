@@ -30,6 +30,7 @@ namespace PatientSystem.User
 
         }
 
+        // Eventos del menu strip
         #region Menu Options
         private void goBackHomeToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -37,7 +38,7 @@ namespace PatientSystem.User
         }
         private void logOutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Login = true;           
+            Login = true;
             this.Close();
         }
         private void maintenanceUsersToolStripMenuItem_Click(object sender, EventArgs e)
@@ -66,12 +67,13 @@ namespace PatientSystem.User
             this.Close();
         }
 
-        #endregion 
+        #endregion
 
+        //Eventos generales de la  app, como el load, los btn, dgv...
         #region Events
         private void FrmUser_FormClosed(object sender, FormClosedEventArgs e)
         {
-            Closed();
+            Clucht();
         }
         private void FrmUser_Load(object sender, EventArgs e)
         {
@@ -112,6 +114,7 @@ namespace PatientSystem.User
 
         #endregion
 
+        //Metodos para el desarrllo de lo anterior
         #region Metodos Privados
         public void loadData()
         {
@@ -184,7 +187,7 @@ namespace PatientSystem.User
             }
         }
 
-        private void Closed()
+        private void Clucht()
         {
             try
             {
@@ -204,7 +207,6 @@ namespace PatientSystem.User
                         Lab.FrmLabTest test = new Lab.FrmLabTest(_connection);
                         test.Show();
                     }
-
                 }
                 else
                 {
@@ -216,10 +218,6 @@ namespace PatientSystem.User
                 FrmLogin.Intance.Show();
             }
         }
-
-
-
-
         #endregion
 
        
