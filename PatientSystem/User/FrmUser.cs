@@ -11,6 +11,7 @@ using LogicLayer;
 using LogicLayer.Usuario;
 using PatientSystem.Login;
 using PatientSystem.Home;
+using PatientSystem;
 
 
 namespace PatientSystem.User
@@ -18,7 +19,9 @@ namespace PatientSystem.User
     public partial class FrmUser : Form
     {
         SqlConnection _connection;
-        ServiceUsers _service;       
+        ServiceUsers _service;
+        private bool Login = false;
+        private object Mantenices = new object();
         public FrmUser(SqlConnection connection)
         {
             InitializeComponent();
@@ -27,11 +30,48 @@ namespace PatientSystem.User
 
         }
 
+        #region Menu Options
+        private void goBackHomeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+        private void logOutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Login = true;           
+            this.Close();
+        }
+        private void maintenanceUsersToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AddUsersMetodo();
+        }
+        private void editUsersToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            EditUsersMetodo();
+        }
+        private void deleteUsersToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DeleteUsersMetodo();
+        }
+        private void patientMaintenanceToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Login = true;
+            Mantenices = true;
+            this.Close();
+        }
+
+        private void keepingMaintenanceToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Login = true;
+            Mantenices = false;
+            this.Close();
+        }
+
+        #endregion 
+
         #region Events
         private void FrmUser_FormClosed(object sender, FormClosedEventArgs e)
         {
-            FrmHome home = new FrmHome(_connection);
-            home.Show();
+            Closed();
         }
         private void FrmUser_Load(object sender, EventArgs e)
         {
@@ -39,8 +79,6 @@ namespace PatientSystem.User
             DgvUser.Columns[0].Visible = false;            
             Deselect();
         }
-
-
        
         private void BtnDeselect_Click(object sender, EventArgs e)
         {
@@ -59,6 +97,63 @@ namespace PatientSystem.User
             }
         }
         private void BtnDelete_Click(object sender, EventArgs e)
+        {
+            DeleteUsersMetodo();
+        }
+
+        private void BtnAdd_Click(object sender, EventArgs e)
+        {
+            AddUsersMetodo();
+        }
+        private void BtnEdit_Click(object sender, EventArgs e)
+        {
+            EditUsersMetodo();
+        }
+
+        #endregion
+
+        #region Metodos Privados
+        public void loadData()
+        {
+
+            DgvUser.DataSource = _service.LoadTable();
+            DgvUser.ClearSelection();
+        }
+        public void Deselect()
+        {
+            DgvUser.ClearSelection();
+            BtnDeselect.Visible = false;
+            GlobalRepositoty.Instance.index = -1;
+            GlobalRepositoty.Instance.id = new int();
+            GlobalRepositoty.Instance.Usuario = new Users();
+            
+        }
+        private void GoBackHome()
+        {
+            FrmHome home = new FrmHome(_connection);
+            home.Show();
+        }
+        private void AddUsersMetodo()
+        {
+            Deselect();
+            FrmAddUsers Add = new FrmAddUsers(FrmLogin.Intance.connectionString);
+            this.Hide();
+            Add.Show();
+        }
+        private void EditUsersMetodo()
+        {
+            FrmAddUsers Edit = new FrmAddUsers(FrmLogin.Intance.connectionString);
+            if (GlobalRepositoty.Instance.index < 0)
+            {
+                MessageBox.Show("Por favor seleccione el usario que desea Editar", "Error");
+            }
+            else
+            {
+                this.Hide();
+                Edit.Show();
+            }
+        }
+        private void DeleteUsersMetodo()
         {
             if (GlobalRepositoty.Instance.index < 0)
             {
@@ -89,45 +184,43 @@ namespace PatientSystem.User
             }
         }
 
-        private void BtnAdd_Click(object sender, EventArgs e)
+        private void Closed()
         {
-            Deselect();
-            FrmAddUsers Add = new FrmAddUsers(FrmLogin.Intance.connectionString);            
-            this.Hide();            
-            Add.Show();
-        }
-        private void BtnEdit_Click(object sender, EventArgs e)
-        {
-            FrmAddUsers Edit = new FrmAddUsers(FrmLogin.Intance.connectionString);
-            if (GlobalRepositoty.Instance.index < 0)
+            try
             {
-                MessageBox.Show("Por favor seleccione el usario que desea Editar", "Error");
+                if (Login)
+                {
+                    if (Mantenices == new object())
+                    {
+                        FrmLogin.Intance.Show();
+                    }
+                    else if ((bool)Mantenices)
+                    {
+                        Medical.FrmMedical doc = new Medical.FrmMedical(_connection);
+                        doc.Show();
+                    }
+                    else if (!(bool)Mantenices)
+                    {
+                        Lab.FrmLabTest test = new Lab.FrmLabTest(_connection);
+                        test.Show();
+                    }
+
+                }
+                else
+                {
+                    GoBackHome();
+                }
             }
-            else 
-            {                
-                this.Hide();
-                Edit.Show();                
+            catch (Exception ex)
+            {
+                FrmLogin.Intance.Show();
             }
         }
+
+
+
 
         #endregion
-
-        
-        public void loadData()
-        {
-
-            DgvUser.DataSource = _service.LoadTable();
-            DgvUser.ClearSelection();
-        }
-        public void Deselect()
-        {
-            DgvUser.ClearSelection();
-            BtnDeselect.Visible = false;
-            GlobalRepositoty.Instance.index = -1;
-            GlobalRepositoty.Instance.id = new int();
-            GlobalRepositoty.Instance.Usuario = new Users();
-            
-        }
 
        
     }
