@@ -18,6 +18,7 @@ namespace PatientSystem.Keep
     {
         SqlConnection _cn;
         ServiceKeep _service;
+        public bool validate = true;
         public FrmDate(SqlConnection cn)
         {
             InitializeComponent();
@@ -48,6 +49,7 @@ namespace PatientSystem.Keep
                     if (_service.AddApointment(item))
                     {
                         MessageBox.Show("The appointmet was create sucessfull", "Notification");
+                        validate = false;
                         this.Close();
                     }
                     else
@@ -90,6 +92,21 @@ namespace PatientSystem.Keep
             else
             {
                 return true;
+            }
+        }
+
+        private void FrmDate_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (validate)
+            {
+                if (MessageBox.Show("Are you sure you want to exit?", "Confirm exit", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+                {
+                    e.Cancel = true;
+                }
+                else
+                {
+                    e.Cancel = false;
+                }
             }
         }
     }

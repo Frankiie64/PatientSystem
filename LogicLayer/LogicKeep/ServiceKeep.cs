@@ -7,6 +7,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Text;
 using DataLayer.DataLabTest;
+using DataLayer.ResultTestData;
 
 namespace LogicLayer.LogicKeep
 {
@@ -16,12 +17,14 @@ namespace LogicLayer.LogicKeep
         SqlConnection _connection;
         RepositoryKeep _repo;
         RepositoryLabTest labTest;
+        ResultTestRepository ResultRepo;
 
         public ServiceKeep(SqlConnection connection)
         {
             _connection = connection;
             _repo = new RepositoryKeep(_connection);
             labTest = new RepositoryLabTest(_connection);
+            ResultRepo = new ResultTestRepository(_connection);
         }
 
         #region Keeps
@@ -36,6 +39,11 @@ namespace LogicLayer.LogicKeep
                 return _repo.Delete(id);
             }
             return false;
+        }
+
+        public bool UpdateKeep(int id)
+        {
+            return ResultRepo.UpdateStatus(id);
         }
         public Appointment GetById(int id)
         {
@@ -98,8 +106,25 @@ namespace LogicLayer.LogicKeep
                 return false;
             }
         }
-        
+
+        public LabResult GetResultById(int id)
+        {
+            return _repo.GetResultById(id);
+        }
+
+        public DataTable GetListResult(int Id_Appointment)
+        {
+            return _repo.GetListResult(Id_Appointment);
+                
+        }
+        public DataTable GetFinaltResult(int Id_Appointment)
+        {
+            return _repo.GetFinaltResult(Id_Appointment);
+
+        }
 
         #endregion
+
+
     }
 }

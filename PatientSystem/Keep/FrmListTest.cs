@@ -17,7 +17,7 @@ namespace PatientSystem.Keep
     {
         SqlConnection _connection;
         ServiceKeep service;
-        
+        private bool Decision = true;
         public FrmListTest(SqlConnection connection)
         {
             InitializeComponent();
@@ -33,6 +33,7 @@ namespace PatientSystem.Keep
         {
            DgvTest.DataSource = service.GetListTest();
            DgvTest.ClearSelection();
+           DgvTest.Columns[0].Visible = false;
         }
 
         private void DgvTest_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -70,9 +71,12 @@ namespace PatientSystem.Keep
             if(AddResult())
             {
                 MessageBox.Show("The tests have been correctly added to the result list.", "Notification");
-                FrmKeep keep = new FrmKeep(_connection);
-                this.Close();
-                keep.Show();
+                if(MessageBox.Show("Are u want to save another Test?", "Question", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+                {
+                    Decision = false;
+                    this.Close();
+                }
+
             }
             else
             {
@@ -84,6 +88,27 @@ namespace PatientSystem.Keep
         private void BtnSearch_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void FrmListTest_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            FrmKeep keep = new FrmKeep(_connection);
+            keep.Show();
+        }
+
+        private void FrmListTest_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (Decision)
+            {
+                if (MessageBox.Show("Are you sure you want to exit?", "Confirm exit", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+                {
+                    e.Cancel = true;
+                }
+                else
+                {
+                    e.Cancel = false;
+                }
+            }
         }
     }
 }

@@ -51,15 +51,24 @@ namespace PatientSystem.Keep
                 GlobalRepositoty.Instance.appointment = serviceKeep.GetById(GlobalRepositoty.Instance.id);
                 if (GlobalRepositoty.Instance.appointment.StatusAppointment == 1)
                 {
+
                     BtnConsult.Visible = true;
+                    BtnSee.Visible = false;
+                    BtnCheck.Visible = false;
+
                 }
                 else if (GlobalRepositoty.Instance.appointment.StatusAppointment == 2)
                 {
-                    BtnCheck.Enabled = true;
+                    BtnCheck.Visible = true;
+                    BtnSee.Visible = false;
+                    BtnConsult.Visible = false;
+
                 }
                 else
                 {
                     BtnSee.Visible = true;
+                    BtnCheck.Visible = false;
+                    BtnConsult.Visible = false;
                 }
             }
         }
@@ -74,20 +83,13 @@ namespace PatientSystem.Keep
 
         private void BtnDelete_Click(object sender, EventArgs e)
         {
-            if(serviceKeep.Delete(GlobalRepositoty.Instance.id))
+            if (MessageBox.Show("Are you sure you want to delete this register ?", "Confirm exit", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                MessageBox.Show("Se ha eliminado correctamente", "Notification");
+                Delete();
             }
-            else
-            {
-                MessageBox.Show("No se ha podido eliminar.", "ERROR");
-            }
-            LoadData();
+            
         }
-        private void tableLayoutPanel3_Paint(object sender, PaintEventArgs e)
-        {
-        }
-
+      
         private void FrmKeep_Load(object sender, EventArgs e)
         {
             LoadData();
@@ -102,7 +104,6 @@ namespace PatientSystem.Keep
         private void Deselect()
         {
             DgvKeep.ClearSelection();
-            BtnDeselect.Enabled = false;
             BtnConsult.Visible = false;
             BtnCheck.Visible = false;
             BtnSee.Visible = false;
@@ -122,6 +123,34 @@ namespace PatientSystem.Keep
         {
             Home.FrmHome Home = new Home.FrmHome(_connection);
             Home.Show();
+        }
+
+        private void BtnCheck_Click(object sender, EventArgs e)
+        {
+            FRMResultLab resultLab = new FRMResultLab(_connection);
+            this.Hide();
+            resultLab.Show();
+        }
+
+        private void BtnSee_Click(object sender, EventArgs e)
+        {
+            FrmSeeResult seeResult = new FrmSeeResult(_connection);
+            this.Hide();
+            seeResult.Show();
+
+        }
+
+        private void Delete()
+        {
+            if (serviceKeep.Delete(GlobalRepositoty.Instance.id))
+            {
+                MessageBox.Show("Se ha eliminado correctamente", "Notification");
+            }
+            else
+            {
+                MessageBox.Show("No se ha podido eliminar.", "ERROR");
+            }
+            LoadData();
         }
     }
 }

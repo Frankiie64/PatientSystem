@@ -25,14 +25,8 @@ namespace LogicLayer.LogicTestResult
         }
         public bool AddResult(LabResult result,int id )
         {
-            if (_repo.AddResult(id,result))
-            {
-                return _repo.UpdateStatus(result.Id_Appointment);
-            }
-            else
-            {
-                return false;
-            }
+            return _repo.AddResult(id, result);
+           
         }
         public DataTable GetList()
         {

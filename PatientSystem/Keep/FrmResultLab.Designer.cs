@@ -1,7 +1,7 @@
 ﻿
 namespace PatientSystem.Keep
 {
-    partial class FrmKeep
+    partial class FRMResultLab
     {
         /// <summary>
         /// Required designer variable.
@@ -29,27 +29,23 @@ namespace PatientSystem.Keep
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmKeep));
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.PtbKeep = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.BtnDelete = new System.Windows.Forms.Button();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
-            this.BtnCheck = new System.Windows.Forms.Button();
-            this.BtnConsult = new System.Windows.Forms.Button();
+            this.BtnClose = new System.Windows.Forms.Button();
             this.tableLayoutPanel5 = new System.Windows.Forms.TableLayoutPanel();
-            this.BtnDeselect = new System.Windows.Forms.Button();
-            this.BtnSee = new System.Windows.Forms.Button();
+            this.BtnCompleteDate = new System.Windows.Forms.Button();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
-            this.BtnAdd = new System.Windows.Forms.Button();
-            this.DgvKeep = new System.Windows.Forms.DataGridView();
+            this.DgvLabResult = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PtbKeep)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel4.SuspendLayout();
             this.tableLayoutPanel5.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DgvKeep)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvLabResult)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -76,7 +72,6 @@ namespace PatientSystem.Keep
             // PtbKeep
             // 
             this.PtbKeep.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PtbKeep.Image = ((System.Drawing.Image)(resources.GetObject("PtbKeep.Image")));
             this.PtbKeep.Location = new System.Drawing.Point(42, 5);
             this.PtbKeep.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.PtbKeep.Name = "PtbKeep";
@@ -112,7 +107,6 @@ namespace PatientSystem.Keep
             this.BtnDelete.FlatAppearance.BorderSize = 0;
             this.BtnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnDelete.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.BtnDelete.Image = ((System.Drawing.Image)(resources.GetObject("BtnDelete.Image")));
             this.BtnDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.BtnDelete.Location = new System.Drawing.Point(4, 69);
             this.BtnDelete.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -121,15 +115,14 @@ namespace PatientSystem.Keep
             this.BtnDelete.TabIndex = 3;
             this.BtnDelete.Text = "Deleted";
             this.BtnDelete.UseVisualStyleBackColor = false;
-            this.BtnDelete.Click += new System.EventHandler(this.BtnDelete_Click);
+            this.BtnDelete.Visible = false;
             // 
             // tableLayoutPanel4
             // 
             this.tableLayoutPanel4.ColumnCount = 2;
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel4.Controls.Add(this.BtnCheck, 1, 0);
-            this.tableLayoutPanel4.Controls.Add(this.BtnConsult, 0, 0);
+            this.tableLayoutPanel4.Controls.Add(this.BtnClose, 0, 0);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel4.Location = new System.Drawing.Point(4, 5);
             this.tableLayoutPanel4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -140,45 +133,29 @@ namespace PatientSystem.Keep
             this.tableLayoutPanel4.Size = new System.Drawing.Size(296, 54);
             this.tableLayoutPanel4.TabIndex = 4;
             // 
-            // BtnCheck
+            // BtnClose
             // 
-            this.BtnCheck.BackColor = System.Drawing.Color.Ivory;
-            this.BtnCheck.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.BtnCheck.FlatAppearance.BorderSize = 0;
-            this.BtnCheck.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnCheck.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.BtnCheck.Location = new System.Drawing.Point(152, 5);
-            this.BtnCheck.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.BtnCheck.Name = "BtnCheck";
-            this.BtnCheck.Size = new System.Drawing.Size(140, 44);
-            this.BtnCheck.TabIndex = 0;
-            this.BtnCheck.Text = "Check results";
-            this.BtnCheck.UseVisualStyleBackColor = false;
-            this.BtnCheck.Click += new System.EventHandler(this.BtnCheck_Click);
-            // 
-            // BtnConsult
-            // 
-            this.BtnConsult.BackColor = System.Drawing.Color.Ivory;
-            this.BtnConsult.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.BtnConsult.FlatAppearance.BorderSize = 0;
-            this.BtnConsult.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnConsult.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.BtnConsult.Location = new System.Drawing.Point(4, 5);
-            this.BtnConsult.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.BtnConsult.Name = "BtnConsult";
-            this.BtnConsult.Size = new System.Drawing.Size(140, 44);
-            this.BtnConsult.TabIndex = 1;
-            this.BtnConsult.Text = "Consult";
-            this.BtnConsult.UseVisualStyleBackColor = false;
-            this.BtnConsult.Click += new System.EventHandler(this.BtnConsult_Click);
+            this.BtnClose.BackColor = System.Drawing.Color.Ivory;
+            this.tableLayoutPanel4.SetColumnSpan(this.BtnClose, 2);
+            this.BtnClose.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.BtnClose.FlatAppearance.BorderSize = 0;
+            this.BtnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnClose.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.BtnClose.Location = new System.Drawing.Point(4, 5);
+            this.BtnClose.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.BtnClose.Name = "BtnClose";
+            this.BtnClose.Size = new System.Drawing.Size(288, 44);
+            this.BtnClose.TabIndex = 1;
+            this.BtnClose.Text = "Close";
+            this.BtnClose.UseVisualStyleBackColor = false;
+            this.BtnClose.Click += new System.EventHandler(this.BtnClose_Click);
             // 
             // tableLayoutPanel5
             // 
             this.tableLayoutPanel5.ColumnCount = 2;
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel5.Controls.Add(this.BtnDeselect, 1, 0);
-            this.tableLayoutPanel5.Controls.Add(this.BtnSee, 0, 0);
+            this.tableLayoutPanel5.Controls.Add(this.BtnCompleteDate, 0, 0);
             this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel5.Location = new System.Drawing.Point(308, 5);
             this.tableLayoutPanel5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
@@ -189,113 +166,75 @@ namespace PatientSystem.Keep
             this.tableLayoutPanel5.Size = new System.Drawing.Size(297, 54);
             this.tableLayoutPanel5.TabIndex = 5;
             // 
-            // BtnDeselect
+            // BtnCompleteDate
             // 
-            this.BtnDeselect.BackColor = System.Drawing.Color.Ivory;
-            this.BtnDeselect.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.BtnDeselect.FlatAppearance.BorderSize = 0;
-            this.BtnDeselect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnDeselect.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.BtnDeselect.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnDeselect.Location = new System.Drawing.Point(152, 5);
-            this.BtnDeselect.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.BtnDeselect.Name = "BtnDeselect";
-            this.BtnDeselect.Size = new System.Drawing.Size(141, 44);
-            this.BtnDeselect.TabIndex = 3;
-            this.BtnDeselect.Text = "Deselect";
-            this.BtnDeselect.UseVisualStyleBackColor = false;
-            this.BtnDeselect.Click += new System.EventHandler(this.BtnDeselect_Click);
-            // 
-            // BtnSee
-            // 
-            this.BtnSee.BackColor = System.Drawing.Color.Ivory;
-            this.BtnSee.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.BtnSee.FlatAppearance.BorderSize = 0;
-            this.BtnSee.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnSee.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.BtnSee.Location = new System.Drawing.Point(4, 5);
-            this.BtnSee.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.BtnSee.Name = "BtnSee";
-            this.BtnSee.Size = new System.Drawing.Size(140, 44);
-            this.BtnSee.TabIndex = 4;
-            this.BtnSee.Text = "See Results";
-            this.BtnSee.UseVisualStyleBackColor = false;
-            this.BtnSee.Click += new System.EventHandler(this.BtnSee_Click);
+            this.BtnCompleteDate.BackColor = System.Drawing.Color.Ivory;
+            this.tableLayoutPanel5.SetColumnSpan(this.BtnCompleteDate, 2);
+            this.BtnCompleteDate.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.BtnCompleteDate.FlatAppearance.BorderSize = 0;
+            this.BtnCompleteDate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnCompleteDate.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.BtnCompleteDate.Location = new System.Drawing.Point(4, 5);
+            this.BtnCompleteDate.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.BtnCompleteDate.Name = "BtnCompleteDate";
+            this.BtnCompleteDate.Size = new System.Drawing.Size(289, 44);
+            this.BtnCompleteDate.TabIndex = 4;
+            this.BtnCompleteDate.Text = "Complete Keep";
+            this.BtnCompleteDate.UseVisualStyleBackColor = false;
+            this.BtnCompleteDate.Click += new System.EventHandler(this.BtnCompleteDate_Click);
             // 
             // tableLayoutPanel3
             // 
             this.tableLayoutPanel3.ColumnCount = 1;
             this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 29F));
-            this.tableLayoutPanel3.Controls.Add(this.BtnAdd, 0, 0);
-            this.tableLayoutPanel3.Controls.Add(this.DgvKeep, 0, 1);
+            this.tableLayoutPanel3.Controls.Add(this.DgvLabResult, 0, 0);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(42, 232);
             this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
-            this.tableLayoutPanel3.RowCount = 2;
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.98842F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 83.01158F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 33F));
+            this.tableLayoutPanel3.RowCount = 1;
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel3.Size = new System.Drawing.Size(609, 371);
             this.tableLayoutPanel3.TabIndex = 3;
             // 
-            // BtnAdd
+            // DgvLabResult
             // 
-            this.BtnAdd.BackColor = System.Drawing.Color.SteelBlue;
-            this.BtnAdd.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.BtnAdd.FlatAppearance.BorderSize = 0;
-            this.BtnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnAdd.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.BtnAdd.Image = ((System.Drawing.Image)(resources.GetObject("BtnAdd.Image")));
-            this.BtnAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnAdd.Location = new System.Drawing.Point(4, 5);
-            this.BtnAdd.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.BtnAdd.Name = "BtnAdd";
-            this.BtnAdd.Size = new System.Drawing.Size(601, 53);
-            this.BtnAdd.TabIndex = 2;
-            this.BtnAdd.Text = "Add quotes";
-            this.BtnAdd.UseVisualStyleBackColor = false;
-            this.BtnAdd.Click += new System.EventHandler(this.BtnAdd_Click);
+            this.DgvLabResult.AllowUserToAddRows = false;
+            this.DgvLabResult.AllowUserToDeleteRows = false;
+            this.DgvLabResult.BackgroundColor = System.Drawing.Color.White;
+            this.DgvLabResult.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DgvLabResult.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.DgvLabResult.GridColor = System.Drawing.Color.DarkGray;
+            this.DgvLabResult.Location = new System.Drawing.Point(4, 5);
+            this.DgvLabResult.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.DgvLabResult.MultiSelect = false;
+            this.DgvLabResult.Name = "DgvLabResult";
+            this.DgvLabResult.ReadOnly = true;
+            this.DgvLabResult.RowHeadersWidth = 62;
+            this.DgvLabResult.RowTemplate.Height = 25;
+            this.DgvLabResult.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.DgvLabResult.Size = new System.Drawing.Size(601, 361);
+            this.DgvLabResult.TabIndex = 1;
             // 
-            // DgvKeep
-            // 
-            this.DgvKeep.AllowUserToAddRows = false;
-            this.DgvKeep.AllowUserToDeleteRows = false;
-            this.DgvKeep.BackgroundColor = System.Drawing.Color.White;
-            this.DgvKeep.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DgvKeep.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.DgvKeep.GridColor = System.Drawing.Color.DarkGray;
-            this.DgvKeep.Location = new System.Drawing.Point(4, 68);
-            this.DgvKeep.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.DgvKeep.MultiSelect = false;
-            this.DgvKeep.Name = "DgvKeep";
-            this.DgvKeep.ReadOnly = true;
-            this.DgvKeep.RowHeadersWidth = 62;
-            this.DgvKeep.RowTemplate.Height = 25;
-            this.DgvKeep.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DgvKeep.Size = new System.Drawing.Size(601, 298);
-            this.DgvKeep.TabIndex = 1;
-            this.DgvKeep.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvKeep_CellClick);
-            // 
-            // FrmKeep
+            // FRMResultLab
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(694, 748);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.Name = "FrmKeep";
-            this.Text = "Keep";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmKeep_FormClosed);
-            this.Load += new System.EventHandler(this.FrmKeep_Load);
+            this.Name = "FRMResultLab";
+            this.Text = "Result";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FRMResultLab_FormClosed);
+            this.Load += new System.EventHandler(this.FRMResultLab_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.PtbKeep)).EndInit();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel4.ResumeLayout(false);
             this.tableLayoutPanel5.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.DgvKeep)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvLabResult)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -303,17 +242,14 @@ namespace PatientSystem.Keep
         #endregion
 
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.PictureBox PtbKeep;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
-        private System.Windows.Forms.DataGridView DgvKeep;
+        private System.Windows.Forms.DataGridView DgvLabResult;
+        private System.Windows.Forms.Button BtnCompleteDate;
+        private System.Windows.Forms.PictureBox PtbKeep;
         private System.Windows.Forms.Button BtnDelete;
-        private System.Windows.Forms.Button BtnAdd;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
-        private System.Windows.Forms.Button BtnCheck;
-        private System.Windows.Forms.Button BtnConsult;
+        private System.Windows.Forms.Button BtnClose;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
-        private System.Windows.Forms.Button BtnDeselect;
-        private System.Windows.Forms.Button BtnSee;
     }
 }

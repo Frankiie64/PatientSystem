@@ -212,24 +212,47 @@ namespace DataLayer.DataKeep
 
 
         #region Result
-        //public bool GetResultById()
-        //{
-        //    try
-        //    {
-        //        SqlCommand cmd = new SqlCommand("select * from LabResult where id = @id", _connection);
-        //        cmd.Parameters.AddWithValue("@id",id);
+        public LabResult GetResultById(int Id_Appointment)
+        {
+            try
+            {
+                SqlCommand cmd = new SqlCommand("select * from LabResult where Id_Appointment = @Id_Appointment", _connection);
+                cmd.CommandType = CommandType.Text;
 
-        //    }
-        //    catch (Exception)
-        //    {
-        //        return false;
-        //    }
-        //}
+                cmd.Parameters.AddWithValue("@Id_Appointment", Id_Appointment);
+
+                SqlDataReader reader = cmd.ExecuteReader();
+                LabResult result = new LabResult();
+
+                while (reader.Read())
+                {
+                    result.Id = reader.IsDBNull(0) ? 0 : reader.GetInt32(0);
+                    result.Id_Patients = reader.IsDBNull(1) ? 0 : reader.GetInt32(1);
+                    result.Id_Appointment = reader.IsDBNull(2) ? 0 : reader.GetInt32(2);
+                    result.Id_LabTest = reader.IsDBNull(3) ? 0 : reader.GetInt32(3);
+                    result.Id_Doctor = reader.IsDBNull(4) ? 0 : reader.GetInt32(4);
+                    result.TestResult = reader.IsDBNull(5) ? "" : reader.GetString(5);
+                    result.StatusResult = reader.IsDBNull(6) ? 0 : reader.GetInt32(6);
+
+                }
+                _connection.Close();
+
+                reader.Close();
+                reader.Dispose();
+
+                return result;
+
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+        }
         public bool AddResult(LabResult result)
         {
             try
             {               
-                SqlCommand cmd = new SqlCommand("insert into LabResult(Id_Patients,Id_Doctor,Id_Appointment,Id_LabTest,TestResult,StatusResult) values(@id_patients,@id_doctor,@id_appointment,@lab_test,null,2)", _connection);
+                SqlCommand cmd = new SqlCommand("insert into LabResult(Id_Patients,Id_Doctor,Id_Appointment,Id_LabTest,TestResult,StatusResult) values(@id_patients,@id_doctor,@id_appointment,@lab_test,'No se han publicado resultado',2)", _connection);
                 cmd.Parameters.AddWithValue("@id_patients", result.Id_Patients);
                 cmd.Parameters.AddWithValue("@id_doctor", result.Id_Doctor);
                 cmd.Parameters.AddWithValue("@id_appointment", result.Id_Appointment);
@@ -255,6 +278,29 @@ namespace DataLayer.DataKeep
             {
                 return false;
             }
+        }
+
+        public DataTable GetListResult(int Id_Appointment)
+        {
+            SqlCommand command = new SqlCommand("select LabTest.Title as 'Nombre de la prueba', StatusDate.Text as 'Estatus' from LabResult inner join StatusDate on LabResult.StatusResult = StatusDate.id inner join LabTest on LabResult.Id_LabTest = LabTest.id where Id_Appointment = @Id_Appointment;", _connection);
+            command.CommandType = CommandType.Text;
+
+            command.Parameters.AddWithValue("@Id_Appointment", Id_Appointment);
+
+            SqlDataAdapter query = new SqlDataAdapter(command);
+
+            return LoadTable(query);
+        }
+        public DataTable GetFinaltResult(int Id_Appointment)
+        {
+            SqlCommand command = new SqlCommand("select LabTest.Title as 'Nombre de la prueba', LabResult.TestResult as 'Resultado' from LabResult inner join LabTest on LabResult.Id_LabTest = LabTest.id where Id_Appointment = Id_Appointment", _connection);
+            command.CommandType = CommandType.Text;
+
+            command.Parameters.AddWithValue("@Id_Appointment", Id_Appointment);
+
+            SqlDataAdapter query = new SqlDataAdapter(command);
+
+            return LoadTable(query);
         }
 
         #endregion

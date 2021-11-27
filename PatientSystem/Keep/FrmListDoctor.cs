@@ -15,6 +15,7 @@ namespace PatientSystem.Keep
     {
         SqlConnection _cn;
         ServiceKeep _service;
+        private bool validate = true;
         public FrmListDoctor(SqlConnection cn)
         {
             InitializeComponent();
@@ -43,8 +44,7 @@ namespace PatientSystem.Keep
             {
                 GlobalRepositoty.Instance.Doc = _service.GetDoctorsById(GlobalRepositoty.Instance.id);
                 Deselect();
-                FrmDate date = new FrmDate(_cn);
-                date.Show();
+                validate = false;               
                 this.Close();
             }
             else
@@ -105,6 +105,38 @@ namespace PatientSystem.Keep
             GlobalRepositoty.Instance.id = new int();
 
         }
-        
+
+        private void FrmListDoctor_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (validate)
+            {
+                if (MessageBox.Show("Are you sure you want to exit?", "Confirm exit", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+                {
+                    e.Cancel = true;
+                }
+                else
+                {
+
+                    e.Cancel = false;
+                }
+            }
+        }
+
+        private void FrmListDoctor_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            if(!validate)
+            {
+                FrmDate date = new FrmDate(_cn);
+                date.Show();
+            }
+            else
+            {
+                FrmKeep keep = new FrmKeep(_cn);
+                keep.Show();
+            }
+            
+        }
+
+       
     }
 }

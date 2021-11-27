@@ -236,6 +236,8 @@ namespace PatientSystem.Keep
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "FrmListDoctor";
             this.Text = "Doctor";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FrmListDoctor_FormClosing);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmListDoctor_FormClosed);
             this.Load += new System.EventHandler(this.FrmListDoctor_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.PtbDoctor)).EndInit();

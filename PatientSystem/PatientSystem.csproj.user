@@ -19,6 +19,12 @@
     <Compile Update="Keep\FrmListTest.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Keep\FrmResultLab.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Keep\FrmSeeResult.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Lab\FrmAddTest.cs">
       <SubType>Form</SubType>
     </Compile>

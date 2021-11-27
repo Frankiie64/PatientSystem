@@ -10,6 +10,8 @@ namespace PatientSystem.Keep
     {
         ServiceKeep _service;
         SqlConnection _cn;
+        private bool validate = true;
+
         public FrmListPatients(SqlConnection cn)
         {
             InitializeComponent();
@@ -17,6 +19,34 @@ namespace PatientSystem.Keep
             _service = new ServiceKeep(_cn);
         }
         #region Events
+
+        private void FrmListPatients_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            if (!validate)
+            {
+                FrmListDoctor listDoctors = new FrmListDoctor(_cn);
+                listDoctors.Show();
+            }
+            else
+            {
+                FrmKeep keep = new FrmKeep(_cn);
+                keep.Show();
+            }
+        }
+        private void FrmListPatients_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (validate)
+            {
+                if (MessageBox.Show("Are you sure you want to exit?", "Confirm exit", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+                {
+                    e.Cancel = true;
+                }
+                else
+                {
+                    e.Cancel = false;
+                }
+            }
+        }
         private void BtnSearch_Click_1(object sender, EventArgs e)
         {
             if (validationSearch())
@@ -54,9 +84,9 @@ namespace PatientSystem.Keep
             {
                 GlobalRepositoty.Instance.Patient = _service.GetPatientsById(GlobalRepositoty.Instance.id);
                 Deselect();
+                validate = false;
                 this.Close();
-                FrmListDoctor listDoctors = new FrmListDoctor(_cn);
-                listDoctors.Show();
+              
             }
             else
             {
@@ -99,6 +129,9 @@ namespace PatientSystem.Keep
             return (MtbCard.MaskFull);
         }
         #endregion
+
+        
+
       
     }
 }

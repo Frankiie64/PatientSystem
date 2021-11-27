@@ -319,3 +319,5 @@ C:\Users\Franklyn\source\KeepX3\PatientSystem\obj\Debug\netcoreapp3.1\PatientSys
 C:\Users\Franklyn\source\KeepX3\PatientSystem\obj\Debug\netcoreapp3.1\PatientSystem.dll
 C:\Users\Franklyn\source\KeepX3\PatientSystem\obj\Debug\netcoreapp3.1\PatientSystem.pdb
 C:\Users\Franklyn\source\KeepX3\PatientSystem\obj\Debug\netcoreapp3.1\PatientSystem.genruntimeconfig.cache
+C:\Users\Franklyn\source\KeepX3\PatientSystem\obj\Debug\netcoreapp3.1\PatientSystem.Keep.FRMResultLab.resources
+C:\Users\Franklyn\source\KeepX3\PatientSystem\obj\Debug\netcoreapp3.1\PatientSystem.Keep.FrmSeeResult.resources
