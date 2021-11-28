@@ -40,6 +40,8 @@ namespace PatientSystem.Keep
         {
             if (e.RowIndex >= 0)
             {
+                btnDeselected.Enabled = true;
+                BtnSelected.Enabled = true;
                 GlobalRepositoty.Instance.id = Convert.ToInt32(DgvTest.CurrentRow.Cells[0].Value);              
             }
         }
@@ -76,7 +78,7 @@ namespace PatientSystem.Keep
                     Decision = false;
                     this.Close();
                 }
-
+                Deselect();
             }
             else
             {
@@ -87,7 +89,41 @@ namespace PatientSystem.Keep
 
         private void BtnSearch_Click(object sender, EventArgs e)
         {
+            if (validationSearch())
+            {
+                DgvTest.DataSource = service.GetByNameTest(TxtTestName.Text);
+                btnDeselected.Enabled = true;
+                if (DgvTest.Rows.Count == 0)
+                {
+                    MessageBox.Show("the id you try to find does not exist in the data base");
+                    Deselect();
+                }
+                else
+                {
+                    DgvTest.Rows[0].Selected = true;
+                    GlobalRepositoty.Instance.id = Convert.ToInt32(DgvTest.CurrentRow.Cells[0].Value);
+                    BtnSelected.Enabled = true;
 
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please, complete the form");
+            }
+        }
+        private bool validationSearch()
+        {
+            return !(string.IsNullOrWhiteSpace(TxtTestName.Text));
+        }
+        private void Deselect()
+        {
+            TxtTestName.Clear();
+            DgvTest.ClearSelection();
+            btnDeselected.Enabled = false;
+            BtnSelected.Enabled = false;
+            LoadData();
+
+            GlobalRepositoty.Instance.id = new int();
         }
 
         private void FrmListTest_FormClosed(object sender, FormClosedEventArgs e)
@@ -109,6 +145,11 @@ namespace PatientSystem.Keep
                     e.Cancel = false;
                 }
             }
+        }
+
+        private void btnDeselected_Click(object sender, EventArgs e)
+        {
+            Deselect();
         }
     }
 }

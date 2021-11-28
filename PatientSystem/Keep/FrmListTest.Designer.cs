@@ -38,6 +38,7 @@ namespace PatientSystem.Keep
             this.BtnSearch = new System.Windows.Forms.Button();
             this.TxtTestName = new System.Windows.Forms.TextBox();
             this.TlpSetting = new System.Windows.Forms.TableLayoutPanel();
+            this.btnDeselected = new System.Windows.Forms.Button();
             this.BtnSelected = new System.Windows.Forms.Button();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PtbPatients)).BeginInit();
@@ -174,6 +175,7 @@ namespace PatientSystem.Keep
             this.TlpSetting.ColumnCount = 2;
             this.TlpSetting.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.TlpSetting.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.TlpSetting.Controls.Add(this.btnDeselected, 1, 0);
             this.TlpSetting.Controls.Add(this.BtnSelected, 0, 0);
             this.TlpSetting.Dock = System.Windows.Forms.DockStyle.Fill;
             this.TlpSetting.Location = new System.Drawing.Point(68, 687);
@@ -184,11 +186,29 @@ namespace PatientSystem.Keep
             this.TlpSetting.Size = new System.Drawing.Size(557, 58);
             this.TlpSetting.TabIndex = 5;
             // 
+            // btnDeselected
+            // 
+            this.btnDeselected.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnDeselected.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnDeselected.Enabled = false;
+            this.btnDeselected.FlatAppearance.BorderSize = 0;
+            this.btnDeselected.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDeselected.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.btnDeselected.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDeselected.Location = new System.Drawing.Point(282, 5);
+            this.btnDeselected.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnDeselected.Name = "btnDeselected";
+            this.btnDeselected.Size = new System.Drawing.Size(271, 48);
+            this.btnDeselected.TabIndex = 5;
+            this.btnDeselected.Text = "Deselected";
+            this.btnDeselected.UseVisualStyleBackColor = false;
+            this.btnDeselected.Click += new System.EventHandler(this.btnDeselected_Click);
+            // 
             // BtnSelected
             // 
             this.BtnSelected.BackColor = System.Drawing.Color.SteelBlue;
-            this.TlpSetting.SetColumnSpan(this.BtnSelected, 2);
             this.BtnSelected.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.BtnSelected.Enabled = false;
             this.BtnSelected.FlatAppearance.BorderSize = 0;
             this.BtnSelected.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnSelected.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
@@ -196,7 +216,7 @@ namespace PatientSystem.Keep
             this.BtnSelected.Location = new System.Drawing.Point(4, 5);
             this.BtnSelected.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.BtnSelected.Name = "BtnSelected";
-            this.BtnSelected.Size = new System.Drawing.Size(549, 48);
+            this.BtnSelected.Size = new System.Drawing.Size(270, 48);
             this.BtnSelected.TabIndex = 4;
             this.BtnSelected.Text = "Save";
             this.BtnSelected.UseVisualStyleBackColor = false;
@@ -237,6 +257,7 @@ namespace PatientSystem.Keep
         private System.Windows.Forms.Button BtnSelected;
         private System.Windows.Forms.TableLayoutPanel TlpSetting;
         private System.Windows.Forms.TextBox TxtTestName;
+        private System.Windows.Forms.Button btnDeselected;
     }
 
 }

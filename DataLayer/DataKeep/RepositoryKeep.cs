@@ -104,6 +104,7 @@ namespace DataLayer.DataKeep
             return LoadTable(query);
         }
         #endregion
+
         #region Patiens
         public PatientsModel GetByIdPatient(int id)
         {
@@ -153,6 +154,7 @@ namespace DataLayer.DataKeep
             return LoadTable(dataAdapter);
         }
         #endregion
+
         #region Doctors
         public DataTable GetUniqueDoctors(string identification)
         {
@@ -207,9 +209,6 @@ namespace DataLayer.DataKeep
         }
 
         #endregion  
-
-
-
 
         #region Result
         public LabResult GetResultById(int Id_Appointment)
@@ -293,7 +292,7 @@ namespace DataLayer.DataKeep
         }
         public DataTable GetFinaltResult(int Id_Appointment)
         {
-            SqlCommand command = new SqlCommand("select LabTest.Title as 'Nombre de la prueba', LabResult.TestResult as 'Resultado' from LabResult inner join LabTest on LabResult.Id_LabTest = LabTest.id where Id_Appointment = Id_Appointment", _connection);
+            SqlCommand command = new SqlCommand("select LabTest.Title as 'Nombre de la prueba', LabResult.TestResult as 'Resultado' from LabResult inner join LabTest on LabResult.Id_LabTest = LabTest.id where Id_Appointment = @Id_Appointment", _connection);
             command.CommandType = CommandType.Text;
 
             command.Parameters.AddWithValue("@Id_Appointment", Id_Appointment);
@@ -304,8 +303,6 @@ namespace DataLayer.DataKeep
         }
 
         #endregion
-
-
 
         #region Consult Genaral
         private bool ExecuteDml(SqlCommand command)

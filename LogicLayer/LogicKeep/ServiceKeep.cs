@@ -54,6 +54,7 @@ namespace LogicLayer.LogicKeep
             return _repo.GetallKeeps();
         }
         #endregion
+
         #region Doctor
         public DataTable GetListDoctors()
         {
@@ -90,6 +91,11 @@ namespace LogicLayer.LogicKeep
         public DataTable GetListTest()
         {
             return labTest.GetallUsers();
+        }
+
+        public DataTable GetByNameTest(string Name)
+        {
+            return labTest.GetaByNameTest(Name);
         }
         #endregion
 

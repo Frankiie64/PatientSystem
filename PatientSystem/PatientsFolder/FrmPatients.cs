@@ -3,65 +3,127 @@ using LogicLayer;
 using LogicLayer.PatientLogic;
 using PatientSystem.Home;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Data.SqlClient;
-using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
+using PatientSystem.Login;
 
 namespace PatientSystem.Patients
 {
     public partial class FrmPatients : Form
     {
         private ServicePatient _service;
-        private SqlConnection _connection;        
+        private SqlConnection _connection;
+        private bool Login = false;
+        private object Mantenices = new object();
         public FrmPatients(SqlConnection cn)
         {
             InitializeComponent();
             _service = new ServicePatient(cn);
             _connection = cn;
         }
+
+        #region Menu Strip
+
+        private void MantenimientoKeep_Click(object sender, EventArgs e)
+        {
+            Login = true;
+            Mantenices = true;
+            this.Close();
+        }
+
+        private void MantenimientoLabResult_Click(object sender, EventArgs e)
+        {
+            Login = true;
+            Mantenices = false;
+            this.Close();
+        }
+
+        private void logOutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Login = true;
+            this.Close();
+        }
+
+        private void goBackHomeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void MenuAdd_Click(object sender, EventArgs e)
+        {
+            AddPatients();
+        }
+
+        private void MenuEdit_Click(object sender, EventArgs e)
+        {
+            EditPatients();
+        }
+
+        private void MenuDelete_Click(object sender, EventArgs e)
+        {
+            DeletePatient();
+        }
+
+        #endregion
+
+        #region Events
+
         private void BtnDeselect_Click(object sender, EventArgs e)
         {
             Deselect();
         }
         private void FrmPatients_FormClosed(object sender, FormClosedEventArgs e)
         {
-            FrmHome home = new FrmHome(_connection);
-            home.Show();
+            Clucht();
         }
         private void BtnEdit_Click(object sender, EventArgs e)
         {
-            if(GlobalRepositoty.Instance.index >= 0)
-            {
-                FrmAddPatients patients = new FrmAddPatients(_connection);
-                patients.Show();
-                this.Hide();
-            }
-            else
-            {
-                MessageBox.Show("U should select a patient", "System");
-            }
+            EditPatients();
         }
         private void FrmPatients_Load(object sender, EventArgs e)
         {
-            LoadData();            
+            LoadData();
         }
-     
+
         private void BtnAdd_Click(object sender, EventArgs e)
         {
-            Deselect();
-            FrmAddPatients frmPatients = new FrmAddPatients(_connection);
-            frmPatients.Show();
-            this.Hide();
+            AddPatients();
         }
+
+
         private void BtnDelete_Click(object sender, EventArgs e)
         {
             DeletePatient();
         }
+        private void DgvPatients_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
 
+            if (e.RowIndex >= 0)
+            {
+                GlobalRepositoty.Instance.id = Convert.ToInt32(DgvPatients.CurrentRow.Cells[0].Value);
+                GlobalRepositoty.Instance.index = e.RowIndex;
+                GlobalRepositoty.Instance._filename = Convert.ToString(DgvPatients.CurrentRow.Cells[9].Value);
+
+                if (GlobalRepositoty.Instance._filename == "")
+                {
+                    PtbPatients.SizeMode = PictureBoxSizeMode.CenterImage;
+                }
+                else
+                {
+                    PtbPatients.ImageLocation = GlobalRepositoty.Instance._filename;
+                    PtbPatients.SizeMode = PictureBoxSizeMode.StretchImage;
+                }
+                BtnDeselect.Visible = true;
+
+                GlobalRepositoty.Instance.Patient = _service.GetById(GlobalRepositoty.Instance.id);
+
+            }
+
+        }
+
+        #endregion
+
+        #region Private metodos
         public void DeletePatient()
         {
             if (GlobalRepositoty.Instance.index < 0)
@@ -98,31 +160,65 @@ namespace PatientSystem.Patients
 
         }
 
-        private void DgvPatients_CellClick(object sender, DataGridViewCellEventArgs e)
+        
+        private void GoBackHome()
         {
-
-            if (e.RowIndex >= 0)
+            FrmHome home = new FrmHome(_connection);
+            home.Show();
+        }
+        private void Clucht()
+        {
+            try
             {
-                GlobalRepositoty.Instance.id = Convert.ToInt32(DgvPatients.CurrentRow.Cells[0].Value);
-                GlobalRepositoty.Instance.index = e.RowIndex;
-                GlobalRepositoty.Instance._filename = Convert.ToString(DgvPatients.CurrentRow.Cells[9].Value);
-
-                if (GlobalRepositoty.Instance._filename == "")
+                if (Login)
                 {
-                    PtbPatients.SizeMode = PictureBoxSizeMode.CenterImage;
+                    if (Mantenices == new object())
+                    {
+                       FrmLogin.Intance.Show();
+                    }
+                    else if ((bool)Mantenices)
+                    {
+                        Keep.FrmKeep keep = new Keep.FrmKeep(_connection);
+                        keep.Show();
+                    }
+                    else if (!(bool)Mantenices)
+                    {
+                        ResultTest.FrmResultLab result = new ResultTest.FrmResultLab(_connection);
+                        result.Show();
+                    }
+
                 }
                 else
                 {
-                    PtbPatients.ImageLocation = GlobalRepositoty.Instance._filename;
-                    PtbPatients.SizeMode = PictureBoxSizeMode.StretchImage;
+                    GoBackHome();
                 }
-                BtnDeselect.Visible = true;
-
-                GlobalRepositoty.Instance.Patient = _service.GetById(GlobalRepositoty.Instance.id);
-
             }
-            
+            catch (Exception ex)
+            {
+                FrmLogin.Intance.Show();
+            }
         }
+        private void AddPatients()
+        {
+            Deselect();
+            FrmAddPatients frmPatients = new FrmAddPatients(_connection);
+            frmPatients.Show();
+            this.Hide();
+        }
+        private void EditPatients()
+        {
+            if (GlobalRepositoty.Instance.index >= 0)
+            {
+                FrmAddPatients patients = new FrmAddPatients(_connection);
+                patients.Show();
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("U should select a patient", "System");
+            }
+        }
+        #endregion
     }
 }
 

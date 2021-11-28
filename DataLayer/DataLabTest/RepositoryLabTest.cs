@@ -43,7 +43,17 @@ namespace DataLayer.DataLabTest
 
             return ExecuteDml(sqlCommand);
         }
-      
+
+        public DataTable GetaByNameTest(string Name)
+        {
+            SqlCommand command = new SqlCommand("select id,Title as 'Name of Test' from LabTest where Title = @Title", _connection);
+            command.CommandType = CommandType.Text;
+
+            command.Parameters.AddWithValue("@Title", Name);
+            SqlDataAdapter query = new SqlDataAdapter(command);
+
+            return LoadTable(query);
+        }
 
         public DataTable GetallUsers()
         {
