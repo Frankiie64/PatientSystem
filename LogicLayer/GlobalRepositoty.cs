@@ -18,6 +18,7 @@ namespace LogicLayer
         public Doctors Doc = new Doctors();
         public Appointment appointment = new Appointment();
 
+        public int UserId = new int(); 
         public int TyperUser = new int();
         private GlobalRepositoty()
         { }

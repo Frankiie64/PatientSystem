@@ -76,7 +76,6 @@ namespace PatientSystem.Medical
             DgvDoctor.Columns[6].Visible = false;
             Deselect();
         }
-
         private void BtnDeselect_Click(object sender, EventArgs e)
         {
             Deselect();
@@ -89,7 +88,6 @@ namespace PatientSystem.Medical
         {
             EditDoctor();
         }
-
         private void BtnDelete_Click(object sender, EventArgs e)
         {
             DeleteDoctor();
@@ -179,9 +177,7 @@ namespace PatientSystem.Medical
                     }
                     else
                     {
-                        MessageBox.Show("Ha ocurrido un error", "Error");
-                        loadData();
-                        Deselect();
+                        MessageBox.Show("¿A donde tan' arreglado? Este doctor ta' bregando con un paciente *clock*", "System");
                     }
                 }
                 else

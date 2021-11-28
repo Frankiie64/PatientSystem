@@ -78,10 +78,10 @@ namespace PatientSystem.User
         private void FrmUser_Load(object sender, EventArgs e)
         {
             loadData();
-            DgvUser.Columns[0].Visible = false;            
+            DgvUser.Columns[0].Visible = false;
             Deselect();
         }
-       
+
         private void BtnDeselect_Click(object sender, EventArgs e)
         {
             Deselect();
@@ -94,7 +94,7 @@ namespace PatientSystem.User
                 GlobalRepositoty.Instance.index = e.RowIndex;
 
                 BtnDeselect.Visible = true;
-             
+
                 GlobalRepositoty.Instance.Usuario = _service.GetById(GlobalRepositoty.Instance.id);
             }
         }
@@ -118,7 +118,6 @@ namespace PatientSystem.User
         #region Metodos Privados
         public void loadData()
         {
-
             DgvUser.DataSource = _service.LoadTable();
             DgvUser.ClearSelection();
         }
@@ -129,7 +128,7 @@ namespace PatientSystem.User
             GlobalRepositoty.Instance.index = -1;
             GlobalRepositoty.Instance.id = new int();
             GlobalRepositoty.Instance.Usuario = new Users();
-            
+
         }
         private void GoBackHome()
         {
@@ -167,17 +166,24 @@ namespace PatientSystem.User
                 DialogResult result = MessageBox.Show("Estas seguro que deseas eliminar este usuario ?", "QUESTION", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                 if (result == DialogResult.OK)
                 {
-                    if (_service.DeleteUser(GlobalRepositoty.Instance.id))
+                    if (GlobalRepositoty.Instance.UserId == GlobalRepositoty.Instance.id)
                     {
-                        MessageBox.Show("Se ha eliminado correctamente", "Eliminacion del usario");
-                        loadData();
-                        Deselect();
+                        MessageBox.Show("Profe, usted no corre. Busquese a otro grupo pa' tripiar", "Burlao'");
                     }
                     else
                     {
-                        MessageBox.Show("Ha ocurrido un error", "Error");
-                        loadData();
-                        Deselect();
+                        if (_service.DeleteUser(GlobalRepositoty.Instance.id))
+                        {
+                            MessageBox.Show("Se ha eliminado correctamente", "Eliminacion del usario");
+                            loadData();
+                            Deselect();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Ha ocurrido un error", "Error");
+                            loadData();
+                            Deselect();
+                        }
                     }
                 }
                 else
@@ -220,7 +226,7 @@ namespace PatientSystem.User
         }
         #endregion
 
-       
+
     }
 
 

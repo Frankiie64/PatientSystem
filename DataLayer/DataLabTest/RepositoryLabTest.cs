@@ -37,10 +37,9 @@ namespace DataLayer.DataLabTest
         }
         public bool DeleteLabTest(int id)
         {
-            SqlCommand sqlCommand = new SqlCommand(" delete LabTest where id=@id", _connection);
-
+            SqlCommand sqlCommand = new SqlCommand("delete LabTest where id=@id", _connection);
+            sqlCommand.CommandType = CommandType.Text;
             sqlCommand.Parameters.AddWithValue("@id", id);
-
             return ExecuteDml(sqlCommand);
         }
 

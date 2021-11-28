@@ -94,8 +94,7 @@ namespace PatientSystem.Lab
         }
         private void FrmLabTest_Load(object sender, EventArgs e)
         {
-            loadData();
-            DgvLab.Columns[0].Visible = false;
+            loadData(); 
             Deselect();
         }
         private void DgvLab_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -137,7 +136,6 @@ namespace PatientSystem.Lab
             }
             else
             {
-
                 DialogResult result = MessageBox.Show("Estas seguro que deseas eliminar esta prueba ?", "QUESTION", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                 if (result == DialogResult.OK)
                 {
@@ -146,13 +144,18 @@ namespace PatientSystem.Lab
                         MessageBox.Show("Se ha elimanado correctamente la prueba", "Notificacion");
                         Deselect();
                     }
+                    else
+                    {
+                        MessageBox.Show("My bro, ¿pa' donde va'? Esta prueba se está utilizando", "System");
+
+                    }
                 }
                 else
                 {
                     MessageBox.Show("No se ha elimanado  la prueba", "Notificacion");
                 }
             }
-            loadData();
+
         }
         private void GoBackHome()
         {
@@ -204,15 +207,16 @@ namespace PatientSystem.Lab
         {
             DgvLab.DataSource = service.GetAll();
             DgvLab.ClearSelection();
+            DgvLab.Columns[0].Visible = false;
         }
         public void Deselect()
         {
+            loadData();
             DgvLab.ClearSelection();
             BtnDeselect.Visible = false;
             GlobalRepositoty.Instance.index = -1;
             GlobalRepositoty.Instance.id = new int();
             GlobalRepositoty.Instance.test = new LabTest();
-
         }
 
         #endregion

@@ -57,23 +57,21 @@ namespace PatientSystem.Login
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel3, 1, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 3;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 45.55984F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 45.17374F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.073359F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(616, 712);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(431, 427);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
             // PtbLogin
             // 
             this.PtbLogin.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PtbLogin.Image = ((System.Drawing.Image)(resources.GetObject("PtbLogin.Image")));
-            this.PtbLogin.Location = new System.Drawing.Point(103, 5);
-            this.PtbLogin.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.PtbLogin.Location = new System.Drawing.Point(72, 3);
             this.PtbLogin.Name = "PtbLogin";
-            this.PtbLogin.Size = new System.Drawing.Size(408, 315);
+            this.PtbLogin.Size = new System.Drawing.Size(285, 188);
             this.PtbLogin.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.PtbLogin.TabIndex = 0;
             this.PtbLogin.TabStop = false;
@@ -86,13 +84,12 @@ namespace PatientSystem.Login
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 17.39131F));
             this.tableLayoutPanel2.Controls.Add(this.BtnLoginInit, 1, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(103, 652);
-            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(72, 390);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 55F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(408, 55);
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 34F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(285, 34);
             this.tableLayoutPanel2.TabIndex = 1;
             // 
             // BtnLoginInit
@@ -105,10 +102,9 @@ namespace PatientSystem.Login
             this.BtnLoginInit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.SteelBlue;
             this.BtnLoginInit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtnLoginInit.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.BtnLoginInit.Location = new System.Drawing.Point(79, 5);
-            this.BtnLoginInit.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.BtnLoginInit.Location = new System.Drawing.Point(55, 3);
             this.BtnLoginInit.Name = "BtnLoginInit";
-            this.BtnLoginInit.Size = new System.Drawing.Size(253, 45);
+            this.BtnLoginInit.Size = new System.Drawing.Size(176, 28);
             this.BtnLoginInit.TabIndex = 0;
             this.BtnLoginInit.Text = "Login";
             this.BtnLoginInit.UseVisualStyleBackColor = false;
@@ -124,13 +120,12 @@ namespace PatientSystem.Login
             this.tableLayoutPanel3.Controls.Add(this.TxbLoginNick, 1, 0);
             this.tableLayoutPanel3.Controls.Add(this.TxbLoginPassword, 1, 1);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(103, 330);
-            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(72, 197);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 2;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(408, 312);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(285, 187);
             this.tableLayoutPanel3.TabIndex = 2;
             // 
             // LblLoginNick
@@ -138,10 +133,9 @@ namespace PatientSystem.Login
             this.LblLoginNick.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.LblLoginNick.AutoSize = true;
             this.LblLoginNick.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.LblLoginNick.Location = new System.Drawing.Point(132, 0);
-            this.LblLoginNick.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.LblLoginNick.Location = new System.Drawing.Point(94, 0);
             this.LblLoginNick.Name = "LblLoginNick";
-            this.LblLoginNick.Size = new System.Drawing.Size(68, 31);
+            this.LblLoginNick.Size = new System.Drawing.Size(45, 20);
             this.LblLoginNick.TabIndex = 0;
             this.LblLoginNick.Text = "User:";
             // 
@@ -150,38 +144,34 @@ namespace PatientSystem.Login
             this.LblLoginPassword.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.LblLoginPassword.AutoSize = true;
             this.LblLoginPassword.Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.LblLoginPassword.Location = new System.Drawing.Point(82, 156);
-            this.LblLoginPassword.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.LblLoginPassword.Location = new System.Drawing.Point(62, 93);
             this.LblLoginPassword.Name = "LblLoginPassword";
-            this.LblLoginPassword.Size = new System.Drawing.Size(118, 31);
+            this.LblLoginPassword.Size = new System.Drawing.Size(77, 20);
             this.LblLoginPassword.TabIndex = 1;
             this.LblLoginPassword.Text = "Password:";
             // 
             // TxbLoginNick
             // 
             this.TxbLoginNick.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.TxbLoginNick.Location = new System.Drawing.Point(208, 5);
-            this.TxbLoginNick.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.TxbLoginNick.Location = new System.Drawing.Point(145, 3);
             this.TxbLoginNick.Name = "TxbLoginNick";
-            this.TxbLoginNick.Size = new System.Drawing.Size(196, 31);
+            this.TxbLoginNick.Size = new System.Drawing.Size(137, 23);
             this.TxbLoginNick.TabIndex = 2;
             // 
             // TxbLoginPassword
             // 
             this.TxbLoginPassword.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.TxbLoginPassword.Location = new System.Drawing.Point(208, 161);
-            this.TxbLoginPassword.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.TxbLoginPassword.Location = new System.Drawing.Point(145, 96);
             this.TxbLoginPassword.Name = "TxbLoginPassword";
-            this.TxbLoginPassword.Size = new System.Drawing.Size(196, 31);
+            this.TxbLoginPassword.Size = new System.Drawing.Size(137, 23);
             this.TxbLoginPassword.TabIndex = 3;
             // 
             // FrmLogin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(616, 712);
+            this.ClientSize = new System.Drawing.Size(431, 427);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "FrmLogin";
             this.Text = "Login";
             this.Load += new System.EventHandler(this.FrmLogin_Load);

@@ -212,13 +212,12 @@ namespace PatientSystem.Lab
             this.TblRegister.Controls.Add(this.tableLayoutPanel5, 1, 2);
             this.TblRegister.Dock = System.Windows.Forms.DockStyle.Fill;
             this.TblRegister.Location = new System.Drawing.Point(0, 0);
-            this.TblRegister.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.TblRegister.Name = "TblRegister";
             this.TblRegister.RowCount = 3;
             this.TblRegister.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 60.04902F));
             this.TblRegister.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 30.22113F));
             this.TblRegister.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.82801F));
-            this.TblRegister.Size = new System.Drawing.Size(630, 678);
+            this.TblRegister.Size = new System.Drawing.Size(441, 407);
             this.TblRegister.TabIndex = 4;
             // 
             // PtbTest
@@ -226,10 +225,9 @@ namespace PatientSystem.Lab
             this.PtbTest.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.PtbTest.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PtbTest.Image = ((System.Drawing.Image)(resources.GetObject("PtbTest.Image")));
-            this.PtbTest.Location = new System.Drawing.Point(96, 5);
-            this.PtbTest.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.PtbTest.Location = new System.Drawing.Point(67, 3);
             this.PtbTest.Name = "PtbTest";
-            this.PtbTest.Size = new System.Drawing.Size(436, 396);
+            this.PtbTest.Size = new System.Drawing.Size(305, 238);
             this.PtbTest.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.PtbTest.TabIndex = 0;
             this.PtbTest.TabStop = false;
@@ -242,16 +240,15 @@ namespace PatientSystem.Lab
             this.tableLayoutPanel4.Controls.Add(this.LblName, 0, 0);
             this.tableLayoutPanel4.Controls.Add(this.TxbName, 1, 0);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel4.Location = new System.Drawing.Point(96, 411);
-            this.tableLayoutPanel4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(67, 247);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 1;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 194F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 194F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 194F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 194F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(436, 194);
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 116F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 116F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 116F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 116F));
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(305, 116);
             this.tableLayoutPanel4.TabIndex = 1;
             // 
             // LblName
@@ -259,20 +256,18 @@ namespace PatientSystem.Lab
             this.LblName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.LblName.AutoSize = true;
             this.LblName.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.LblName.Location = new System.Drawing.Point(143, 0);
-            this.LblName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.LblName.Location = new System.Drawing.Point(102, 0);
             this.LblName.Name = "LblName";
-            this.LblName.Size = new System.Drawing.Size(71, 28);
+            this.LblName.Size = new System.Drawing.Size(47, 17);
             this.LblName.TabIndex = 0;
             this.LblName.Text = "Name:";
             // 
             // TxbName
             // 
             this.TxbName.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.TxbName.Location = new System.Drawing.Point(222, 5);
-            this.TxbName.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.TxbName.Location = new System.Drawing.Point(155, 3);
             this.TxbName.Name = "TxbName";
-            this.TxbName.Size = new System.Drawing.Size(210, 31);
+            this.TxbName.Size = new System.Drawing.Size(147, 23);
             this.TxbName.TabIndex = 5;
             // 
             // tableLayoutPanel5
@@ -283,13 +278,12 @@ namespace PatientSystem.Lab
             this.tableLayoutPanel5.Controls.Add(this.BtnBack, 0, 0);
             this.tableLayoutPanel5.Controls.Add(this.BtnConfirm, 1, 0);
             this.tableLayoutPanel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel5.Location = new System.Drawing.Point(96, 615);
-            this.tableLayoutPanel5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tableLayoutPanel5.Location = new System.Drawing.Point(67, 369);
             this.tableLayoutPanel5.Name = "tableLayoutPanel5";
             this.tableLayoutPanel5.RowCount = 1;
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 63F));
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(436, 58);
+            this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 38F));
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(305, 35);
             this.tableLayoutPanel5.TabIndex = 2;
             // 
             // BtnBack
@@ -301,10 +295,9 @@ namespace PatientSystem.Lab
             this.BtnBack.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.BtnBack.ForeColor = System.Drawing.Color.Black;
             this.BtnBack.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnBack.Location = new System.Drawing.Point(4, 5);
-            this.BtnBack.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.BtnBack.Location = new System.Drawing.Point(3, 3);
             this.BtnBack.Name = "BtnBack";
-            this.BtnBack.Size = new System.Drawing.Size(210, 48);
+            this.BtnBack.Size = new System.Drawing.Size(146, 29);
             this.BtnBack.TabIndex = 0;
             this.BtnBack.Text = "Back";
             this.BtnBack.UseVisualStyleBackColor = false;
@@ -319,10 +312,9 @@ namespace PatientSystem.Lab
             this.BtnConfirm.Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.BtnConfirm.ForeColor = System.Drawing.Color.Black;
             this.BtnConfirm.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnConfirm.Location = new System.Drawing.Point(222, 5);
-            this.BtnConfirm.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.BtnConfirm.Location = new System.Drawing.Point(155, 3);
             this.BtnConfirm.Name = "BtnConfirm";
-            this.BtnConfirm.Size = new System.Drawing.Size(210, 48);
+            this.BtnConfirm.Size = new System.Drawing.Size(147, 29);
             this.BtnConfirm.TabIndex = 1;
             this.BtnConfirm.Text = "Add";
             this.BtnConfirm.UseVisualStyleBackColor = false;
@@ -330,11 +322,10 @@ namespace PatientSystem.Lab
             // 
             // FrmAddTest
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(630, 678);
+            this.ClientSize = new System.Drawing.Size(441, 407);
             this.Controls.Add(this.TblRegister);
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "FrmAddTest";
             this.Text = "Test";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmAddTest_FormClosed);

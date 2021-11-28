@@ -30,7 +30,9 @@ namespace LogicLayer.Login
                     string DataNickName = data.ValidationExist(User.NickName).NickName.Trim();
                     string DataPass = data.ValidationExist(User.NickName).Pass.Trim();
                     int TyperUser = data.ValidationExist(User.NickName).TypeUsers;
+                    int idUser = data.ValidationExist(User.NickName).Id;
                     
+
                     if (DataNickName != User.NickName)
                     {
                         return 1;
@@ -41,8 +43,10 @@ namespace LogicLayer.Login
                     }
                     else
                     {
+                        GlobalRepositoty.Instance.UserId = idUser;
                         GlobalRepositoty.Instance.TyperUser = TyperUser;
                         return 3;
+
                     }
                 }
             }

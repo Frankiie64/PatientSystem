@@ -135,13 +135,22 @@ namespace PatientSystem.Patients
                 DialogResult response = MessageBox.Show("U sure u want to delete this patient", "System", MessageBoxButtons.OKCancel);
                 if (response == DialogResult.OK)
                 {
-                    _service.Delete(GlobalRepositoty.Instance.id);
-                    Deselect();
-                    LoadData();
+                    if (_service.Delete(GlobalRepositoty.Instance.id))
+                    {
+                        Deselect();
+                        LoadData();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Profesor, usted no es tiguere. Ese paciente esta bajo consulta", "System");
+                        Deselect();
+                    }
                 }
+
+
             }
         }
-        
+
         private void Deselect()
         {
             DgvPatients.ClearSelection();
@@ -160,7 +169,7 @@ namespace PatientSystem.Patients
 
         }
 
-        
+
         private void GoBackHome()
         {
             FrmHome home = new FrmHome(_connection);
@@ -174,7 +183,7 @@ namespace PatientSystem.Patients
                 {
                     if (Mantenices == new object())
                     {
-                       FrmLogin.Intance.Show();
+                        FrmLogin.Intance.Show();
                     }
                     else if ((bool)Mantenices)
                     {
