@@ -1,14 +1,13 @@
 {
   "ExpandedNodes": [
     "",
-    "\\DataLayer",
-    "\\DataLayer\\ResultTestData",
     "\\LogicLayer",
-    "\\LogicLayer\\LogicKeep",
     "\\LogicLayer\\LogicTestResult",
     "\\PatientSystem",
     "\\PatientSystem\\Home",
     "\\PatientSystem\\Keep",
+    "\\PatientSystem\\Lab",
+    "\\PatientSystem\\Medical",
     "\\PatientSystem\\ResultTest",
     "\\PatientSystem\\User"
   ],
