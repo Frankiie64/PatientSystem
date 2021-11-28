@@ -69,7 +69,7 @@ namespace PatientSystem.Patients
                     MessageBox.Show("Plis introduce the patiens' birthday.", "System");
                     return false;
                 }               
-                else if ((int)Smoker.Value == 0)
+                else if (Smoker.Value == null)
                 {
                     MessageBox.Show("smoker field is empty ", "System");
                     return false;
@@ -212,7 +212,7 @@ namespace PatientSystem.Patients
             ComboBoxItem defaultOption = new ComboBoxItem();
             {
                 defaultOption.Text = "Select an option";
-                defaultOption.Value = new int();
+                defaultOption.Value = null;
             };
             ComboBoxItem yesismoke = new ComboBoxItem();
             {

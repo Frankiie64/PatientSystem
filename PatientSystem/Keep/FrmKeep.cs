@@ -190,8 +190,8 @@ namespace PatientSystem.Keep
                     }
                     else if ((bool)Mantenices)
                     {
-                        Keep.FrmKeep keep = new Keep.FrmKeep(_connection);
-                        keep.Show();
+                        Patients.FrmPatients patients = new Patients.FrmPatients(_connection);
+                        patients.Show();
                     }
                     else if (!(bool)Mantenices)
                     {
