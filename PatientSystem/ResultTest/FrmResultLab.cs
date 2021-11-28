@@ -4,12 +4,15 @@ using System;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 using LogicLayer.FolderLabTest;
+using PatientSystem.Login;
 namespace PatientSystem.ResultTest
 {
     public partial class FrmResultLab : Form
     {
         SqlConnection _cn;
         ServiceTestResult _service;
+        private bool Login = false;
+        private object Mantenices = new object();
         public FrmResultLab(SqlConnection cn)
         {
             InitializeComponent();
@@ -79,20 +82,13 @@ namespace PatientSystem.ResultTest
 
         }
 
+       
+
 
 
         private void BtnReport_Click_1(object sender, EventArgs e)
         {
-            if(GlobalRepositoty.Instance.id > 0)
-            {
-                FrmReport report = new FrmReport(_cn);
-                this.Hide();
-                report.Show();
-            }
-            else
-            {
-                MessageBox.Show("Selected a result to declared a report.");
-            }
+            ReportResult();
           
         }
 
@@ -113,13 +109,92 @@ namespace PatientSystem.ResultTest
                 GlobalRepositoty.Instance.result = _service.GetById(GlobalRepositoty.Instance.id);
             }
         }
+        private void ReportResult()
+        {
+            if (GlobalRepositoty.Instance.id > 0)
+            {
+                FrmReport report = new FrmReport(_cn);
+                this.Hide();
+                report.Show();
+            }
+            else
+            {
+                MessageBox.Show("Selected a result to declared a report.");
+            }
+        }
+        private void Clucht()
+        {
+            try
+            {
+                if (Login)
+                {
+                    if (Mantenices == new object())
+                    {
+                        FrmLogin.Intance.Show();
+                    }
+                    else if ((bool)Mantenices)
+                    {
+                        Keep.FrmKeep keep = new Keep.FrmKeep(_cn);
+                        keep.Show();
+                    }
+                    else if (!(bool)Mantenices)
+                    {
+                        Patients.FrmPatients patients = new Patients.FrmPatients(_cn);
+                        patients.Show();
+                    }
+
+                }
+                else
+                {
+                    GoBackHome();
+                }
+            }
+            catch (Exception ex)
+            {
+                FrmLogin.Intance.Show();
+            }
+        }
+
+        private void GoBackHome()
+        {
+           Home.FrmHome home = new Home.FrmHome(_cn);
+            home.Show();
+        }
 
         private void FrmResultLab_FormClosed(object sender, FormClosedEventArgs e)
         {
-            PatientSystem.Home.FrmHome home = new Home.FrmHome(_cn);
-            Deselect();
-            home.Show();
+            Clucht();
 
+        }
+
+        private void MantenimientoKeep_Click(object sender, EventArgs e)
+        {
+            Login = true;
+            Mantenices = true;
+            this.Close();
+        }
+
+        private void MantenPatinents_Click(object sender, EventArgs e)
+        {
+            Login = true;
+            Mantenices = false;
+            this.Close();
+        }
+
+        private void logOutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Login = true;
+            this.Close();
+        }
+
+        private void goBackHomeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void MenuAdd_Click(object sender, EventArgs e)
+        {
+            ReportResult();
         }
     }
 }

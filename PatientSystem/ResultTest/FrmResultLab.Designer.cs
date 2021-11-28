@@ -41,12 +41,22 @@ namespace PatientSystem.ResultTest
             this.LblSearch = new System.Windows.Forms.Label();
             this.MtbCard = new System.Windows.Forms.MaskedTextBox();
             this.BtnSearch = new System.Windows.Forms.Button();
+            this.MenuP = new System.Windows.Forms.MenuStrip();
+            this.homeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.logOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.goBackHomeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.MaintenaceAdministrator = new System.Windows.Forms.ToolStripMenuItem();
+            this.MenuAdd = new System.Windows.Forms.ToolStripMenuItem();
+            this.MenuDoctors = new System.Windows.Forms.ToolStripMenuItem();
+            this.MantenimientoKeep = new System.Windows.Forms.ToolStripMenuItem();
+            this.MantenPatinents = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PbLab)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvResultLab)).BeginInit();
             this.tableLayoutPanel4.SuspendLayout();
+            this.MenuP.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -231,11 +241,87 @@ namespace PatientSystem.ResultTest
             this.BtnSearch.UseVisualStyleBackColor = false;
             this.BtnSearch.Click += new System.EventHandler(this.BtnSearch_Click);
             // 
+            // MenuP
+            // 
+            this.MenuP.GripStyle = System.Windows.Forms.ToolStripGripStyle.Visible;
+            this.MenuP.ImageScalingSize = new System.Drawing.Size(24, 24);
+            this.MenuP.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.homeToolStripMenuItem,
+            this.MaintenaceAdministrator,
+            this.MenuDoctors});
+            this.MenuP.Location = new System.Drawing.Point(0, 0);
+            this.MenuP.Name = "MenuP";
+            this.MenuP.Size = new System.Drawing.Size(694, 33);
+            this.MenuP.TabIndex = 7;
+            this.MenuP.Text = "MainMenu";
+            // 
+            // homeToolStripMenuItem
+            // 
+            this.homeToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.logOutToolStripMenuItem,
+            this.goBackHomeToolStripMenuItem});
+            this.homeToolStripMenuItem.Name = "homeToolStripMenuItem";
+            this.homeToolStripMenuItem.Size = new System.Drawing.Size(77, 29);
+            this.homeToolStripMenuItem.Text = "Home";
+            // 
+            // logOutToolStripMenuItem
+            // 
+            this.logOutToolStripMenuItem.Name = "logOutToolStripMenuItem";
+            this.logOutToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.logOutToolStripMenuItem.Text = "Sing out";
+            this.logOutToolStripMenuItem.Click += new System.EventHandler(this.logOutToolStripMenuItem_Click);
+            // 
+            // goBackHomeToolStripMenuItem
+            // 
+            this.goBackHomeToolStripMenuItem.Name = "goBackHomeToolStripMenuItem";
+            this.goBackHomeToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.goBackHomeToolStripMenuItem.Text = "Go back home";
+            this.goBackHomeToolStripMenuItem.Click += new System.EventHandler(this.goBackHomeToolStripMenuItem_Click);
+            // 
+            // MaintenaceAdministrator
+            // 
+            this.MaintenaceAdministrator.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.MenuAdd});
+            this.MaintenaceAdministrator.Name = "MaintenaceAdministrator";
+            this.MaintenaceAdministrator.Size = new System.Drawing.Size(188, 29);
+            this.MaintenaceAdministrator.Text = "Maintenance Patiens";
+            // 
+            // MenuAdd
+            // 
+            this.MenuAdd.Name = "MenuAdd";
+            this.MenuAdd.Size = new System.Drawing.Size(270, 34);
+            this.MenuAdd.Text = "Report Result";
+            this.MenuAdd.Click += new System.EventHandler(this.MenuAdd_Click);
+            // 
+            // MenuDoctors
+            // 
+            this.MenuDoctors.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.MantenimientoKeep,
+            this.MantenPatinents});
+            this.MenuDoctors.Name = "MenuDoctors";
+            this.MenuDoctors.Size = new System.Drawing.Size(175, 29);
+            this.MenuDoctors.Text = "More Maintenance";
+            // 
+            // MantenimientoKeep
+            // 
+            this.MantenimientoKeep.Name = "MantenimientoKeep";
+            this.MantenimientoKeep.Size = new System.Drawing.Size(270, 34);
+            this.MantenimientoKeep.Text = "Mantenice Keep";
+            this.MantenimientoKeep.Click += new System.EventHandler(this.MantenimientoKeep_Click);
+            // 
+            // MantenPatinents
+            // 
+            this.MantenPatinents.Name = "MantenPatinents";
+            this.MantenPatinents.Size = new System.Drawing.Size(270, 34);
+            this.MantenPatinents.Text = "Mantenice Patients";
+            this.MantenPatinents.Click += new System.EventHandler(this.MantenPatinents_Click);
+            // 
             // FrmResultLab
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(694, 748);
+            this.Controls.Add(this.MenuP);
             this.Controls.Add(this.tableLayoutPanel1);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "FrmResultLab";
@@ -249,7 +335,10 @@ namespace PatientSystem.ResultTest
             ((System.ComponentModel.ISupportInitialize)(this.DgvResultLab)).EndInit();
             this.tableLayoutPanel4.ResumeLayout(false);
             this.tableLayoutPanel4.PerformLayout();
+            this.MenuP.ResumeLayout(false);
+            this.MenuP.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -266,5 +355,14 @@ namespace PatientSystem.ResultTest
         private System.Windows.Forms.Label LblSearch;
         private System.Windows.Forms.MaskedTextBox MtbCard;
         private System.Windows.Forms.Button BtnSearch;
+        private System.Windows.Forms.MenuStrip MenuP;
+        private System.Windows.Forms.ToolStripMenuItem homeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem logOutToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem goBackHomeToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem MaintenaceAdministrator;
+        private System.Windows.Forms.ToolStripMenuItem MenuAdd;
+        private System.Windows.Forms.ToolStripMenuItem MenuDoctors;
+        private System.Windows.Forms.ToolStripMenuItem MantenimientoKeep;
+        private System.Windows.Forms.ToolStripMenuItem MantenPatinents;
     }
 }

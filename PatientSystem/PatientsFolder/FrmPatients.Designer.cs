@@ -246,14 +246,14 @@ namespace PatientSystem.Patients
             // logOutToolStripMenuItem
             // 
             this.logOutToolStripMenuItem.Name = "logOutToolStripMenuItem";
-            this.logOutToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.logOutToolStripMenuItem.Size = new System.Drawing.Size(230, 34);
             this.logOutToolStripMenuItem.Text = "Sing out";
             this.logOutToolStripMenuItem.Click += new System.EventHandler(this.logOutToolStripMenuItem_Click);
             // 
             // goBackHomeToolStripMenuItem
             // 
             this.goBackHomeToolStripMenuItem.Name = "goBackHomeToolStripMenuItem";
-            this.goBackHomeToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.goBackHomeToolStripMenuItem.Size = new System.Drawing.Size(230, 34);
             this.goBackHomeToolStripMenuItem.Text = "Go back home";
             this.goBackHomeToolStripMenuItem.Click += new System.EventHandler(this.goBackHomeToolStripMenuItem_Click);
             // 
@@ -270,21 +270,21 @@ namespace PatientSystem.Patients
             // MenuAdd
             // 
             this.MenuAdd.Name = "MenuAdd";
-            this.MenuAdd.Size = new System.Drawing.Size(270, 34);
+            this.MenuAdd.Size = new System.Drawing.Size(224, 34);
             this.MenuAdd.Text = "Add Patiens";
             this.MenuAdd.Click += new System.EventHandler(this.MenuAdd_Click);
             // 
             // MenuEdit
             // 
             this.MenuEdit.Name = "MenuEdit";
-            this.MenuEdit.Size = new System.Drawing.Size(270, 34);
+            this.MenuEdit.Size = new System.Drawing.Size(224, 34);
             this.MenuEdit.Text = "Edit Patiens";
             this.MenuEdit.Click += new System.EventHandler(this.MenuEdit_Click);
             // 
             // MenuDelete
             // 
             this.MenuDelete.Name = "MenuDelete";
-            this.MenuDelete.Size = new System.Drawing.Size(270, 34);
+            this.MenuDelete.Size = new System.Drawing.Size(224, 34);
             this.MenuDelete.Text = "Delete Patiens";
             this.MenuDelete.Click += new System.EventHandler(this.MenuDelete_Click);
             // 

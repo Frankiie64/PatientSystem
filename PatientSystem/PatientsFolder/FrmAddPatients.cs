@@ -15,6 +15,8 @@ namespace PatientSystem.Patients
         public int? id = null;
         SqlConnection _connection;
         public string filename = null;
+        ComboBoxItem Smoker;
+
         public FrmAddPatients(SqlConnection cn)
         {
             InitializeComponent();
@@ -29,6 +31,67 @@ namespace PatientSystem.Patients
         private void btnSavePhoto_Click(object sender, EventArgs e)
         {
             AddPhoto();
+        }
+
+        private bool validation()
+        {
+            try
+            {
+                Smoker = CbxSmoker.SelectedItem as ComboBoxItem;
+                
+                if(string.IsNullOrWhiteSpace(TxbName.Text))
+                {
+                    MessageBox.Show("Plis introduce the patiens' name.", "System");
+                    return false;
+                }
+                else if (string.IsNullOrWhiteSpace(TxbLastName.Text))
+                {
+                    MessageBox.Show("Plis introduce the patiens' Lastname.", "System");
+                    return false;
+                }
+                else if (!MtbPhone.MaskFull)
+                {
+                    MessageBox.Show("Plis introduce the patiens' phone number.", "System");
+                    return false;
+                }
+                else if (string.IsNullOrWhiteSpace(TxbAddress.Text))
+                {
+                    MessageBox.Show("Plis introduce the patiens' address.", "System");
+                    return false;
+                }
+                else if (!MtbCard.MaskFull)
+                {
+                    MessageBox.Show("Plis introduce the patiens' id.", "System");
+                    return false;
+                }
+                else if (!MtbBirth.MaskFull)
+                {
+                    MessageBox.Show("Plis introduce the patiens' birthday.", "System");
+                    return false;
+                }               
+                else if ((int)Smoker.Value == 0)
+                {
+                    MessageBox.Show("smoker field is empty ", "System");
+                    return false;
+                }
+                else if (string.IsNullOrWhiteSpace(TxbAllergies.Text))
+                {
+                    MessageBox.Show("Plis introduce the patiens' allergies.(if don't have write 'nop')", "System");
+                    return false;
+                }
+                else
+                {
+                    return true;
+                }
+
+            }
+            catch(Exception ex)
+            {
+                return false;
+            }
+
+
+
         }
         public void AddPatient()
         {
@@ -47,14 +110,8 @@ namespace PatientSystem.Patients
 
                 if (_service.Add(item))
                 {
-                    if (SavePhoto())
-                    {
-                        MessageBox.Show("The patients was saved bacanamente", "System");
-                    }
-                    else
-                    {
-                        MessageBox.Show("The patients was not saved sad-mente", "System");
-                    }
+                    SavePhoto();                 
+                    MessageBox.Show("The patients was saved bacanamente", "System");                   
                 }
                 else
                 {
@@ -180,15 +237,18 @@ namespace PatientSystem.Patients
         }
         private void BtnConfirm_Click(object sender, EventArgs e)
         {
-            if (GlobalRepositoty.Instance.id == 0)
+            if (validation())
             {
-                AddPatient();
+                if (GlobalRepositoty.Instance.id == 0)
+                {
+                    AddPatient();
+                }
+                else
+                {
+                    EditPatient();
+                }
+                this.Close();
             }
-            else
-            {
-                EditPatient();
-            }
-            this.Close();
         }
         private void FrmAddPatients_FormClosed(object sender, FormClosedEventArgs e)
         {
