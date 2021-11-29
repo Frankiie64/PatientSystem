@@ -133,7 +133,7 @@ namespace DataLayer
         }
         public DataTable GetallUsers()
         {
-            SqlCommand command = new SqlCommand("select * from Doctors", _connection);
+            SqlCommand command = new SqlCommand("select id,FName as 'Name', LastName,Email,PhoneNumber,Identification,Photos from Doctors", _connection);
             command.CommandType = CommandType.Text;
 
             SqlDataAdapter query = new SqlDataAdapter(command);

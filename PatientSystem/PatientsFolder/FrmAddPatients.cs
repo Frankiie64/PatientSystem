@@ -38,8 +38,8 @@ namespace PatientSystem.Patients
             try
             {
                 Smoker = CbxSmoker.SelectedItem as ComboBoxItem;
-                
-                if(string.IsNullOrWhiteSpace(TxbName.Text))
+
+                if (string.IsNullOrWhiteSpace(TxbName.Text))
                 {
                     MessageBox.Show("Plis introduce the patiens' name.", "System");
                     return false;
@@ -68,7 +68,11 @@ namespace PatientSystem.Patients
                 {
                     MessageBox.Show("Plis introduce the patiens' birthday.", "System");
                     return false;
-                }               
+                }  
+                else if(!ValiDate())
+                {
+                    return false;
+                }
                 else if (Smoker.Value == null)
                 {
                     MessageBox.Show("smoker field is empty ", "System");
@@ -268,6 +272,20 @@ namespace PatientSystem.Patients
                 filename = ChosePhot.FileName;
                 PtbPatients.ImageLocation = filename;
             }
+        }
+        private bool ValiDate()
+        {
+            DateTime dt;
+            if (!DateTime.TryParse(MtbBirth.Text, out dt))
+            {
+                MessageBox.Show("Por favor introduzca una fecha que petenerzca al calendiario romano.", "ERROR");
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+            
         }
 
     }

@@ -82,7 +82,7 @@ namespace PatientSystem.User
                     }
                     else
                     {
-                        MessageBox.Show("El usuario que intenta registrar ya existe", "Error");
+                        MessageBox.Show("El usuario que intenta registrar ya existe", "System");
 
                     }
 
@@ -105,48 +105,53 @@ namespace PatientSystem.User
             {
                 if (string.IsNullOrWhiteSpace(TxbName.Text))
                 {
-                    MessageBox.Show("Por favor introduzca el nombre", "Error");
+                    MessageBox.Show("Por favor introduzca el nombre", "System");
                     return false;
                 }
                 else if (string.IsNullOrWhiteSpace(TxbLastName.Text))
                 {
-                    MessageBox.Show("Por favor introduzca el apellido", "Error");
+                    MessageBox.Show("Por favor introduzca el apellido", "System");
                     return false;
                 }
                 else if (string.IsNullOrWhiteSpace(TxbMail.Text))
                 {
-                    MessageBox.Show("Por favor introduzca el correo", "Error");
+                    MessageBox.Show("Por favor introduzca el correo", "System");
                     return false;
                 }
                 else if (string.IsNullOrWhiteSpace(TxbUser.Text))
                 {
-                    MessageBox.Show("Por favor introduzca el usuario", "Error");
+                    MessageBox.Show("Por favor introduzca el usuario", "System");
                     return false;
                 }
                 else if (string.IsNullOrWhiteSpace(TxbPassword.Text) || string.IsNullOrWhiteSpace(TxbConfirm.Text))
                 {
-                    MessageBox.Show("Por favor introduzca la contraseña", "Error");
+                    MessageBox.Show("Por favor introduzca la contraseña", "System");
                     return false;
                 }
                 else if (rol.Value == null)
                 {
-                    MessageBox.Show("Por favor introduzca el rol de la persona", "Error");
+                    MessageBox.Show("Por favor introduzca el rol de la persona", "System");
                     return false;
                 }
                 else if (ValidationEmail(TxbMail.Text) == false)
                 {
-                    MessageBox.Show("El email que desea de ingresar no corresponde a una dirrecion de correo reconocidad por el sistema, favor tratar de nuevo.", "Error");
+                    MessageBox.Show("El email que desea de ingresar no corresponde a una dirrecion de correo reconocidad por el sistema, favor tratar de nuevo.", "System");
+                    return false;
+                }
+                else if (TxbPassword.Text != TxbConfirm.Text)
+                {
+                    MessageBox.Show("Pa donde va mi rey, las contraseñas no coinciden", "System");
                     return false;
                 }
                 else
-                        {
+                {
                     return true;
                 }
 
             }
             catch
             {
-                MessageBox.Show("Error", "Error");
+                MessageBox.Show("Error", "System");
                 return false;
             }
         }

@@ -71,10 +71,10 @@ namespace PatientSystem.Medical
         }
         private void FrmMedical_Load(object sender, EventArgs e)
         {
-            loadData();
+            loadData();           
+            Deselect();
             DgvDoctor.Columns[0].Visible = false;
             DgvDoctor.Columns[6].Visible = false;
-            Deselect();
         }
         private void BtnDeselect_Click(object sender, EventArgs e)
         {

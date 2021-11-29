@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Panda\\Source\\Repos\\PatientSystem\\PatientSystem\\PatientSystem.csproj": {}
+    "C:\\Users\\Franklyn\\source\\Entregable\\PatientSystem\\PatientSystem.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Panda\\Source\\Repos\\PatientSystem\\DataLayer\\DataLayer.csproj": {
+    "C:\\Users\\Franklyn\\source\\Entregable\\DataLayer\\DataLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Panda\\Source\\Repos\\PatientSystem\\DataLayer\\DataLayer.csproj",
+        "projectUniqueName": "C:\\Users\\Franklyn\\source\\Entregable\\DataLayer\\DataLayer.csproj",
         "projectName": "DataLayer",
-        "projectPath": "C:\\Users\\Panda\\Source\\Repos\\PatientSystem\\DataLayer\\DataLayer.csproj",
-        "packagesPath": "C:\\Users\\Panda\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Panda\\Source\\Repos\\PatientSystem\\DataLayer\\obj\\",
+        "projectPath": "C:\\Users\\Franklyn\\source\\Entregable\\DataLayer\\DataLayer.csproj",
+        "packagesPath": "C:\\Users\\Franklyn\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Franklyn\\source\\Entregable\\DataLayer\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Panda\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Franklyn\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -64,21 +64,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Panda\\Source\\Repos\\PatientSystem\\EmailLayer\\EmailLayer.csproj": {
+    "C:\\Users\\Franklyn\\source\\Entregable\\EmailLayer\\EmailLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Panda\\Source\\Repos\\PatientSystem\\EmailLayer\\EmailLayer.csproj",
+        "projectUniqueName": "C:\\Users\\Franklyn\\source\\Entregable\\EmailLayer\\EmailLayer.csproj",
         "projectName": "EmailLayer",
-        "projectPath": "C:\\Users\\Panda\\Source\\Repos\\PatientSystem\\EmailLayer\\EmailLayer.csproj",
-        "packagesPath": "C:\\Users\\Panda\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Panda\\Source\\Repos\\PatientSystem\\EmailLayer\\obj\\",
+        "projectPath": "C:\\Users\\Franklyn\\source\\Entregable\\EmailLayer\\EmailLayer.csproj",
+        "packagesPath": "C:\\Users\\Franklyn\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Franklyn\\source\\Entregable\\EmailLayer\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Panda\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Franklyn\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -124,21 +124,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Panda\\Source\\Repos\\PatientSystem\\LogicLayer\\LogicLayer.csproj": {
+    "C:\\Users\\Franklyn\\source\\Entregable\\LogicLayer\\LogicLayer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Panda\\Source\\Repos\\PatientSystem\\LogicLayer\\LogicLayer.csproj",
+        "projectUniqueName": "C:\\Users\\Franklyn\\source\\Entregable\\LogicLayer\\LogicLayer.csproj",
         "projectName": "LogicLayer",
-        "projectPath": "C:\\Users\\Panda\\Source\\Repos\\PatientSystem\\LogicLayer\\LogicLayer.csproj",
-        "packagesPath": "C:\\Users\\Panda\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Panda\\Source\\Repos\\PatientSystem\\LogicLayer\\obj\\",
+        "projectPath": "C:\\Users\\Franklyn\\source\\Entregable\\LogicLayer\\LogicLayer.csproj",
+        "packagesPath": "C:\\Users\\Franklyn\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Franklyn\\source\\Entregable\\LogicLayer\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Panda\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Franklyn\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -152,11 +152,11 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "C:\\Users\\Panda\\Source\\Repos\\PatientSystem\\DataLayer\\DataLayer.csproj": {
-                "projectPath": "C:\\Users\\Panda\\Source\\Repos\\PatientSystem\\DataLayer\\DataLayer.csproj"
+              "C:\\Users\\Franklyn\\source\\Entregable\\DataLayer\\DataLayer.csproj": {
+                "projectPath": "C:\\Users\\Franklyn\\source\\Entregable\\DataLayer\\DataLayer.csproj"
               },
-              "C:\\Users\\Panda\\Source\\Repos\\PatientSystem\\EmailLayer\\EmailLayer.csproj": {
-                "projectPath": "C:\\Users\\Panda\\Source\\Repos\\PatientSystem\\EmailLayer\\EmailLayer.csproj"
+              "C:\\Users\\Franklyn\\source\\Entregable\\EmailLayer\\EmailLayer.csproj": {
+                "projectPath": "C:\\Users\\Franklyn\\source\\Entregable\\EmailLayer\\EmailLayer.csproj"
               }
             }
           }
@@ -195,21 +195,21 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Panda\\Source\\Repos\\PatientSystem\\PatientSystem\\PatientSystem.csproj": {
+    "C:\\Users\\Franklyn\\source\\Entregable\\PatientSystem\\PatientSystem.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Panda\\Source\\Repos\\PatientSystem\\PatientSystem\\PatientSystem.csproj",
+        "projectUniqueName": "C:\\Users\\Franklyn\\source\\Entregable\\PatientSystem\\PatientSystem.csproj",
         "projectName": "PatientSystem",
-        "projectPath": "C:\\Users\\Panda\\Source\\Repos\\PatientSystem\\PatientSystem\\PatientSystem.csproj",
-        "packagesPath": "C:\\Users\\Panda\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Panda\\Source\\Repos\\PatientSystem\\PatientSystem\\obj\\",
+        "projectPath": "C:\\Users\\Franklyn\\source\\Entregable\\PatientSystem\\PatientSystem.csproj",
+        "packagesPath": "C:\\Users\\Franklyn\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Franklyn\\source\\Entregable\\PatientSystem\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Panda\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Franklyn\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -223,14 +223,14 @@
           "netcoreapp3.1": {
             "targetAlias": "netcoreapp3.1",
             "projectReferences": {
-              "C:\\Users\\Panda\\Source\\Repos\\PatientSystem\\DataLayer\\DataLayer.csproj": {
-                "projectPath": "C:\\Users\\Panda\\Source\\Repos\\PatientSystem\\DataLayer\\DataLayer.csproj"
+              "C:\\Users\\Franklyn\\source\\Entregable\\DataLayer\\DataLayer.csproj": {
+                "projectPath": "C:\\Users\\Franklyn\\source\\Entregable\\DataLayer\\DataLayer.csproj"
               },
-              "C:\\Users\\Panda\\Source\\Repos\\PatientSystem\\EmailLayer\\EmailLayer.csproj": {
-                "projectPath": "C:\\Users\\Panda\\Source\\Repos\\PatientSystem\\EmailLayer\\EmailLayer.csproj"
+              "C:\\Users\\Franklyn\\source\\Entregable\\EmailLayer\\EmailLayer.csproj": {
+                "projectPath": "C:\\Users\\Franklyn\\source\\Entregable\\EmailLayer\\EmailLayer.csproj"
               },
-              "C:\\Users\\Panda\\Source\\Repos\\PatientSystem\\LogicLayer\\LogicLayer.csproj": {
-                "projectPath": "C:\\Users\\Panda\\Source\\Repos\\PatientSystem\\LogicLayer\\LogicLayer.csproj"
+              "C:\\Users\\Franklyn\\source\\Entregable\\LogicLayer\\LogicLayer.csproj": {
+                "projectPath": "C:\\Users\\Franklyn\\source\\Entregable\\LogicLayer\\LogicLayer.csproj"
               }
             }
           }
@@ -268,7 +268,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     }

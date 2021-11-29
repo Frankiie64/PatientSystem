@@ -17,7 +17,7 @@ namespace DataLayer.ResultTestData
 
         public DataTable GetResultByIdent(string identification)
         {
-            SqlCommand cmd = new SqlCommand("select LabResult.Id, Patients.FName as 'Name', Patients.LastName as 'Last Name', Patients.identification,LabTest.Title from LabResult inner join Patients ON id_Patients = Patients.id INNER JOIN LabTest ON id_LabTest = LabTest.id where Patients.Identification = @identification", _cn);
+            SqlCommand cmd = new SqlCommand("select LabResult.Id, Patients.FName as 'Name', Patients.LastName as 'Last Name', Patients.identification,LabTest.Title from LabResult inner join Patients ON id_Patients = Patients.id INNER JOIN LabTest ON id_LabTest = LabTest.id  where Patients.Identification = @identification and LabResult.StatusResult = 2", _cn);
             cmd.CommandType = CommandType.Text;
 
             cmd.Parameters.AddWithValue("@identification", identification);

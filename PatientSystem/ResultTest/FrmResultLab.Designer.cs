@@ -267,14 +267,14 @@ namespace PatientSystem.ResultTest
             // logOutToolStripMenuItem
             // 
             this.logOutToolStripMenuItem.Name = "logOutToolStripMenuItem";
-            this.logOutToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.logOutToolStripMenuItem.Size = new System.Drawing.Size(230, 34);
             this.logOutToolStripMenuItem.Text = "Sing out";
             this.logOutToolStripMenuItem.Click += new System.EventHandler(this.logOutToolStripMenuItem_Click);
             // 
             // goBackHomeToolStripMenuItem
             // 
             this.goBackHomeToolStripMenuItem.Name = "goBackHomeToolStripMenuItem";
-            this.goBackHomeToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
+            this.goBackHomeToolStripMenuItem.Size = new System.Drawing.Size(230, 34);
             this.goBackHomeToolStripMenuItem.Text = "Go back home";
             this.goBackHomeToolStripMenuItem.Click += new System.EventHandler(this.goBackHomeToolStripMenuItem_Click);
             // 
@@ -289,7 +289,7 @@ namespace PatientSystem.ResultTest
             // MenuAdd
             // 
             this.MenuAdd.Name = "MenuAdd";
-            this.MenuAdd.Size = new System.Drawing.Size(270, 34);
+            this.MenuAdd.Size = new System.Drawing.Size(219, 34);
             this.MenuAdd.Text = "Report Result";
             this.MenuAdd.Click += new System.EventHandler(this.MenuAdd_Click);
             // 
@@ -305,14 +305,14 @@ namespace PatientSystem.ResultTest
             // MantenimientoKeep
             // 
             this.MantenimientoKeep.Name = "MantenimientoKeep";
-            this.MantenimientoKeep.Size = new System.Drawing.Size(270, 34);
+            this.MantenimientoKeep.Size = new System.Drawing.Size(261, 34);
             this.MantenimientoKeep.Text = "Mantenice Keep";
             this.MantenimientoKeep.Click += new System.EventHandler(this.MantenimientoKeep_Click);
             // 
             // MantenPatinents
             // 
             this.MantenPatinents.Name = "MantenPatinents";
-            this.MantenPatinents.Size = new System.Drawing.Size(270, 34);
+            this.MantenPatinents.Size = new System.Drawing.Size(261, 34);
             this.MantenPatinents.Text = "Mantenice Patients";
             this.MantenPatinents.Click += new System.EventHandler(this.MantenPatinents_Click);
             // 

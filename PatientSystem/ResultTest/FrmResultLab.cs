@@ -31,8 +31,9 @@ namespace PatientSystem.ResultTest
                 BtnDeselect.Visible = true;
                 if (DgvResultLab.Rows.Count == 0)
                 {
-                    MessageBox.Show("the id you try to find does not exist in the data base");
-                    Deselect();
+                    MessageBox.Show("the id you try to find does not exist in the data base","System");
+                    LoadData();
+                    
                 }
                 else
                 {
@@ -67,6 +68,7 @@ namespace PatientSystem.ResultTest
             DgvResultLab.ClearSelection();
 
             DgvResultLab.Columns[0].Visible = false;
+            Deselect();
 
         }
 
@@ -76,10 +78,10 @@ namespace PatientSystem.ResultTest
             BtnDeselect.Visible = false;
 
             GlobalRepositoty.Instance.result = new DataLayer.Models.LabResult();
-            GlobalRepositoty.Instance.id = new int();
+            GlobalRepositoty.Instance.id = 0;
 
-            LoadData();
-
+            MtbCard.Clear();
+           
         }
 
        
@@ -95,6 +97,7 @@ namespace PatientSystem.ResultTest
         private void BtnDeselect_Click_1(object sender, EventArgs e)
         {
             Deselect();
+            LoadData();
 
         }
 
@@ -119,7 +122,7 @@ namespace PatientSystem.ResultTest
             }
             else
             {
-                MessageBox.Show("Selected a result to declared a report.");
+                MessageBox.Show("Selected a result to declared a report.","System");
             }
         }
         private void Clucht()
